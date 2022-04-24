@@ -1,0 +1,7 @@
+{
+  "name": "SnackUno",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
