@@ -1,5 +1,5 @@
 ion-menu-button {
-  color: var(--ion-color-primary);
+  color: #FFF;
 }
 
 #container {
@@ -25,4 +25,13 @@ ion-menu-button {
 
 #container a {
   text-decoration: none;
+}
+
+.ion-color-nav {
+	--ion-color-base: var(--ion-color-nav);
+	--ion-color-base-rgb: var(--ion-color-nav-rgb);
+	--ion-color-contrast: var(--ion-color-nav-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-nav-contrast-rgb);
+	--ion-color-shade: var(--ion-color-nav-shade);
+	--ion-color-tint: var(--ion-color-nav-tint);
 }

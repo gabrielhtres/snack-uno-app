@@ -74,6 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** nav **/
+  --ion-color-nav: #8C0400;
+	--ion-color-nav-rgb: 140,4,0;
+	--ion-color-nav-contrast: #ffffff;
+	--ion-color-nav-contrast-rgb: 255,255,255;
+	--ion-color-nav-shade: #7b0400;
+	--ion-color-nav-tint: #981d1a;
 }
 
 @media (prefers-color-scheme: dark) {
