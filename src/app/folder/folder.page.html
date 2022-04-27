@@ -4,8 +4,10 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-item color="nav">
-      <ion-icon size="large" slot="end" name="bag"></ion-icon>
-    </ion-item>
+      <a [routerLink]="['/cesta']">
+        <ion-icon size="large" slot="end" name="bag"></ion-icon>
+      </a>
+      </ion-item>
     <ion-title slot="end">SnackUno</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,8 +19,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- <div id="container">
+      <strong class="capitalize">{{ folder }}</strong>
+      <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  
+    </div> -->
+</ion-content>
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>
