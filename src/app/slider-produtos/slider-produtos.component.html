@@ -1,0 +1,64 @@
+<ion-grid>
+  <ion-row class="">
+    <ion-col size="12">
+      <swiper [pagination]="true" #swipper class="mySwiper">
+
+        <!-- <ng-template *ngFor="let produto of produtos" swiperSlide> -->
+        <ng-template swiperSlide>
+          <ion-card style="width: 100%; height: 550px; margin: 0px;">
+            <img style="height: 50%; width: 100%;" src="https://picsum.photos/50/50">
+            <ion-card-header class="card-header">
+              <ion-card-subtitle class="restaurante-card ml-5px card-subtitle">
+                <img [src]="" class="icone-restaurante">
+                <p style="display: inline;" class="ml-5px">Hangar</p>
+              </ion-card-subtitle>
+              <ion-card-title class="ml-5px card-title"><h3 style="margin: 0px;">Pizza</h3></ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content style="margin-top: -10px;">
+              <p class="ml-5px" style="font-size: 16px">Pizza de Calabresa</p>
+            </ion-card-content>
+
+            <ion-card-content class="preco ml-5px">
+              <strong>R$ 5.00</strong>
+            </ion-card-content>
+
+            <ion-card-content class="ml-5px">
+              <ion-button color="nav" [routerLink]="['/folder/home/home', 1]">
+                Ver Produto
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ng-template>
+        <ng-template swiperSlide>
+
+          <ion-card style="width: 100%; height: 550px; margin: 0px;">
+            <img style="height: 50%; width: 100%;" src="https://picsum.photos/50/50">
+            <ion-card-header class="card-header">
+              <ion-card-subtitle class="restaurante-card ml-5px card-subtitle">
+                <img [src]="" class="icone-restaurante">
+                <p style="display: inline;" class="ml-5px">Hangar</p>
+              </ion-card-subtitle>
+              <ion-card-title class="ml-5px card-title"><h3 style="margin: 0px;">Pizza</h3></ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content style="margin-top: -10px;">
+              <p class="ml-5px" style="font-size: 16px">Pizza de Calabresa</p>
+            </ion-card-content>
+
+            <ion-card-content class="preco ml-5px">
+              <strong>R$ 5.00</strong>
+            </ion-card-content>
+
+            <ion-card-content class="ml-5px">
+              <ion-button color="nav" [routerLink]="['/folder/home/home', 1]">
+                Ver Produto
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ng-template>
+
+      </swiper>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -19,6 +19,10 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
+        path: 'home/:id',
+        component: HomeComponent
+      },
+      {
         path: 'meu-perfil',
         component: MeuPerfilComponent
       },

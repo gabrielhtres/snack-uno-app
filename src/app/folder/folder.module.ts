@@ -13,13 +13,16 @@ import { MeusCartoesComponent } from '../meus-cartoes/meus-cartoes.component';
 import { MeusLocaisComponent } from '../meus-locais/meus-locais.component';
 import { MeusPedidosComponent } from '../meus-pedidos/meus-pedidos.component';
 import { ConfiguracoesComponent } from '../configuracoes/configuracoes.component';
+import { SliderProdutosComponent } from '../slider-produtos/slider-produtos.component';
+import { SwiperModule } from "swiper/angular";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,
+    SwiperModule
   ],
   declarations: [
     FolderPage,
@@ -28,7 +31,8 @@ import { ConfiguracoesComponent } from '../configuracoes/configuracoes.component
     MeusCartoesComponent,
     MeusLocaisComponent,
     MeusPedidosComponent,
-    ConfiguracoesComponent
+    ConfiguracoesComponent,
+    SliderProdutosComponent
   ]
 })
 export class FolderPageModule {}
