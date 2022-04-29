@@ -3,8 +3,13 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
+            <ion-list-header class="mb-3">
+            <div class="d-flex flex-row justify-content-center align-items-center">
+              <img src="https://picsum.photos/50/50" class="img-fluid" style="border-radius: 50px;">
+              <p class="m-auto ms-3">Gabriel</p>
+            </div>
+            </ion-list-header>
+            <ion-note class="pt-2">Olá Gabriel, tenha um bom apetite!</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="[p.url]" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
