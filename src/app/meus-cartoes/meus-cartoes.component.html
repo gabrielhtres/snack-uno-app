@@ -2,26 +2,19 @@
   <ion-list>
     <ion-list-header class="mb-2">
       <ion-text class="d-flex mt-3">
-        <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
+        <a [routerLink]="['/folder/home/home']">
+          <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
+        </a>
         <h1 class="ms-3">Meus Cartões</h1>
       </ion-text>
     </ion-list-header>
   </ion-list>
 
-  <ion-item lines="full">
+  <ion-item lines="full" *ngFor="let d of dadosCartoes">
     <ion-icon slot="start" name="card" color="nav"></ion-icon>
     <ion-label>
-      <h2>Cartão 1</h2>
-      <p>**** **** **** 1234</p>
-    </ion-label>
-    <ion-icon slot="end" name="pencil"></ion-icon>
-  </ion-item>
-
-  <ion-item lines="full">
-    <ion-icon slot="start" name="card" color="nav"></ion-icon>
-    <ion-label>
-      <h2>Cartão 2</h2>
-      <p>**** **** **** 9876</p>
+      <h2>{{ d.titulo }}</h2>
+      <p>{{ d.cartao }}</p>
     </ion-label>
     <ion-icon slot="end" name="pencil"></ion-icon>
   </ion-item>

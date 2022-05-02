@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meus-pedidos.component.scss'],
 })
 export class MeusPedidosComponent implements OnInit {
+  public dadosPedidos = [
+    { pedido: '#12', restaurante: 'Hangar', src: 'https://picsum.photos/200/200', data: '28/04/2022' },
+    { pedido: '#15', restaurante: 'Da Tia', src: 'https://picsum.photos/200/200', data: '29/04/2022' },
+  ];
 
   constructor() { }
 
