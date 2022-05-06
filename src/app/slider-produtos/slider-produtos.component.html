@@ -1,53 +1,26 @@
 <ion-grid>
-  <ion-row class="">
-    <ion-col size="12">
+  <!-- <ion-row class="">
+    <ion-col size="12"> -->
       <swiper [pagination]="true" #swipper class="mySwiper">
 
         <!-- <ng-template *ngFor="let produto of produtos" swiperSlide> -->
-        <ng-template swiperSlide>
+        <ng-template swiperSlide *ngFor="let d of dadosProdutos">
           <ion-card>
-            <img src="https://picsum.photos/500/400">
+            <img [src]="d.img">
             <ion-card-header>
               <ion-card-subtitle>
                 <img [src]="">
-                <p>Hangar</p>
+                <p>{{ d.restaurante }}</p>
               </ion-card-subtitle>
-              <ion-card-title><h3>Pizza</h3></ion-card-title>
+              <ion-card-title><h3>{{ d.produto }}</h3></ion-card-title>
             </ion-card-header>
           
             <ion-card-content>
-              <p>Pizza de Calabresa</p>
+              <p>{{ d.descricao }}</p>
             </ion-card-content>
 
             <ion-card-content>
-              <strong>R$ 5.00</strong>
-            </ion-card-content>
-
-            <ion-card-content>
-              <ion-button color="nav" [routerLink]="['/folder/home/home', 1]">
-                Ver Produto
-              </ion-button>
-            </ion-card-content>
-          </ion-card>
-        </ng-template>
-        <ng-template swiperSlide>
-
-          <ion-card>
-            <img src="https://picsum.photos/500/400">
-            <ion-card-header>
-              <ion-card-subtitle>
-                <img [src]="">
-                <p>Hangar</p>
-              </ion-card-subtitle>
-              <ion-card-title><h3>Pizza</h3></ion-card-title>
-            </ion-card-header>
-          
-            <ion-card-content>
-              <p>Pizza de Calabresa</p>
-            </ion-card-content>
-
-            <ion-card-content>
-              <strong>R$ 5.00</strong>
+              <strong>{{ d.preco }}</strong>
             </ion-card-content>
 
             <ion-card-content>
@@ -58,6 +31,6 @@
           </ion-card>
         </ng-template>
       </swiper>
-    </ion-col>
-  </ion-row>
+    <!-- </ion-col>
+  </ion-row> -->
 </ion-grid>
