@@ -1,12 +1,12 @@
 <ion-grid>
   <!-- <ion-row class="">
     <ion-col size="12"> -->
-      <swiper [pagination]="true" #swipper class="mySwiper">
+      <swiper [pagination]="true" #swipper class="mySwiper" *ngFor="let dp of dadosProdutos">
 
         <!-- <ng-template *ngFor="let produto of produtos" swiperSlide> -->
-        <ng-template swiperSlide *ngFor="let d of dadosProdutos">
+        <ng-template swiperSlide *ngFor="let d of dp">
           <ion-card>
-            <img [src]="d.img">
+            <img [src]="d.img" class="img-card">
             <ion-card-header>
               <ion-card-subtitle>
                 <img [src]="">
@@ -20,7 +20,7 @@
             </ion-card-content>
 
             <ion-card-content>
-              <strong>{{ d.preco }}</strong>
+              <strong class="text-success fs-6">{{ d.preco }}</strong>
             </ion-card-content>
 
             <ion-card-content>
