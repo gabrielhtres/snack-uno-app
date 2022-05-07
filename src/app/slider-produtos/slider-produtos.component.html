@@ -5,30 +5,32 @@
 
         <!-- <ng-template *ngFor="let produto of produtos" swiperSlide> -->
         <ng-template swiperSlide *ngFor="let d of dp">
-          <ion-card>
-            <img [src]="d.img" class="img-card">
-            <ion-card-header>
-              <ion-card-subtitle>
-                <img [src]="">
-                <p>{{ d.restaurante }}</p>
-              </ion-card-subtitle>
-              <ion-card-title><h3>{{ d.produto }}</h3></ion-card-title>
-            </ion-card-header>
-          
-            <ion-card-content>
-              <p>{{ d.descricao }}</p>
-            </ion-card-content>
+          <a [routerLink]="['/folder/home/home', 1]">
+            <ion-card>
+              <img [src]="d.img" class="img-card">
+              <ion-card-header>
+                <ion-card-subtitle class="d-flex align-items-center mb-3">
+                  <img class="img-restaurante" src="http://picsum.photos/40/40">
+                  <p>{{ d.restaurante }}</p>
+                </ion-card-subtitle>
+                <ion-card-title><h3>{{ d.produto }}</h3></ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+                <p>{{ d.descricao }}</p>
+              </ion-card-content>
 
-            <ion-card-content>
-              <strong class="text-success fs-6">{{ d.preco }}</strong>
-            </ion-card-content>
+              <ion-card-content class="preco mb-1">
+                <strong class="text-success fs-5">{{ d.preco }}</strong>
+              </ion-card-content>
 
-            <ion-card-content>
-              <ion-button color="nav" [routerLink]="['/folder/home/home', 1]">
-                Ver Produto
-              </ion-button>
-            </ion-card-content>
-          </ion-card>
+              <!-- <ion-card-content>
+                <ion-button color="nav">
+                  Ver Produto
+                </ion-button>
+              </ion-card-content> -->
+            </ion-card>
+          </a>
         </ng-template>
       </swiper>
     <!-- </ion-col>
