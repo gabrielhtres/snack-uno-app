@@ -14,6 +14,5 @@ export class AppComponent {
     { title: 'Meus Locais', url: '/folder/meus-locais/meus-locais', icon: 'location' },
     { title: 'Configurações', url: '/folder/configuracoes/configuracoes', icon: 'construct' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
 }

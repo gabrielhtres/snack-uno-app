@@ -7,6 +7,7 @@ import { MeusCartoesComponent } from '../meus-cartoes/meus-cartoes.component';
 import { MeusLocaisComponent } from '../meus-locais/meus-locais.component';
 import { MeusPedidosComponent } from '../meus-pedidos/meus-pedidos.component';
 import { MinhaCestaComponent } from '../minha-cesta/minha-cesta.component';
+import { ProdutoComponent } from '../produto/produto.component';
 
 import { FolderPage } from './folder.page';
 
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path: 'minha-cesta',
         component: MinhaCestaComponent
+      },
+      {
+        path: 'produto/:restaurante/:id',
+        component: ProdutoComponent
       }
     ]
   },

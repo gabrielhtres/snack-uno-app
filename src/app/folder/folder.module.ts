@@ -16,6 +16,7 @@ import { ConfiguracoesComponent } from '../configuracoes/configuracoes.component
 import { SliderProdutosComponent } from '../slider-produtos/slider-produtos.component';
 import { SwiperModule } from "swiper/angular";
 import { MinhaCestaComponent } from '../minha-cesta/minha-cesta.component';
+import { ProdutoComponent } from '../produto/produto.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { MinhaCestaComponent } from '../minha-cesta/minha-cesta.component';
     MeusPedidosComponent,
     ConfiguracoesComponent,
     SliderProdutosComponent,
-    MinhaCestaComponent
+    MinhaCestaComponent,
+    ProdutoComponent
   ]
 })
 export class FolderPageModule {}
