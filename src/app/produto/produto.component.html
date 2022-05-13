@@ -1,9 +1,30 @@
-<ion-content>
-  <p>
-    {{ id }}
-  </p>
-
-  <p>
-    {{ restaurante }}
-  </p>
+<ion-content color="">
+  <div *ngFor="let p of Produtos">
+    <div *ngIf="p == Produto">
+      <ion-text class="d-flex mt-3 ms-3">
+        <a [routerLink]="['/folder/home/home']">
+          <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
+        </a>
+        <h1 class="ms-3">Meu Perfil</h1>
+      </ion-text>
+      <img [src]="p.img" class="mt-2">
+      <div class="m-4">
+        <h2 class="fs-1">{{ p.produto }}</h2>
+        <p class="fs-5 mt-2">{{ p.descricao }}</p>
+        <p class="text-success fs-3 mt-3"><strong>{{ p.preco }}</strong></p>
+      </div>
+      <div class="caixa m-auto">
+        <ion-list>
+          <ion-item lines="full">Item 1</ion-item>
+          <ion-item lines="full">Item 2</ion-item>
+          <ion-item lines="full">Item 3</ion-item>
+        </ion-list>
+      </div>
+      <div class="botao-fc mt-5">
+        <ion-button class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
+          Adicionar à Cesta
+        </ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>

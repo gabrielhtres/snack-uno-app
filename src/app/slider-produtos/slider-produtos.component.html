@@ -5,7 +5,7 @@
 
         <!-- <ng-template *ngFor="let produto of produtos" swiperSlide> -->
         <ng-template swiperSlide *ngFor="let d of dp">
-          <a [routerLink]="['/produto', [restaurante, id]]">
+          <a [routerLink]="['/folder/produto/produto', d.restaurante, d.id]">
             <ion-card>
               <img [src]="d.img" class="img-card">
               <ion-card-header>
