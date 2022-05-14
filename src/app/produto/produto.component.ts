@@ -7,9 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./produto.component.scss'],
 })
 export class ProdutoComponent implements OnInit {
+  public menu: any = ['Item 1', 'Item 2']
   public id: string = ''
   public restaurante: string = ''
   public Produto: any = {  }
+  public menuOpcoes: boolean = false
+  public iconeItem: string = 'caret-down'
 
   public Produtos = [
       { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Hangar', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 'R$ 5.00' },
@@ -26,6 +29,17 @@ export class ProdutoComponent implements OnInit {
         this.Produto = this.Produtos[i]
       }
     }
+  }
+
+  public abrirMenu(): void {
+    if (this.menuOpcoes === false) {
+      this.menuOpcoes = true
+      this.iconeItem = 'caret-back'
+    } else {
+      this.menuOpcoes = false
+      this.iconeItem = 'caret-down'
+    }
+    
   }
 
   constructor(private rotaAtiva: ActivatedRoute) { }

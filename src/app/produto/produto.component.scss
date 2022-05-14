@@ -1,24 +1,32 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-ion-content {
+ion-content, ion-list-header {
     --background: rgba(var(--ion-color-nav-rgb), 0.1);
 }
 
-.caixa {
-    width: 90%;
-    background-color: #FFF;
-    height: 150px;
+ion-list, ion-item {
+    padding: 0px;
+    // border: 1px solid red;
+}
+
+
+ion-button {
+    --border-radius: 50px;
 }
 
 .botao-fc {
     display: flex;
     width: 100%;
+    // position: fixed;
+    // bottom: 0;
     justify-content: center;
 }
 
-ion-button {
-    --border-radius: 50px;
+.caixa {
+    width: 90%;
+    background-color: #FFF;
+}
+
+
+img {
+    height: 200px;
+    width: 100%;
 }
