@@ -29,7 +29,7 @@ export class ProdutoComponent implements OnInit {
 
   public getProduto(): any {
     for(let i = 0; i < this.Produtos.length; i++) {
-      if (this.Produtos[i]. id == this.id && this.Produtos[i].restaurante == this.restaurante) {
+      if (this.Produtos[i].id == this.id && this.Produtos[i].restaurante == this.restaurante) {
         this.Produto = this.Produtos[i]
       }
     }
@@ -61,6 +61,10 @@ export class ProdutoComponent implements OnInit {
         this.iconePagamento = 'caret-down'
       }
     }
+  }
+
+  public adicionarACesta(): void {
+    console.log(`Produto ${this.Produto.id} recebido`)
   }
 
   constructor(private rotaAtiva: ActivatedRoute) { }
