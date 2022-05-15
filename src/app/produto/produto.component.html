@@ -5,9 +5,9 @@
         <a [routerLink]="['/folder/home/home']">
           <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
         </a>
-        <h1 class="ms-3">Meu Perfil</h1>
+        <h1 class="ms-3 mt-0">{{ p.restaurante }}</h1>
       </ion-text>
-      <img [src]="p.img" class="mt-2 img-fluid">
+      <img [src]="p.img" class="mt-1 img-fluid">
       <div class="m-4">
         <h2 class="fs-2">{{ p.produto }}</h2>
         <p class="fs-6 mt-2">{{ p.descricao }}</p>
@@ -17,29 +17,49 @@
       <div class="caixa me-auto ms-auto mt-4">
 
         <ion-list class="">
-            <ion-label>
+          <ion-label>
+            <a (click)="abrirMenu('entrega')">
               <ion-item lines="full" class="">
                 <ion-icon slot="start" name="bicycle" color="success" class="ms-3"></ion-icon>
                 <p>Entrega Disponível</p>
+                <ion-icon [name]="iconeEntrega" slot="end" size="small"></ion-icon>
               </ion-item>
-            </ion-label>
+            </a>
+            <ion-list *ngIf="listaEntrega === true" style="border: 1px solid black">
+              <ion-item lines="full"><p>Taxa - R$ 3,00</p></ion-item>
+            </ion-list>
+          </ion-label>
           <ion-label>
-            <a (click)="abrirMenu()">
+            <a (click)="abrirMenu('pagamento')">
               <ion-item lines="full" [color]="corItem">
                 <ion-icon slot="start" name="card" color="success" class="ms-3"></ion-icon>
                 <p>Formas de Pagamento</p>
-                <ion-icon [name]="iconeItem" slot="end" size="small"></ion-icon>
+                <ion-icon [name]="iconePagamento" slot="end" size="small"></ion-icon>
               </ion-item>
-              <ion-list *ngIf="menuOpcoes === true">
-                <ion-item lines="full"><p>Item 1</p></ion-item>
+              <ion-list *ngIf="listaPagamento === true" style="border: 1px solid black">
+                <ion-item lines="full"><p>Pix</p></ion-item>
+                <ion-item lines="full"><p>Cartão de Crédito</p></ion-item>
+                <ion-item lines="full"><p>Cartão de Débtio</p></ion-item>
               </ion-list>
             </a>
           </ion-label>
           <ion-label>
-            <ion-item lines="full">
-              <ion-icon slot="start" name="time" color="success" class="ms-3"></ion-icon>
-              <p>Aberto até as 22:00</p>
-            </ion-item>
+            <a (click)="abrirMenu('horario')">
+              <ion-item lines="full">
+                <ion-icon slot="start" name="time" color="success" class="ms-3"></ion-icon>
+                <p>Aberto até as 22:00</p>
+                <ion-icon [name]="iconeHorario" slot="end" size="small"></ion-icon>
+              </ion-item>
+              <ion-list *ngIf="listaHorario === true" style="border: 1px solid black">
+                <ion-item lines="full"><p>Domingo - Fechado</p></ion-item>
+                <ion-item lines="full"><p>Segunda-Feira - 08:00 - 22:00</p></ion-item>
+                <ion-item lines="full"><p>Terça-Feira - 08:00 - 22:00</p></ion-item>
+                <ion-item lines="full"><p>Quarta-Feira - 08:00 - 22:00</p></ion-item>
+                <ion-item lines="full"><p>Quinta-Feira - 08:00 - 22:00</p></ion-item>
+                <ion-item lines="full"><p>Sexta-Feira - 08:00 - 22:00</p></ion-item>
+                <ion-item lines="full"><p>Sábado - 08:00 - 13:00</p></ion-item>
+              </ion-list>
+            </a>
           </ion-label>
         </ion-list>
       </div>

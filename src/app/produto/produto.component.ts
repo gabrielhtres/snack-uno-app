@@ -11,8 +11,12 @@ export class ProdutoComponent implements OnInit {
   public id: string = ''
   public restaurante: string = ''
   public Produto: any = {  }
-  public menuOpcoes: boolean = false
-  public iconeItem: string = 'caret-down'
+  public iconeEntrega: string = 'caret-down'
+  public iconePagamento: string = 'caret-down'
+  public iconeHorario: string = 'caret-down'
+  public listaEntrega: boolean = false
+  public listaPagamento: boolean = false
+  public listaHorario: boolean = false
 
   public Produtos = [
       { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Hangar', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 'R$ 5.00' },
@@ -31,15 +35,32 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
-  public abrirMenu(): void {
-    if (this.menuOpcoes === false) {
-      this.menuOpcoes = true
-      this.iconeItem = 'caret-back'
-    } else {
-      this.menuOpcoes = false
-      this.iconeItem = 'caret-down'
+  public abrirMenu(nomeMenu: string): void {
+    if (nomeMenu === 'entrega') {
+      if (this.listaEntrega === false) {
+        this.listaEntrega = true
+        this.iconeEntrega = 'caret-back'
+      } else {
+        this.listaEntrega = false
+        this.iconeEntrega = 'caret-down'
+      }
+    } else if (nomeMenu === 'horario') {
+      if (this.listaHorario === false) {
+        this.listaHorario = true
+        this.iconeHorario = 'caret-back'
+      } else {
+        this.listaHorario = false
+        this.iconeHorario = 'caret-down'
+      }
+    } else if (nomeMenu === 'pagamento') {
+      if (this.listaPagamento === false) {
+        this.listaPagamento = true
+        this.iconePagamento = 'caret-back'
+      } else {
+        this.listaPagamento = false
+        this.iconePagamento = 'caret-down'
+      }
     }
-    
   }
 
   constructor(private rotaAtiva: ActivatedRoute) { }
