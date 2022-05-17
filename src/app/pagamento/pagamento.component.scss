@@ -1,0 +1,29 @@
+ion-content, ion-list-header {
+    --background: rgba(var(--ion-color-nav-rgb), 0.1);
+}
+
+ion-list, ion-item {
+    padding: 0px;
+    // border: 1px solid red;
+}
+
+
+ion-button {
+    --border-radius: 50px;
+}
+
+.botao-fc {
+    display: flex;
+    width: 100%;
+    // position: fixed;
+    // bottom: 0;
+    justify-content: center;
+}
+
+.form-pagamento {
+    width: 80%;
+}
+
+option:active {
+    background-color: white;
+}
