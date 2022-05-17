@@ -1,0 +1,27 @@
+ion-item {
+    margin-left: 0px;
+    // border: 1px solid red;
+}
+
+ion-content, ion-list-header {
+    --background: rgba(var(--ion-color-nav-rgb), 0.1);
+}
+
+ion-list, ion-item {
+    padding: 0px;
+}
+
+.caixa {
+    width: 80%;
+    background-color: white;
+    height: 50%;
+    border: 1px solid red;
+}
+
+.caixa img {
+    top: -100px;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    left: 23%;
+}
