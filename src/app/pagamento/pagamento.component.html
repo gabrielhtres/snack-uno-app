@@ -1,26 +1,36 @@
 <ion-content>
-  <ion-select interface="alert" [interfaceOptions]="alertOptions" class="alertClass" placeholder="Seleciona uma forma de pagamento">
-    <ion-select-option value="1">1</ion-select-option>
-    <ion-select-option value="2">2</ion-select-option>
-  </ion-select>
-   <!-- <form class="form-pagamento d-flex flex-column me-auto ms-auto mt-5">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Forma de Pagamento</label>
-      <select class="form-select">
-        <option>Pix</option>
-        <option>Cartão de Crédito</option>
-        <option>Cartão de Débito</option>
-      </select>
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-success botao-fc">Submit</button>
-  </form> -->
+  <ion-text class="d-flex mt-3 ms-3 mb-4">
+    <a [routerLink]="['/folder/home/home']">
+      <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
+    </a>
+    <h1 class="ms-3 mt-0">Finalizar Pedido</h1>
+  </ion-text>
+
+  <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+    <ion-label class="mb-1"><h1 class="fs-5">Forma de Pagamento</h1></ion-label>
+    <ion-select interface="alert" [interfaceOptions]="alertOptions" class="alertClass mb-3" placeholder="Seleciona uma forma de pagamento">
+      <ion-select-option value="pix">Pix</ion-select-option>
+      <ion-select-option value="credito">Cartão de Crédito</ion-select-option>
+      <ion-select-option value="credito">Cartão de Débito</ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+    <ion-label class="mb-1"><h1 class="fs-5">Entrega</h1></ion-label>
+    <ion-select interface="alert" [interfaceOptions]="alertOptions2" class="alertClass mb-3" placeholder="Seleciona uma forma de entrega">
+      <ion-select-option value="retirada">Retirada</ion-select-option>
+      <ion-select-option value="entrega">Entrega</ion-select-option>
+    </ion-select>
+  </div>
+
+  <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+    <ion-label class="mb-1"><h1 class="fs-5">Observações</h1></ion-label>
+    <ion-textarea rows="2" class="input-form" placeholder="Observações" maxlength="100"></ion-textarea>
+  </div>
+
+  <div class="botao-fc">
+    <ion-button [routerLink]="['/folder/pedido/pedido']" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
+      Finalizar Pedido
+    </ion-button>
+  </div>
 </ion-content>

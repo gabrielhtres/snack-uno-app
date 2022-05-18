@@ -29,5 +29,32 @@ ion-select {
     background-color: white;
     height: 50px;
     padding: 10px;
-    margin: 0px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.caixa-form {
+    width: 90%;
+    color: var(--ion-color-nav);
+}
+
+.input-form {
+    background-color: white;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    height: 50px;
+}
+
+.botao-fc {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+}
+
+ion-button {
+    --border-radius: 50px;
 }

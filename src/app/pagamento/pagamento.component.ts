@@ -9,7 +9,14 @@ export class PagamentoComponent implements OnInit {
 
   public alertOptions = {
     cssClass: 'alertClass',
-    header: 'Pagamento'
+    header: 'Forma de Pagamento',
+    mode: 'md'
+  }
+
+  public alertOptions2 = {
+    cssClass: 'alertClass',
+    header: 'Forma de Entrega',
+    mode: 'md'
   }
 
   constructor() { }
