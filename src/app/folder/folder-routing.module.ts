@@ -61,10 +61,6 @@ const routes: Routes = [
       {
         path: 'pagamento',
         component: PagamentoComponent
-      },
-      {
-        path: 'Cadastro',
-        component: CadastroComponent
       }
     ]
   },
