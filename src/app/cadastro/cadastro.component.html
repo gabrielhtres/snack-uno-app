@@ -1,25 +1,23 @@
 <ion-content>
-  <div style="height:100%; width:100%" class="d-flex align-itens-center">
-    <div class="caixa m-auto d-flex align-itens-center">
-      <img src="../../assets/Hamburguer Menu.png" class="ms-auto me-auto">
-
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Usuário</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-
-    </div>
+  <div class="d-flex justify-content-center">
+    <img src="../../assets/Logo_Forms.png">
   </div>
+
+  <form>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+      <ion-label class="mb-1"><h1 class="fs-5">Usuário</h1></ion-label>
+      <ion-textarea rows="1" class="input-form" placeholder="Usuário" maxlength="100"></ion-textarea>
+    </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+      <ion-label class="mb-1"><h1 class="fs-5">Senha</h1></ion-label>
+      <ion-textarea rows="1" class="input-form" placeholder="Senha" maxlength="100"></ion-textarea>
+    </div>
+  </form>
+
+  <div class="botao-login mt-5">
+    <ion-button expand="block" [routerLink]="['/folder/pedido/pedido']" class="fs-6 m-0 mb-4" size="large" strong="false">
+      Entrar
+    </ion-button>
+  </div>  
+
 </ion-content>

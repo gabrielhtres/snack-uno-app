@@ -11,17 +11,33 @@ ion-list, ion-item {
     padding: 0px;
 }
 
-.caixa {
-    width: 80%;
-    background-color: white;
-    height: 50%;
-    border: 1px solid red;
+img {
+    width: 150px;
+    height: 180px;
 }
 
-.caixa img {
-    top: -100px;
-    position: relative;
-    height: 150px;
-    width: 150px;
-    left: 23%;
+.caixa-form {
+    width: 90%;
+    color: var(--ion-color-nav);
+}
+
+.input-form {
+    background-color: white;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+.botao-login {
+    display: flex;
+    justify-content: center;
+}
+
+ion-button {
+    --border-radius: 7px;
+    width: 90%;
+    --background: var(--ion-color-nav)
 }

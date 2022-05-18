@@ -6,31 +6,33 @@
     <h1 class="ms-3 mt-0">Finalizar Pedido</h1>
   </ion-text>
 
-  <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
-    <ion-label class="mb-1"><h1 class="fs-5">Forma de Pagamento</h1></ion-label>
-    <ion-select interface="alert" [interfaceOptions]="alertOptions" class="alertClass mb-3" placeholder="Seleciona uma forma de pagamento">
-      <ion-select-option value="pix">Pix</ion-select-option>
-      <ion-select-option value="credito">Cartão de Crédito</ion-select-option>
-      <ion-select-option value="credito">Cartão de Débito</ion-select-option>
-    </ion-select>
-  </div>
+  <form>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+      <ion-label class="mb-1"><h1 class="fs-5">Forma de Pagamento</h1></ion-label>
+      <ion-select interface="alert" [interfaceOptions]="alertOptions" class="alertClass mb-3" placeholder="Seleciona uma forma de pagamento">
+        <ion-select-option value="pix">Pix</ion-select-option>
+        <ion-select-option value="credito">Cartão de Crédito</ion-select-option>
+        <ion-select-option value="credito">Cartão de Débito</ion-select-option>
+      </ion-select>
+    </div>
 
-  <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
-    <ion-label class="mb-1"><h1 class="fs-5">Entrega</h1></ion-label>
-    <ion-select interface="alert" [interfaceOptions]="alertOptions2" class="alertClass mb-3" placeholder="Seleciona uma forma de entrega">
-      <ion-select-option value="retirada">Retirada</ion-select-option>
-      <ion-select-option value="entrega">Entrega</ion-select-option>
-    </ion-select>
-  </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+      <ion-label class="mb-1"><h1 class="fs-5">Entrega</h1></ion-label>
+      <ion-select interface="alert" [interfaceOptions]="alertOptions2" class="alertClass mb-3" placeholder="Seleciona uma forma de entrega">
+        <ion-select-option value="retirada">Retirada</ion-select-option>
+        <ion-select-option value="entrega">Entrega</ion-select-option>
+      </ion-select>
+    </div>
 
-  <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
-    <ion-label class="mb-1"><h1 class="fs-5">Observações</h1></ion-label>
-    <ion-textarea rows="2" class="input-form" placeholder="Observações" maxlength="100"></ion-textarea>
-  </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+      <ion-label class="mb-1"><h1 class="fs-5">Observações</h1></ion-label>
+      <ion-textarea rows="2" class="input-form" placeholder="Observações" maxlength="100"></ion-textarea>
+    </div>
 
-  <div class="botao-fc">
-    <ion-button [routerLink]="['/folder/pedido/pedido']" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
-      Finalizar Pedido
-    </ion-button>
-  </div>
+    <div class="botao-fc">
+      <ion-button [routerLink]="['/folder/pagamento/pagamento']" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
+        Finalizar Compra
+      </ion-button>
+    </div>
+  </form>
 </ion-content>
