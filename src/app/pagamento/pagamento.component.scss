@@ -12,18 +12,22 @@ ion-button {
     --border-radius: 50px;
 }
 
-.botao-fc {
-    display: flex;
-    width: 100%;
-    // position: fixed;
-    // bottom: 0;
-    justify-content: center;
+ion-select {
+    /* Applies to the value and placeholder color */
+    color: var(--ion-color-nav);
+  
+    /* Set a different placeholder color */
+    --placeholder-color: var(--ion-color-nav);
+  
+    /* Set full opacity on the placeholder */
+    --placeholder-opacity: 1;
+
+    --padding-top: 50px;
 }
 
-.form-pagamento {
-    width: 80%;
-}
-
-option:active {
+.alertClass {
     background-color: white;
+    height: 50px;
+    padding: 10px;
+    margin: 0px;
 }

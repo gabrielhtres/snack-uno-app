@@ -1,23 +1,9 @@
 <ion-content>
-  <!-- <ion-list>
-    <ion-item> -->
-      <div>
-        <!-- <ion-label>Forma de Pagamento</ion-label>
-        <ion-select interface="popover" interfaceOptions="{ 'size': 'cover' }">
-          <ion-select-option>Pix</ion-select-option>
-          <ion-select-option>Cartão de Crédito</ion-select-option>
-          <ion-select-option>Cartão de Débito</ion-select-option>
-        </ion-select> -->
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </div>
-    <!-- </ion-item>
-  </ion-list> -->
-  <!-- <form class="form-pagamento d-flex flex-column me-auto ms-auto mt-5">
+  <ion-select interface="alert" [interfaceOptions]="alertOptions" class="alertClass" placeholder="Seleciona uma forma de pagamento">
+    <ion-select-option value="1">1</ion-select-option>
+    <ion-select-option value="2">2</ion-select-option>
+  </ion-select>
+   <!-- <form class="form-pagamento d-flex flex-column me-auto ms-auto mt-5">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Forma de Pagamento</label>
       <select class="form-select">
