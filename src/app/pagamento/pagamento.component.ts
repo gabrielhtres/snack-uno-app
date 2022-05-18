@@ -9,7 +9,7 @@ export class PagamentoComponent implements OnInit {
 
   public alertOptions = {
     cssClass: 'alertClass',
-    header: 'Pagamento',
+    header: 'Pagamento'
   }
 
   constructor() { }

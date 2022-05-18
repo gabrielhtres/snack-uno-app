@@ -87,3 +87,9 @@
 .alertClass .alert-wrapper {
     border: 1px solid red;
 }
+
+.alert-radio-inner.sc-ion-alert-md,
+.alert-radio-inner.sc-ion-alert-md:focus {
+	background: purple;
+	margin: 0px;
+}
