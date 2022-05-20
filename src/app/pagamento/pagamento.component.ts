@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-pagamento',
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagamentoComponent implements OnInit {
 
+  public tipoPagamento: string = ''
+  public tipoEntrega: string = ''
+  public observacoes: string = ''
+  public formulario: any
+  
   public alertOptions = {
     cssClass: 'alertClass',
     header: 'Forma de Pagamento',
@@ -20,6 +25,10 @@ export class PagamentoComponent implements OnInit {
   }
 
   constructor() { }
+
+  public validarPagamento(): void {
+    console.log(this.formulario.pagamento)
+  }
 
   ngOnInit() {}
 

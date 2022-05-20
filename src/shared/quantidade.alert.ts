@@ -21,7 +21,8 @@ export class AlertQuantidade {
     }
 
     public alertBotaoOk: AlertButton = {
-        text: 'OK'
+        text: 'OK',
+        handler: (valor: any) => { this.valor = valor[0] }
     }
 
     public async presentAlert() {

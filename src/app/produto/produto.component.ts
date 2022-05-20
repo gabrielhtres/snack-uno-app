@@ -74,8 +74,8 @@ export class ProdutoComponent implements OnInit {
   public async adicionarACesta() {
     console.log(`Produto ${this.Produto.id} recebido`)
     this.quantidade = await this.alertQuantidade.presentAlert()
+    console.log(this.quantidade)
   }
-
 
   ngOnInit() {
 
