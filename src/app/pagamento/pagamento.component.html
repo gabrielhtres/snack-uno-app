@@ -8,12 +8,11 @@
 
   <form novalidate #formulario="ngForm">
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
-      <ion-label class="mb-1"><h1 class="fs-5">Forma de Pagamento</h1></ion-label>
-      <ion-select name="pagamento" ngModel interface="alert" [interfaceOptions]="alertOptions" class="alertClass mb-3" placeholder="Seleciona uma forma de pagamento">
-        <ion-select-option value="pix" [ngValue]="tipoPagamento">Pix</ion-select-option>
-        <ion-select-option value="credito" [ngValue]="tipoPagamento">Cartão de Crédito</ion-select-option>
-        <ion-select-option value="debito" [ngValue]="tipoPagamento">Cartão de Débito</ion-select-option>
-      </ion-select>
+      <h1 class="mt-2 fs-5">Forma de Pagamento</h1>
+      <div name="pagamento" (click)="validarPagamento()" class="alertClass mb-3">
+        <p *ngIf="tipoPagamento === ''">Selecione uma Forma de Pagamento</p>
+        <p *ngIf="tipoPagamento !== ''">{{ tipoPagamentoTemplate }}</p>
+      </div>
     </div>
 
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">

@@ -4,7 +4,7 @@ export class AlertsPagamento {
 
     public alertFormaPagamento: AlertController = new AlertController()
     public alertFormaEntrega: AlertController = new AlertController()
-    public valor: any = ''
+    public valorPagamento: any = ''
 
     constructor() {  }
 
@@ -49,7 +49,7 @@ export class AlertsPagamento {
 
     public alertBotaoOk: AlertButton = {
         text: 'OK',
-        // handler: (valor: any) => { this.valor = valor }
+        handler: (valor: any) => { this.valorPagamento = valor.data }
     }
 
     public async presentAlertFormaPagamento() {
@@ -62,9 +62,9 @@ export class AlertsPagamento {
 
         await alert.present();
 
-        this.valor =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
+        this.valorPagamento =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
 
-        return this.valor
+        return this.valorPagamento
         
     }
 
@@ -78,9 +78,9 @@ export class AlertsPagamento {
 
         await alert.present();
 
-        this.valor =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
+        this.valorPagamento =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
 
-        return this.valor
+        return this.valorPagamento
         
     }
 }
