@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlertQuantidade } from 'src/shared/quantidade.alert';
 
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.scss'],
+  providers: [ AlertQuantidade ]
 })
 export class ProdutoComponent implements OnInit {
   public menu: any = ['Item 1', 'Item 2']
@@ -17,6 +19,7 @@ export class ProdutoComponent implements OnInit {
   public listaEntrega: boolean = false
   public listaPagamento: boolean = false
   public listaHorario: boolean = false
+  public quantidade: number = 0
 
   public Produtos = [
       { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Hangar', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 'R$ 5.00' },
@@ -63,11 +66,16 @@ export class ProdutoComponent implements OnInit {
     }
   }
 
-  public adicionarACesta(): void {
+  constructor(
+    private rotaAtiva: ActivatedRoute,
+    private alertQuantidade: AlertQuantidade
+    ) { }
+
+  public async adicionarACesta() {
     console.log(`Produto ${this.Produto.id} recebido`)
+    this.quantidade = await this.alertQuantidade.presentAlert()
   }
 
-  constructor(private rotaAtiva: ActivatedRoute) { }
 
   ngOnInit() {
 
