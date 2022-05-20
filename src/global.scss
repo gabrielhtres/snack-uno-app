@@ -116,3 +116,33 @@ ion-select::part(placeholder),
 ion-select::part(text) {
   padding: 10px;
 }
+
+.alertQuantidade .alert-wrapper .alert-head,
+.alertQuantidade .alert-wrapper .alert-head h2 {
+	background-color: var(--ion-color-nav) !important;
+	color: white !important;
+}
+
+.alertQuantidade .alert-wrapper .alert-input-group,
+.alertQuantidade .alert-wrapper .alert-button-group {
+	background-color: rgba(var(--ion-color-nav-rgb), 0.1) !important;
+	padding: 10px 20px;	
+}
+
+.alertQuantidade .alert-wrapper .alert-button-group .alert-button-inner {
+	color: var(--ion-color-nav) !important;
+	border-color: var(--ion-color-nav) !important;
+}
+
+.alertQuantidade .alert-wrapper .alert-message {
+	background-color: rgba(var(--ion-color-nav-rgb), 0.1) !important;
+	color: black;
+	text-align: center;
+	justify-content: center;
+	font-weight: bold;
+	padding: 10px 0 0 0;
+}
+
+.alertQuantidade .alert-wrapper .alert-message p {
+	margin: 15px 0 0 0;
+}

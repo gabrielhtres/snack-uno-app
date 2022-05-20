@@ -26,8 +26,9 @@ export class AlertQuantidade {
 
     public async presentAlert() {
         const alert = await this.alertQuantidade.create({
-        cssClass: 'my-custom-class',
+        cssClass: 'alertQuantidade',
         header: 'Quantidade desejada',
+        message: '<p>* A quantidade precisa ser no mínimo 1</p>',
         inputs: this.inputAlertQuantidade,
         buttons: [this.alertBotaoCancelar, this.alertBotaoOk]
         });
