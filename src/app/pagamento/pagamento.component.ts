@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Pagamento } from 'src/shared/pagamento.model';
 import { AlertsPagamento } from 'src/shared/pagamentos.alert';
 
 @Component({
@@ -10,11 +11,9 @@ import { AlertsPagamento } from 'src/shared/pagamentos.alert';
 })
 export class PagamentoComponent implements OnInit {
 
-  public tipoPagamento: string = ''
+  public pagamento: Pagamento = new Pagamento()
   public tipoPagamentoTemplate: string = ''
-  public tipoEntrega: string = ''
   public tipoEntregaTemplate: string = ''
-  public observacoes: string = ''
   public observacoesTemplate: string = ''
 
   public valoresInputs = {
@@ -35,18 +34,17 @@ export class PagamentoComponent implements OnInit {
 
   public async abrirAlertSelecao(input: string) {
     if (input === 'pagamento') {
-      this.tipoPagamento = await this.alertsPagamento.presentAlertFormaPagamento()
-      this.formularioPagamento.get('formaPagamento').setValue = this.valoresInputs[this.tipoPagamento]
-      this.tipoPagamentoTemplate = this.valoresInputs[this.tipoPagamento]
+      this.pagamento.formaPagamento = await this.alertsPagamento.presentAlertFormaPagamento()
+      this.formularioPagamento.get('formaPagamento').setValue = this.valoresInputs[this.pagamento.formaPagamento]
+      this.tipoPagamentoTemplate = this.valoresInputs[this.pagamento.formaPagamento]
     } else if (input === 'entrega') {
-      this.tipoEntrega = await this.alertsPagamento.presentAlertFormaEntrega()
-      console.log(this.tipoEntrega)
-      this.formularioPagamento.get('formaEntrega').setValue = this.valoresInputs[this.tipoEntrega]
-      this.tipoEntregaTemplate = this.valoresInputs[this.tipoEntrega]
+      this.pagamento.formaEntrega = await this.alertsPagamento.presentAlertFormaEntrega()
+      this.formularioPagamento.get('formaEntrega').setValue = this.valoresInputs[this.pagamento.formaEntrega]
+      this.tipoEntregaTemplate = this.valoresInputs[this.pagamento.formaEntrega]
     }
     
   }
-
+  
   ngOnInit() {}
 
 }
