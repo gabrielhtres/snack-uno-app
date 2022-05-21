@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { FolderPageRoutingModule } from './folder-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FolderPage } from './folder.page';
 import { HomeComponent } from '../home/home.component';
@@ -26,7 +27,8 @@ import { PagamentoComponent } from '../pagamento/pagamento.component';
     FormsModule,
     IonicModule,
     FolderPageRoutingModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule
   ],
   declarations: [
     FolderPage,

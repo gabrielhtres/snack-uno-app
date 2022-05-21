@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertsPagamento } from 'src/shared/pagamentos.alert';
 
 @Component({
@@ -10,34 +11,40 @@ import { AlertsPagamento } from 'src/shared/pagamentos.alert';
 export class PagamentoComponent implements OnInit {
 
   public tipoPagamento: string = ''
-  public tipoEntrega: string = ''
-  public observacoes: string = ''
-  public formulario: any
   public tipoPagamentoTemplate: string = ''
+  public tipoEntrega: string = ''
+  public tipoEntregaTemplate: string = ''
+  public observacoes: string = ''
+  public observacoesTemplate: string = ''
 
-  public teste = {
+  public valoresInputs = {
     pix: 'Pix',
     credito: 'Cartão de Crédito',
-    debito: 'Cartão de Débito'
-  }
-  
-  public alertOptions = {
-    cssClass: 'alertClass',
-    header: 'Forma de Pagamento',
-    mode: 'md'
+    debito: 'Cartão de Débito',
+    entrega: 'Entrega',
+    retirada: 'Retirada'
   }
 
-  public alertOptions2 = {
-    cssClass: 'alertClass',
-    header: 'Forma de Entrega',
-    mode: 'md'
-  }
+  public formularioPagamento: FormGroup = new FormGroup({
+    'formaPagamento': new FormControl(null, [ Validators.required ]),
+    'formaEntrega': new FormControl(null, [ Validators.required ]),
+    'observacoes': new FormControl(null)
+  })
 
   constructor(private alertsPagamento: AlertsPagamento) { }
 
-  public async validarPagamento() {
-    this.tipoPagamento = await this.alertsPagamento.presentAlertFormaPagamento()
-    this.tipoPagamentoTemplate = this.teste[this.tipoPagamento]
+  public async abrirAlertSelecao(input: string) {
+    if (input === 'pagamento') {
+      this.tipoPagamento = await this.alertsPagamento.presentAlertFormaPagamento()
+      this.formularioPagamento.get('formaPagamento').setValue = this.valoresInputs[this.tipoPagamento]
+      this.tipoPagamentoTemplate = this.valoresInputs[this.tipoPagamento]
+    } else if (input === 'entrega') {
+      this.tipoEntrega = await this.alertsPagamento.presentAlertFormaEntrega()
+      console.log(this.tipoEntrega)
+      this.formularioPagamento.get('formaEntrega').setValue = this.valoresInputs[this.tipoEntrega]
+      this.tipoEntregaTemplate = this.valoresInputs[this.tipoEntrega]
+    }
+    
   }
 
   ngOnInit() {}

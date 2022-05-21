@@ -4,7 +4,7 @@ export class AlertsPagamento {
 
     public alertFormaPagamento: AlertController = new AlertController()
     public alertFormaEntrega: AlertController = new AlertController()
-    public valorPagamento: any = ''
+    public valor: string = ''
 
     constructor() {  }
 
@@ -32,55 +32,58 @@ export class AlertsPagamento {
     public selectAlertEntrega: AlertInput[] = [
         {
             type: "radio",
+            label: 'Retirada',
             placeholder: 'Retirada',
-            handler: (input: AlertInput) => { console.log(input) }
+            value: 'retirada'
         },
         {
             type: "radio",
+            label: 'Entrega',
             placeholder: 'Entrega',
-            handler: (input: AlertInput) => { console.log(input) }
+            value: 'entrega'
         }
     ]
 
-    public alertBotaoCancelar: AlertButton = {
-        text: 'Cancelar',
-        role: 'cancel'
-    }
-
     public alertBotaoOk: AlertButton = {
-        text: 'OK',
-        handler: (valor: any) => { this.valorPagamento = valor.data }
+        text: 'Selecionar Opção',
+        handler: (valor: any) => { this.valor = valor }
     }
 
     public async presentAlertFormaPagamento() {
-        const alert = await this.alertFormaPagamento.create({
-        cssClass: 'alertQuantidade',
+        const alertPagamento = await this.alertFormaPagamento.create({
+        cssClass: 'alertClass',
         header: 'Forma de Pagamento',
         inputs: this.selectAlertPagamento,
-        buttons: [this.alertBotaoCancelar, this.alertBotaoOk]
+        buttons: [this.alertBotaoOk]
         });
 
-        await alert.present();
+        await alertPagamento.present();
 
-        this.valorPagamento =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
-
-        return this.valorPagamento
+        this.valor =  await alertPagamento.onDidDismiss().then((dado: any) => { return dado.data.values })
+        console.log(this.valor)
+        if (this.valor !== undefined) {
+            return this.valor
+        } else {
+            return ''
+        }
+        
         
     }
 
     public async presentAlertFormaEntrega() {
-        const alert = await this.alertFormaEntrega.create({
-        cssClass: 'alertQuantidade',
+        const alertEntrega = await this.alertFormaEntrega.create({
+        cssClass: 'alertClass',
         header: 'Quantidade desejada',
         inputs: this.selectAlertEntrega,
-        buttons: [this.alertBotaoCancelar, this.alertBotaoOk]
+        buttons: [this.alertBotaoOk],
+        backdropDismiss: false
         });
 
-        await alert.present();
+        await alertEntrega.present();
 
-        this.valorPagamento =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
+        this.valor =  await alertEntrega.onDidDismiss().then((dado: any) => { return dado.data.values })
 
-        return this.valorPagamento
+        return this.valor
         
     }
 }

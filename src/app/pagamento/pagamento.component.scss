@@ -58,3 +58,28 @@ ion-select {
 ion-button {
     --border-radius: 50px;
 }
+
+.input-pagamento {
+    color: black;
+}
+
+.form-control[readonly] {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    height: 50px;
+    border-radius: 7px;
+}
+
+textarea {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+textarea:focus,
+.form-control[readonly]:focus {
+    border: 0.5px solid black;
+    box-shadow: 0 0 0 0.25rem rgba(black, 0.25);
+}

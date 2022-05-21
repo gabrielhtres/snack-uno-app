@@ -6,32 +6,42 @@
     <h1 class="ms-3 mt-0">Finalizar Pedido</h1>
   </ion-text>
 
-  <form novalidate #formulario="ngForm">
+  <form novalidate [formGroup]="formularioPagamento" (ngSubmit)="validarPagamento()">
+
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
       <h1 class="mt-2 fs-5">Forma de Pagamento</h1>
-      <div name="pagamento" (click)="validarPagamento()" class="alertClass mb-3">
-        <p *ngIf="tipoPagamento === ''">Selecione uma Forma de Pagamento</p>
-        <p *ngIf="tipoPagamento !== ''">{{ tipoPagamentoTemplate }}</p>
-      </div>
+      <input
+        [value]="tipoPagamentoTemplate"
+        (click)="abrirAlertSelecao('pagamento')"
+        formControlName="formaPagamento"
+        readOnly
+        class="form-control mb-3"
+        placeholder="Selecione uma forma de pagamento"
+      >
     </div>
 
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
       <ion-label class="mb-1"><h1 class="fs-5">Entrega</h1></ion-label>
-      <ion-select name="entrega" ngModel interface="alert" [interfaceOptions]="alertOptions2" class="alertClass mb-3" placeholder="Seleciona uma forma de entrega">
-        <ion-select-option value="retirada" [ngValue]="tipoEntrega">Retirada</ion-select-option>
-        <ion-select-option value="entrega" [ngValue]="tipoEntrega">Entrega</ion-select-option>
-      </ion-select>
+      <input
+        [value]="tipoEntregaTemplate"
+        (click)="abrirAlertSelecao('entrega')"
+        formControlName="formaEntrega"
+        readOnly
+        class="form-control mb-3"
+        placeholder="Selecione uma forma de entrega"
+      >
     </div>
 
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
       <ion-label class="mb-1"><h1 class="fs-5">Observações</h1></ion-label>
-      <ion-textarea rows="2" class="input-form" placeholder="Observações" maxlength="100"></ion-textarea>
+      <textarea rows="2" formControlName="observacoes"class="form-control" placeholder="Observações"></textarea>
     </div>
 
     <div class="botao-fc mt-5">
-      <ion-button (click)="validarCompra()" [routerLink]="['/folder/pagamento/pagamento']" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
+      <ion-button type="submit" [routerLink]="" size="large" color="success" class="fs-6 m-0 mb-4">
         Finalizar Compra
       </ion-button>
     </div>
+
   </form>
 </ion-content>
