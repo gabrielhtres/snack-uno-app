@@ -46,6 +46,10 @@ export class PagamentoComponent implements OnInit {
     }
     
   }
+
+  public validarPagamento(): void {
+    console.log('Pagamento validado')
+  }
   
   ngOnInit() {}
 
