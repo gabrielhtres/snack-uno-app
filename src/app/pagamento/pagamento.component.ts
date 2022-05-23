@@ -21,12 +21,13 @@ export class PagamentoComponent implements OnInit {
     credito: 'Cartão de Crédito',
     debito: 'Cartão de Débito',
     entrega: 'Entrega',
-    retirada: 'Retirada'
+    retirada: 'Retirada',
+    '': ''
   }
 
   public formularioPagamento: FormGroup = new FormGroup({
-    'formaPagamento': new FormControl(null, [ Validators.required ]),
-    'formaEntrega': new FormControl(null, [ Validators.required ]),
+    'formaPagamento': new FormControl(null, [ Validators.required, Validators.minLength(1) ]),
+    'formaEntrega': new FormControl(null, [ Validators.required, Validators.minLength(1) ]),
     'observacoes': new FormControl(null)
   })
 
@@ -35,11 +36,12 @@ export class PagamentoComponent implements OnInit {
   public async abrirAlertSelecao(input: string) {
     if (input === 'pagamento') {
       this.pagamento.formaPagamento = await this.alertsPagamento.presentAlertFormaPagamento()
-      this.formularioPagamento.get('formaPagamento').setValue = this.valoresInputs[this.pagamento.formaPagamento]
+      this.formularioPagamento.get('formaPagamento').setValue(this.valoresInputs[this.pagamento.formaPagamento])
       this.tipoPagamentoTemplate = this.valoresInputs[this.pagamento.formaPagamento]
+      console.log(this.formularioPagamento.get('formaEntrega'))
     } else if (input === 'entrega') {
       this.pagamento.formaEntrega = await this.alertsPagamento.presentAlertFormaEntrega()
-      this.formularioPagamento.get('formaEntrega').setValue = this.valoresInputs[this.pagamento.formaEntrega]
+      this.formularioPagamento.get('formaEntrega').setValue(this.valoresInputs[this.pagamento.formaEntrega])
       this.tipoEntregaTemplate = this.valoresInputs[this.pagamento.formaEntrega]
     }
     

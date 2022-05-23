@@ -83,3 +83,19 @@ textarea:focus,
     border: 0.5px solid black;
     box-shadow: 0 0 0 0.25rem rgba(black, 0.25);
 }
+
+.ng-touched .ng-valid {
+    border: 1px solid green;
+}
+
+.ng-touched .ng-invalid {
+    border: 1px solid red;
+}
+
+small.valid {
+    color: green;
+}
+
+small.invalid {
+    color: red;
+}

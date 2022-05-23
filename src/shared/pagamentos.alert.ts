@@ -60,13 +60,12 @@ export class AlertsPagamento {
         await alertPagamento.present();
 
         this.valor =  await alertPagamento.onDidDismiss().then((dado: any) => { return dado.data.values })
-        console.log(this.valor)
-        if (this.valor !== undefined) {
-            return this.valor
-        } else {
-            return ''
+        
+        if (this.valor == undefined) {
+            this.valor = ''
         }
         
+        return this.valor
         
     }
 
@@ -82,6 +81,10 @@ export class AlertsPagamento {
         await alertEntrega.present();
 
         this.valor =  await alertEntrega.onDidDismiss().then((dado: any) => { return dado.data.values })
+
+        if (this.valor == undefined) {
+            this.valor = ''
+        }
 
         return this.valor
         

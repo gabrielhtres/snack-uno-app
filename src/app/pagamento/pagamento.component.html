@@ -8,37 +8,51 @@
 
   <form novalidate [formGroup]="formularioPagamento" (ngSubmit)="validarPagamento()">
 
-    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2 mb-3">
       <h1 class="mt-2 fs-5">Forma de Pagamento</h1>
       <input
         [value]="tipoPagamentoTemplate"
         (click)="abrirAlertSelecao('pagamento')"
         formControlName="formaPagamento"
         readOnly
-        class="form-control mb-3"
+        class="form-control"
         placeholder="Selecione uma forma de pagamento"
       >
+      <small *ngIf="formularioPagamento.get('formaPagamento').valid && formularioPagamento.get('formaPagamento').touched" class="valid">Ok</small>
+    <small *ngIf="!formularioPagamento.get('formaPagamento').valid && formularioPagamento.get('formaPagamento').touched" class="invalid">Forma de Pagamento Inválida</small>
     </div>
 
-    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2 mb-3">
       <ion-label class="mb-1"><h1 class="fs-5">Entrega</h1></ion-label>
       <input
         [value]="tipoEntregaTemplate"
         (click)="abrirAlertSelecao('entrega')"
         formControlName="formaEntrega"
         readOnly
-        class="form-control mb-3"
+        class="form-control"
         placeholder="Selecione uma forma de entrega"
       >
+      <small *ngIf="formularioPagamento.get('formaEntrega').valid && formularioPagamento.get('formaEntrega').touched" class="valid">Ok</small>
+      <small *ngIf="!formularioPagamento.get('formaEntrega').valid && formularioPagamento.get('formaEntrega').touched" class="invalid">Forma de Entrega Inválida</small>
     </div>
 
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2">
       <ion-label class="mb-1"><h1 class="fs-5">Observações</h1></ion-label>
       <textarea rows="2" formControlName="observacoes"class="form-control" placeholder="Observações"></textarea>
+      <small *ngIf="formularioPagamento.get('observacoes').valid && formularioPagamento.get('observacoes').touched" class="valid">Ok</small>
+      <small *ngIf="!formularioPagamento.get('observacoes').valid && formularioPagamento.get('observacoes').touched" class="invalid">Observações Inválidas</small>
     </div>
+    
 
     <div class="botao-fc mt-5">
-      <ion-button type="submit" [routerLink]="" size="large" color="success" class="fs-6 m-0 mb-4">
+      <ion-button
+        type="submit"
+        [routerLink]=""
+        size="large"
+        color="success"
+        class="fs-6 m-0"
+        [disabled]="!formularioPagamento.valid"
+        >
         Finalizar Compra
       </ion-button>
     </div>
