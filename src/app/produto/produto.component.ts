@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertQuantidade } from 'src/shared/quantidade.alert';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-produto',
@@ -31,11 +32,14 @@ export class ProdutoComponent implements OnInit {
   ];
 
   public getProduto(): any {
-    for(let i = 0; i < this.Produtos.length; i++) {
-      if (this.Produtos[i].id == this.id && this.Produtos[i].restaurante == this.restaurante) {
-        this.Produto = this.Produtos[i]
-      }
-    }
+    // for(let i = 0; i < this.Produtos.length; i++) {
+    //   if (this.Produtos[i].id == this.id && this.Produtos[i].restaurante == this.restaurante) {
+    //     this.Produto = this.Produtos[i]
+    //   }
+    // }
+    this.http.get('http://localhost:3000/produtos/')
+    .subscribe((dado: any) => { console.log(dado) })
+
   }
 
   public abrirMenu(nomeMenu: string): void {
@@ -68,7 +72,8 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private rotaAtiva: ActivatedRoute,
-    private alertQuantidade: AlertQuantidade
+    private alertQuantidade: AlertQuantidade,
+    private http: HttpClient
     ) { }
 
   public async adicionarACesta() {

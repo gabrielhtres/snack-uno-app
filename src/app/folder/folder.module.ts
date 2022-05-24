@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -28,7 +30,8 @@ import { PagamentoComponent } from '../pagamento/pagamento.component';
     IonicModule,
     FolderPageRoutingModule,
     SwiperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     FolderPage,
