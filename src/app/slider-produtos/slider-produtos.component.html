@@ -21,7 +21,7 @@
               </ion-card-content>
 
               <ion-card-content class="preco mb-1">
-                <strong class="text-success fs-5">{{ d.preco }}</strong>
+                <strong class="text-success fs-5">{{ d.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong>
               </ion-card-content>
 
               <!-- <ion-card-content>

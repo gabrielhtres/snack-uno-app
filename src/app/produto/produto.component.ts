@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Produto } from 'src/shared/produto.model';
 import { AlertQuantidade } from 'src/shared/quantidade.alert';
@@ -10,7 +10,7 @@ import { ProdutosService } from '../produtos.service';
   styleUrls: ['./produto.component.scss'],
   providers: [ AlertQuantidade, ProdutosService ]
 })
-export class ProdutoComponent implements OnInit {
+export class ProdutoComponent implements OnInit, OnDestroy {
   public menu: any = ['Item 1', 'Item 2']
   public id: string = ''
   public restaurante: string = ''
@@ -74,9 +74,11 @@ export class ProdutoComponent implements OnInit {
     
     this.produtoService.getProdutoIdRestaurante(this.id, this.restaurante)
       .subscribe((dado: any) => this.produto = dado[0])
-    
-    console.log(this.produto)
 
+  }
+
+  ngOnDestroy(): void {
+    this.produto = new Produto()
   }
 
 }
