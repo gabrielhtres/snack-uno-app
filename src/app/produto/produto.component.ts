@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Produto } from 'src/shared/produto.model';
 import { AlertQuantidade } from 'src/shared/quantidade.alert';
-import { HttpClient } from '@angular/common/http';
+import { ProdutosService } from '../produtos.service';
 
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.scss'],
-  providers: [ AlertQuantidade ]
+  providers: [ AlertQuantidade, ProdutosService ]
 })
 export class ProdutoComponent implements OnInit {
   public menu: any = ['Item 1', 'Item 2']
@@ -22,25 +23,7 @@ export class ProdutoComponent implements OnInit {
   public listaHorario: boolean = false
   public quantidade: number = 0
 
-  public Produtos = [
-      { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Hangar', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 'R$ 5.00' },
-      { id: '2', img: '../../assets/pastel.webp', restaurante: 'Hangar', produto: 'Pastel', descricao: 'Pastel de Frango', preco: 'R$ 4.00' },
-      { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Hangar', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 'R$ 3.00' },
-      { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Da Tia', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 'R$ 5.00' },
-      { id: '2', img: '../../assets/pastel.webp', restaurante: 'Da Tia', produto: 'Pastel', descricao: 'Pastel de Frango', preco: 'R$ 4.00' },
-      { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Da Tia', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 'R$ 3.00' }  
-  ];
-
-  public getProduto(): any {
-    // for(let i = 0; i < this.Produtos.length; i++) {
-    //   if (this.Produtos[i].id == this.id && this.Produtos[i].restaurante == this.restaurante) {
-    //     this.Produto = this.Produtos[i]
-    //   }
-    // }
-    this.http.get('http://localhost:3000/produtos/')
-    .subscribe((dado: any) => { console.log(dado) })
-
-  }
+  public produto: Produto = new Produto()
 
   public abrirMenu(nomeMenu: string): void {
     if (nomeMenu === 'entrega') {
@@ -73,7 +56,7 @@ export class ProdutoComponent implements OnInit {
   constructor(
     private rotaAtiva: ActivatedRoute,
     private alertQuantidade: AlertQuantidade,
-    private http: HttpClient
+    private produtoService: ProdutosService
     ) { }
 
   public async adicionarACesta() {
@@ -87,7 +70,12 @@ export class ProdutoComponent implements OnInit {
     this.id = this.rotaAtiva.snapshot.params.id
     this.restaurante = this.rotaAtiva.snapshot.params.restaurante
 
-    this.getProduto()
+    this.produtoService.getProduto()
+    
+    this.produtoService.getProdutoIdRestaurante(this.id, this.restaurante)
+      .subscribe((dado: any) => this.produto = dado[0])
+    
+    console.log(this.produto)
 
   }
 

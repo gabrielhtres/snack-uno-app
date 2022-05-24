@@ -30,8 +30,7 @@ import { PagamentoComponent } from '../pagamento/pagamento.component';
     IonicModule,
     FolderPageRoutingModule,
     SwiperModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   declarations: [
     FolderPage,
