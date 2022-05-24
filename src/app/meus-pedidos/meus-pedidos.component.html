@@ -14,12 +14,14 @@
         <img [src]="d.src">
       </ion-avatar>
       <ion-label>
-        <h2 class="fs-6 fw-bold">{{ d.pedido }}</h2>
+        <h2 class="fs-6 fw-bold"># {{ d.pedido }}</h2>
         <h3>{{ d.restaurante }}</h3>
         <p>{{ d.data }}</p>
         <p class="text-success fs-6 fw-bold">{{ d.valor }}</p>
       </ion-label>
-      <ion-icon slot="end" name="search"></ion-icon>
+      <a [routerLink]="['/folder/pedido/pedido', d.pedido]">
+        <ion-icon slot="end" name="search"></ion-icon>
+      </a>
     </ion-item>
   </ion-list>
 </ion-content>

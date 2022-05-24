@@ -9,6 +9,7 @@ import { MeusLocaisComponent } from '../meus-locais/meus-locais.component';
 import { MeusPedidosComponent } from '../meus-pedidos/meus-pedidos.component';
 import { MinhaCestaComponent } from '../minha-cesta/minha-cesta.component';
 import { PagamentoComponent } from '../pagamento/pagamento.component';
+import { PedidoComponent } from '../pedido/pedido.component';
 import { ProdutoComponent } from '../produto/produto.component';
 
 import { FolderPage } from './folder.page';
@@ -61,6 +62,10 @@ const routes: Routes = [
       {
         path: 'pagamento',
         component: PagamentoComponent
+      },
+      {
+        path: 'pedido/:id',
+        component: PedidoComponent
       }
     ]
   },
