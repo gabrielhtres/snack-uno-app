@@ -16,6 +16,5 @@ export class AppComponent {
     { title: 'Configurações', url: '/folder/configuracoes/configuracoes', icon: 'construct' },
   ];
 
-  public cesta: Cesta
-  constructor() {}
+  constructor(private cesta: Cesta) {}
 }
