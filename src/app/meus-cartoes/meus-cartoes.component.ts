@@ -20,18 +20,11 @@ export class MeusCartoesComponent implements OnInit {
     private cartaoService: CartaoService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
 
-    console.log('just before subscribe');
-    this.cartaoService.getAllCartoes(1)
-      .subscribe(
-        {
-          next(x) { console.log('got value ' + x); },
-          error(err) { console.error('something wrong occurred: ' + err); },
-          complete() { console.log('done'); }
-        }
-      )
-    console.log('just after subscribe');
+    console.log(this.cartaoService.getAllCartoes(1)
+      .subscribe((dado: any) => this.cartoes = dado))
+      ._next()
     
     console.log(this.cartoes)
   } 
