@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PedidoService } from '../pedido.service';
-import { CommonModule } from '@angular/common';
 import { RestauranteService } from '../restaurante.service';
+
+import { Pedido } from 'src/shared/pedido.model';
+import { Restaurante } from 'src/shared/restaurante.model';
 
 @Component({
   selector: 'app-pedido',
@@ -13,8 +15,8 @@ import { RestauranteService } from '../restaurante.service';
 export class PedidoComponent implements OnInit {
 
   public idPedido: any
-  public pedido: any = undefined
-  public restaurantes: any = undefined
+  public pedido: Pedido
+  public restaurantes: Restaurante[]
 
   constructor(
     private pedidoService: PedidoService,

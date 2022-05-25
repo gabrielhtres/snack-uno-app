@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Produto } from 'src/shared/produto.model';
 import { AlertQuantidade } from 'src/shared/quantidade.alert';
 import { ProdutosService } from '../produtos.service';
+
+import { Produto } from 'src/shared/produto.model';
+import { Restaurante } from 'src/shared/restaurante.model';
 
 @Component({
   selector: 'app-produto',
@@ -11,10 +13,11 @@ import { ProdutosService } from '../produtos.service';
   providers: [ AlertQuantidade, ProdutosService ]
 })
 export class ProdutoComponent implements OnInit, OnDestroy {
-  public menu: any = ['Item 1', 'Item 2']
-  public id: string = ''
-  public restaurante: string = ''
-  public Produto: any = {  }
+
+  public produto: Produto
+  public restaurante: Restaurante
+  public id: number
+  
   public iconeEntrega: string = 'caret-down'
   public iconePagamento: string = 'caret-down'
   public iconeHorario: string = 'caret-down'
@@ -22,8 +25,6 @@ export class ProdutoComponent implements OnInit, OnDestroy {
   public listaPagamento: boolean = false
   public listaHorario: boolean = false
   public quantidade: number = 0
-
-  public produto: Produto = new Produto()
 
   public abrirMenu(nomeMenu: string): void {
     if (nomeMenu === 'entrega') {
@@ -59,11 +60,11 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     private produtoService: ProdutosService
     ) { }
 
-  public async adicionarACesta() {
-    console.log(`Produto ${this.Produto.id} recebido`)
-    this.quantidade = await this.alertQuantidade.presentAlert()
-    console.log(this.quantidade)
-  }
+  // public async adicionarACesta() {
+  //   console.log(`Produto ${this.Produto.id} recebido`)
+  //   this.quantidade = await this.alertQuantidade.presentAlert()
+  //   console.log(this.quantidade)
+  // }
 
   ngOnInit() {
 

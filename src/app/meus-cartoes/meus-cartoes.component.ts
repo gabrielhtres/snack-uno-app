@@ -10,7 +10,7 @@ import { Cartao } from 'src/shared/cartao.model';
 })
 export class MeusCartoesComponent implements OnInit {
 
-  public cartoes: [] = []
+  public cartoes: Cartao[]
   public dadosCartoes = [
     { titulo: 'Cartão 1', cartao: '**** **** **** 1234', icon: 'card' },
     { titulo: 'Cartão 2', cartao: '**** **** **** 9876', icon: 'card' }
