@@ -22,6 +22,7 @@ import { MinhaCestaComponent } from '../minha-cesta/minha-cesta.component';
 import { ProdutoComponent } from '../produto/produto.component';
 import { CadastroComponent } from '../cadastro/cadastro.component';
 import { PagamentoComponent } from '../pagamento/pagamento.component';
+import { PedidoComponent } from '../pedido/pedido.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { PagamentoComponent } from '../pagamento/pagamento.component';
     MinhaCestaComponent,
     ProdutoComponent,
     CadastroComponent,
-    PagamentoComponent
+    PagamentoComponent,
+    PedidoComponent
   ]
 })
 export class FolderPageModule {}
