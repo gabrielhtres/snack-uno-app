@@ -7,11 +7,12 @@
     
   </ion-text>
 
-  <div class="vtnc" *ngIf="pedido !== undefined">
-    <p>Teste</p>
+  <div class="vtnc" *ngIf="pedido !== undefined && restaurantes !== undefined">
     <p>{{ pedido.id }}</p>
+    <div *ngFor="let r of restaurantes">
+      <p *ngIf="pedido.restaurante === r.id">{{ r.nome }}</p>
+    </div>
+    <p>{{ pedido.data }}</p>
+    <p>{{ pedido.valor_total }}</p>
   </div>
-
-  
-
 </ion-content>
