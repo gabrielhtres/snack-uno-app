@@ -10,7 +10,7 @@ import { Cartao } from 'src/shared/cartao.model';
 })
 export class MeusCartoesComponent implements OnInit {
 
-  public cartoes: any = ''
+  public cartoes: [] = []
   public dadosCartoes = [
     { titulo: 'Cartão 1', cartao: '**** **** **** 1234', icon: 'card' },
     { titulo: 'Cartão 2', cartao: '**** **** **** 9876', icon: 'card' }
@@ -20,13 +20,10 @@ export class MeusCartoesComponent implements OnInit {
     private cartaoService: CartaoService
   ) { }
 
-  async ngOnInit() {
+  ngOnInit() {
 
-    console.log(this.cartaoService.getAllCartoes(1)
-      .subscribe((dado: any) => this.cartoes = dado))
-      ._next()
-    
-    console.log(this.cartoes)
-  } 
+    this.cartaoService.getAllCartoes(1)
+      .subscribe((dado: any) => { this.cartoes = dado }) 
+  }
 
 }
