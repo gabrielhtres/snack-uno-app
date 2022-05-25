@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cesta } from '../shared/cesta.model';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +15,7 @@ export class AppComponent {
     { title: 'Meus Locais', url: '/folder/meus-locais/meus-locais', icon: 'location' },
     { title: 'Configurações', url: '/folder/configuracoes/configuracoes', icon: 'construct' },
   ];
+
+  public cesta: Cesta
   constructor() {}
 }
