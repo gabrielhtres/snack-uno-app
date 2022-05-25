@@ -65,5 +65,38 @@
             "numeroCartao": "1234 5678 9012 3456",
             "id_usuario": 2
         }
+    ],
+    "resturantes": [
+        {
+            "id": 1,
+            "nome": "Hangar"
+        },
+        {
+            "id": 2,
+            "nome": "Point"
+        }
+    ],
+    "pedidos": [
+        {
+            "id": 1,
+            "restaurante": 1,
+            "data": "28/04/2022",
+            "valor_total": 7.00,
+            "id_usuario": 1
+        },
+        {
+            "id": 2,
+            "restaurante": 2,
+            "data": "30/04/2022",
+            "valor_total": 10.00,
+            "id_usuario": 1
+        },
+        {
+            "id": 3,
+            "restaurante": 1,
+            "data": "28/04/2022",
+            "valor_total": 12.00,
+            "id_usuario": 2
+        }
     ]
 }
