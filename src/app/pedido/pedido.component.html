@@ -3,7 +3,15 @@
     <a [routerLink]="['/folder/home/home']">
       <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
     </a>
-    <h1 class="ms-3 mt-0">Pedido {{ numeroPedido }}</h1>
+    <h1 class="ms-3 mt-0">Pedido</h1>
+    
   </ion-text>
+
+  <div [ngIf]="pedido">
+    <p>Teste</p>
+    <p>{{ pedido.id }}</p>
+  </div>
+
+  
 
 </ion-content>
