@@ -10,11 +10,11 @@
     </ion-list-header>
   </ion-list>
 
-  <ion-item lines="full" *ngFor="let d of dadosCartoes" class="mt-0 pt-0">
+  <ion-item lines="full" *ngFor="let d of cartoes" class="mt-0 pt-0">
     <ion-icon slot="start" name="card" color="nav"></ion-icon>
     <ion-label>
-      <h2>{{ d.titulo }}</h2>
-      <p>{{ d.cartao }}</p>
+      <h2>Cartão</h2>
+      <p>{{ d.numCartao }}</p>
     </ion-label>
     <ion-icon slot="end" name="pencil"></ion-icon>
   </ion-item>
