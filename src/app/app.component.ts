@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Cesta } from '../shared/cesta.model';
+import { CestaService } from './cesta.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  providers: [ CestaService ]
 })
 export class AppComponent {
   public appPages = [
@@ -16,5 +18,5 @@ export class AppComponent {
     { title: 'Configurações', url: '/folder/configuracoes/configuracoes', icon: 'construct' },
   ];
 
-  constructor(private cesta: Cesta) {}
+  constructor(private cesta: CestaService) {}
 }
