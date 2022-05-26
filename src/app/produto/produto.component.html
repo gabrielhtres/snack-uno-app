@@ -1,5 +1,6 @@
 <ion-content color="">
 
+  <div *ngIf="produto !== undefined">
     <ion-text class="d-flex mt-3 ms-3">
       <a [routerLink]="['/folder/home/home']">
         <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
@@ -64,10 +65,11 @@
       </ion-list>
     </div>
 
-  <div class="botao-fc mt-5">
-    <ion-button class="fs-6 m-0 mb-4" size="large" color="success" strong="false" (click)="adicionarACesta()">
-      Adicionar à cesta
-    </ion-button>
+    <div class="botao-fc mt-5">
+      <ion-button class="fs-6 m-0 mb-4" size="large" color="success" strong="false" (click)="adicionarACesta()">
+        Adicionar à cesta
+      </ion-button>
+    </div>
   </div>
 
 </ion-content>
