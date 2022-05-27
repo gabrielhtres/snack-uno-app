@@ -8,30 +8,26 @@ export class AlertEdicao {
 
     constructor() {  }
 
-    public inputAlertQuantidade: AlertInput[] = [{
-        type: "number",
-        placeholder: 'Quantidade: ',
-        handler: (input: AlertInput) => { console.log(input) },
-        min: '1'
-    }]
+    public inputsAlertEditar: AlertInput[]
 
     public alertBotaoOk: AlertButton = {
-        text: 'Selecionar Opção',
+        text: 'Confirmar',
         handler: (valor: any) => { this.valor = valor }
     }
 
-    public async presentAlert() {
+    public async presentAlertEditar(inputs: AlertInput[]) {
+        this.inputsAlertEditar = inputs
         const alert = await this.alertEditar.create({
         cssClass: 'alertQuantidade',
-        header: 'Quantidade desejada',
-        message: '<p>* A quantidade precisa ser no mínimo 1</p>',
-        inputs: this.inputAlertQuantidade,
+        header: 'Editando Cartão',
+        message: '<p class="ms-auto me-auto">Para manter os dados atuais, deixe o campo vazio</p>',
+        inputs: this.inputsAlertEditar,
         buttons: [this.alertBotaoOk]
         });
 
         await alert.present();
 
-        this.valor =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values[0] })
+        this.valor =  await alert.onDidDismiss().then((dado: any) => { return dado.data.values })
 
         return this.valor
         
