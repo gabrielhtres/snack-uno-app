@@ -21,9 +21,10 @@ export class MeusCartoesComponent implements OnInit {
       min: '0'
     },
     {
-      type: "number",
+      type: "text",
       placeholder: 'Número Cartão ',
-      min: '16'
+      min: '16',
+      disabled: true
     }
   ]
 

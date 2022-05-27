@@ -9,13 +9,79 @@
       </ion-text>
     </ion-list-header>
 
-    <ion-item lines="full" *ngFor="let d of dadosPerfil">
-      <ion-icon slot="start" [name]="d.icon" color="nav"></ion-icon>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="card" color="nav"></ion-icon>
       <ion-label>
-        <h2>{{ d.titulo }}</h2>
-        <p>{{ d.dado }}</p>
+        <h2>CPF</h2>
+        <p>{{ usuario.cpf }}</p>
       </ion-label>
-      <ion-icon slot="end" name="pencil"></ion-icon>
+      <!-- <ion-icon slot="end" name="pencil" (click)="abreEditar('cpf')"></ion-icon> -->
     </ion-item>
+
+    <ion-item lines="full">
+      <ion-icon slot="start" name="person" color="nav"></ion-icon>
+      <ion-label>
+        <h2>Nome</h2>
+        <p>{{ usuario.nome }}</p>
+      </ion-label>
+      <ion-icon *ngIf="listaEditarNome === false" slot="end" name="pencil" (click)="abreEditar('nome')"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="listaEditarNome === true">
+      <ion-item lines="full">
+        <ion-label position="fixed">Nome:</ion-label>
+        <ion-input></ion-input>
+        <ion-icon name="save" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-item lines="full">
+      <ion-icon slot="start" name="mail" color="nav"></ion-icon>
+      <ion-label>
+        <h2>E-mail</h2>
+        <p>{{ usuario.email }}</p>
+      </ion-label>
+      <ion-icon *ngIf="listaEditarEmail === false" slot="end" name="pencil" (click)="abreEditar('e-mail')"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="listaEditarEmail === true">
+      <ion-item lines="full">
+        <ion-label position="fixed">Email:</ion-label>
+        <ion-input type="email"></ion-input>
+        <ion-icon name="save" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-item lines="full">
+      <ion-icon slot="start" name="call" color="nav"></ion-icon>
+      <ion-label>
+        <h2>Telefone</h2>
+        <p>{{ usuario.celular }}</p>
+      </ion-label>
+      <ion-icon *ngIf="listaEditarCelular === false" slot="end" name="pencil" (click)="abreEditar('celular')"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="listaEditarCelular === true">
+      <ion-item lines="full">
+        <ion-label position="fixed">Celular:</ion-label>
+        <ion-input type="tel"></ion-input>
+        <ion-icon name="save" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-item lines="full">
+      <ion-icon slot="start" name="calendar" color="nav"></ion-icon>
+      <ion-label>
+        <h2>Data de Nascimento</h2>
+        <p>{{ usuario.dataNascimento }}</p>
+      </ion-label>
+      <ion-icon *ngIf="listaEditarNascimento === false" slot="end" name="pencil" (click)="abreEditar('nascimento')"></ion-icon>
+    </ion-item>
+    <ion-list *ngIf="listaEditarNascimento === true">
+      <ion-item lines="full">
+        <ion-label position="fixed">Nascimento:</ion-label>
+        <ion-input type="date"></ion-input>
+        <ion-icon name="save" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+
   </ion-list>
+  
 </ion-content>

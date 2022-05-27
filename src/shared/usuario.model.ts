@@ -1,10 +1,15 @@
 export class Usuario {
 
+    public token: string
+    public usuario: string
+    public senha: string
+
     constructor(
-        public usuario: string,
-        public senha: string,
-        public logado: boolean,
-        public token: string
+        public nome: string,
+        public email: string,
+        public celular: string,
+        public cpf: string,
+        public dataNascimento: string
     ) {
 
     }
