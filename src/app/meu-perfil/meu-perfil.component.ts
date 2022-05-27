@@ -11,11 +11,17 @@ export class MeuPerfilComponent implements OnInit {
   public listaEditar: boolean = false
 
   public usuario: Usuario = new Usuario('Gabriel', 'gabrielhtres@gmail.com', '(49) 98504-7645', '111.222.333-44', '19/09/2000')
+  
   public listaEditarNome: boolean = false
   public listaEditarEmail: boolean = false
   public listaEditarCelular: boolean = false
   public listaEditarCPF: boolean = false
   public listaEditarNascimento: boolean = false
+  
+  public valorInputNome: string
+  public valorInputEmail: string
+  public valorInputCelular: string
+  public valorInputNascimento: string
 
   public dadosPerfil = [
     { titulo: 'Nome', dado: this.usuario.nome, icon: 'person' },
@@ -54,6 +60,33 @@ export class MeuPerfilComponent implements OnInit {
         } else {
           this.listaEditarNascimento = false
         }
+        break
+      default:
+        break
+    }
+  }
+
+  public editaValor(campo: string): void {
+    switch(campo) {
+      case 'nome':
+        this.usuario[campo] = this.valorInputNome
+        console.log(this.usuario)
+        console.log(this.valorInputNome)
+        break
+      case 'email':
+        this.usuario[campo] = this.valorInputEmail
+        console.log(this.usuario)
+        console.log(this.valorInputEmail)
+        break
+      case 'celular':
+        this.usuario[campo] = this.valorInputCelular
+        console.log(this.usuario)
+        console.log(this.valorInputCelular)
+        break
+      case 'dataNascimento':
+        this.usuario[campo] = this.valorInputNascimento
+        console.log(this.usuario)
+        console.log(this.valorInputNascimento)
         break
       default:
         break

@@ -29,8 +29,8 @@
     <ion-list *ngIf="listaEditarNome === true">
       <ion-item lines="full">
         <ion-label position="stacked">Nome:</ion-label>
-        <ion-input></ion-input>
-        <ion-icon name="save" slot="end"></ion-icon>
+        <ion-input type="text" [(ngModel)]="valorInputNome"></ion-input>
+        <ion-icon name="save" slot="end" (click)="editaValor('nome')"></ion-icon>
       </ion-item>
     </ion-list>
 
@@ -45,8 +45,8 @@
     <ion-list *ngIf="listaEditarEmail === true">
       <ion-item lines="full">
         <ion-label position="stacked">Email:</ion-label>
-        <ion-input type="email"></ion-input>
-        <ion-icon name="save" slot="end"></ion-icon>
+        <ion-input type="email" [(ngModel)]="valorInputEmail"></ion-input>
+        <ion-icon name="save" slot="end" (click)="editaValor('email')"></ion-icon>
       </ion-item>
     </ion-list>
 
@@ -61,8 +61,8 @@
     <ion-list *ngIf="listaEditarCelular === true">
       <ion-item lines="full">
         <ion-label position="stacked">Celular:</ion-label>
-        <ion-input type="tel"></ion-input>
-        <ion-icon name="save" slot="end"></ion-icon>
+        <ion-input type="tel" [(ngModel)]="valorInputCelular"></ion-input>
+        <ion-icon name="save" slot="end" (click)="editaValor('celular')"></ion-icon>
       </ion-item>
     </ion-list>
 
@@ -77,8 +77,8 @@
     <ion-list *ngIf="listaEditarNascimento === true">
       <ion-item lines="full">
         <ion-label position="stacked">Nascimento:</ion-label>
-        <ion-input type="date"></ion-input>
-        <ion-icon name="save" slot="end"></ion-icon>
+        <ion-input type="date" [(ngModel)]="valorInputNascimento"></ion-input>
+        <ion-icon name="save" slot="end" (click)="editaValor('dataNascimento')"></ion-icon>
       </ion-item>
     </ion-list>
 
