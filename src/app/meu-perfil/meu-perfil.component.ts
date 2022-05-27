@@ -34,32 +34,17 @@ export class MeuPerfilComponent implements OnInit {
   public abreEditar(dadoEditar: string): void {
     switch(dadoEditar) {
       case 'nome':
-        if(this.listaEditarNome === false) {
-          this.listaEditarNome = true
-        } else {
-          this.listaEditarNome = false
-        }
+        this.listaEditarNome = true
+
         break
       case 'e-mail':
-        if(this.listaEditarEmail === false) {
-          this.listaEditarEmail = true
-        } else {
-          this.listaEditarEmail = false
-        }
+        this.listaEditarEmail = true
         break
       case 'celular':
-        if(this.listaEditarCelular === false) {
-          this.listaEditarCelular = true
-        } else {
-          this.listaEditarCelular = false
-        }
+        this.listaEditarCelular = true
         break
       case 'nascimento':
-        if(this.listaEditarNascimento === false) {
-          this.listaEditarNascimento = true
-        } else {
-          this.listaEditarNascimento = false
-        }
+        this.listaEditarNascimento = true
         break
       default:
         break
@@ -70,21 +55,25 @@ export class MeuPerfilComponent implements OnInit {
     switch(campo) {
       case 'nome':
         this.usuario[campo] = this.valorInputNome
+        this.listaEditarNome = false
         console.log(this.usuario)
         console.log(this.valorInputNome)
         break
       case 'email':
         this.usuario[campo] = this.valorInputEmail
+        this.listaEditarEmail = false
         console.log(this.usuario)
         console.log(this.valorInputEmail)
         break
       case 'celular':
         this.usuario[campo] = this.valorInputCelular
+        this.listaEditarCelular= false
         console.log(this.usuario)
         console.log(this.valorInputCelular)
         break
       case 'dataNascimento':
         this.usuario[campo] = this.valorInputNascimento
+        this.listaEditarNascimento = false
         console.log(this.usuario)
         console.log(this.valorInputNascimento)
         break
