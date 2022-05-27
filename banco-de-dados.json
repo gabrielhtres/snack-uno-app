@@ -27,7 +27,7 @@
         {
             "id": 4,
             "img": "../../assets/pizza.jpg",
-            "restaurante": "Da Tia",
+            "restaurante": "Point",
             "produto": "Pizza",
             "descricao": "Pizza de Calabresa",
             "preco": 5.00
@@ -35,7 +35,7 @@
         {
             "id": 5,
             "img": "../../assets/pastel.webp",
-            "restaurante": "Da Tia",
+            "restaurante": "Point",
             "produto": "Pastel",
             "descricao": "Pastel de Frango",
             "preco": 4.00
@@ -43,7 +43,7 @@
         {
             "id": 6,
             "img": "../../assets/cafe.jpg",
-            "restaurante": "Da Tia",
+            "restaurante": "Point",
             "produto": "Café",
             "descricao": "Café Preto com Açúcar",
             "preco": 3.00
@@ -53,16 +53,19 @@
         {
             "id": 1,
             "numeroCartao": "1234 5678 9012 3456",
+            "nomeCartao": "Cartão 1",
             "id_usuario": 1
         },
         {
             "id": 2,
             "numeroCartao": "1234 5678 9012 3456",
+            "nomeCartao": "Meu Cartão",
             "id_usuario": 1
         },
         {
             "id": 3,
             "numeroCartao": "1234 5678 9012 3456",
+            "nomeCartao": "My Card",
             "id_usuario": 2
         }
     ],

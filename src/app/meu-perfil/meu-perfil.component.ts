@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Usuario } from 'src/shared/usuario.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Usuario } from 'src/shared/usuario.model';
   templateUrl: './meu-perfil.component.html',
   styleUrls: ['./meu-perfil.component.scss'],
 })
-export class MeuPerfilComponent implements OnInit {
+export class MeuPerfilComponent implements OnInit, OnDestroy {
 
   public listaEditar: boolean = false
 
@@ -86,6 +86,13 @@ export class MeuPerfilComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  ngOnDestroy() {
+    this.listaEditarNome = false
+    this.listaEditarEmail = false
+    this.listaEditarCelular = false
+    this.listaEditarNascimento = false
   }
 
 }

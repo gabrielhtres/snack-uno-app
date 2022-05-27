@@ -10,12 +10,25 @@
     </ion-list-header>
   </ion-list>
 
-  <ion-item lines="full" *ngFor="let d of cartoes" class="mt-0 pt-0">
-    <ion-icon slot="start" name="card" color="nav"></ion-icon>
-    <ion-label>
-      <h2>Cartão</h2>
-      <p>{{ d.numeroCartao }}</p>
-    </ion-label>
-    <ion-icon slot="end" name="pencil" (click)="abrirAlertEditarCartao()"></ion-icon>
-  </ion-item>
+  <div *ngFor="let d of cartoes; index as i">
+    <ion-item lines="full" class="mt-0 pt-0">
+      <ion-icon slot="start" name="card" color="nav"></ion-icon>
+      <ion-label>
+        <h2>{{ d.nomeCartao }}</h2>
+        <p>{{ d.numeroCartao }}</p>
+      </ion-label>
+      <ion-icon *ngIf="controladoresInputs[i] === false" slot="end" name="pencil" (click)="abreEditar(i)"></ion-icon>
+    </ion-item>
+
+    <ion-list *ngIf="controladoresInputs[i] === true">
+      <ion-item lines="full">
+        <ion-label position="stacked">Nome do Cartão:</ion-label>
+        <ion-input [placeholder]="d.nomeCartao" type="text" [(ngModel)]="valoresInputNomeCartao[i]"></ion-input>
+        <ion-label position="stacked">Número do Cartão:</ion-label>
+        <ion-input [placeholder]="d.numeroCartao" type="number" [(ngModel)]="valoresInputNumeroCartao[i]"></ion-input>
+        <ion-icon name="save" slot="end" (click)="editaCartao(d.id)"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+  
 </ion-content>

@@ -20,9 +20,9 @@ export class SliderProdutosComponent implements OnInit {
       { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Hangar', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 3 }  
     ],
     [
-      { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Da Tia', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 5.00 },
-      { id: '2', img: '../../assets/pastel.webp', restaurante: 'Da Tia', produto: 'Pastel', descricao: 'Pastel de Frango', preco: 4.00 },
-      { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Da Tia', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 3.00 }  
+      { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Point', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 5.00 },
+      { id: '2', img: '../../assets/pastel.webp', restaurante: 'Point', produto: 'Pastel', descricao: 'Pastel de Frango', preco: 4.00 },
+      { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Point', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 3.00 }  
     ]
   ];
 
