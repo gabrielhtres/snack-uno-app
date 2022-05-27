@@ -9,7 +9,8 @@ ion-list, ion-item {
 
 
 ion-button {
-    --border-radius: 50px;
+    // --border-radius: 50px;
+    height: 100%;
 }
 
 .botao-fc {
@@ -22,11 +23,22 @@ ion-button {
 
 .caixa {
     width: 90%;
+    height: 50px;
     background-color: #FFF;
+    margin-top: 150px;
 }
 
 
 img {
     height: 200px;
     width: 100%;
+}
+
+ion-input {
+    --background: #FFF;
+    --padding-bottom: 10px;
+    --padding-top: 10px;
+    --padding-start: 15px;
+    --padding-end: 10px;
+    height: 100%;
 }

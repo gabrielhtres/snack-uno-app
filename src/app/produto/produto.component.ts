@@ -24,7 +24,9 @@ export class ProdutoComponent implements OnInit, OnDestroy {
   public listaEntrega: boolean = false
   public listaPagamento: boolean = false
   public listaHorario: boolean = false
-  public quantidade: number = 0
+
+  public quantidadeProduto: number
+  public saborProduto: string
 
   public abrirMenu(nomeMenu: string): void {
     if (nomeMenu === 'entrega') {
@@ -56,15 +58,13 @@ export class ProdutoComponent implements OnInit, OnDestroy {
 
   constructor(
     private rotaAtiva: ActivatedRoute,
-    private alertQuantidade: AlertQuantidade,
     private produtoService: ProdutosService
     ) { }
 
-  // public async adicionarACesta() {
-  //   console.log(`Produto ${this.Produto.id} recebido`)
-  //   this.quantidade = await this.alertQuantidade.presentAlert()
-  //   console.log(this.quantidade)
-  // }
+  public adicionarACesta(idProduto: number) {
+    console.log(`Produto ${idProduto} recebido`)
+    console.log(`Quantidade: ${this.quantidadeProduto}`)
+  }
 
   ngOnInit() {
 
