@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Produto } from 'src/shared/produto.model';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from "swiper";
+
+import { Restaurante } from '../../shared/restaurante.model'
+import { ProdutosService } from '../produtos.service';
+import { RestauranteService } from '../restaurante.service';
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
@@ -10,9 +15,15 @@ SwiperCore.use([Pagination]);
   selector: 'app-slider-produtos',
   templateUrl: './slider-produtos.component.html',
   styleUrls: ['./slider-produtos.component.scss'],
+  providers: [ ProdutosService, RestauranteService ]
   // encapsulation: ViewEncapsulation.None
 })
 export class SliderProdutosComponent implements OnInit {
+
+  public restaurantes: Restaurante[]
+  public produtosSlider: Array<Produto[]>
+  // public produtos: Produto[]
+
   public dadosProdutos = [
     [
       { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Hangar', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 5 },
@@ -26,8 +37,23 @@ export class SliderProdutosComponent implements OnInit {
     ]
   ];
 
-  constructor() { }
+  constructor(
+    private restauranteService: RestauranteService,
+    private produtoService: ProdutosService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.restauranteService.getAllRestaurantes()
+      .subscribe((restaurantes: Restaurante[]) => { 
+        this.restaurantes = restaurantes
+        for(let i=0; i<this.restaurantes.length; i++) {
+          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].nome)
+            .subscribe((produtos: Produto[]) => { this.produtosSlider.push(produtos) })
+        }
+      
+      })
+
+
+  }
 
 }
