@@ -23,7 +23,7 @@ export class MeusCartoesComponent implements OnInit {
     {
       type: "number",
       placeholder: 'Número Cartão ',
-      min: '1'
+      min: '16'
     }
   ]
 
