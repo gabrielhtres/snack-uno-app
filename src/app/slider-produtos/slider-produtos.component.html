@@ -2,7 +2,7 @@
   <div *ngIf="produtosSlider !== undefined">
     <swiper [pagination]="true" #swipper class="swiper" *ngFor="let produtos of produtosSlider">
       <ng-template swiperSlide class="swiper-slide" *ngFor="let p of produtos">
-        <a [routerLink]="['/folder/produto/produto', p.restaurante, p.id]">
+        <a [routerLink]="['/folder/produto/produto', p.id]">
           <ion-card>
             <img [src]="p.img" class="img-card">
             <ion-card-header>

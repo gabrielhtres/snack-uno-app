@@ -52,7 +52,7 @@ const routes: Routes = [
         component: MinhaCestaComponent
       },
       {
-        path: 'produto/:restaurante/:id',
+        path: 'produto/:id',
         component: ProdutoComponent
       },
       {

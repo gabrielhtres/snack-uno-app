@@ -16,4 +16,9 @@ export class RestauranteService {
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 
+    public getRestaurantePorId(idRestaurante: any): any {
+        return this.http.get(`${URL_API}restaurantes?id=${idRestaurante}`)
+            .pipe( map( (resposta: any) => { return resposta }), retry(10) )
+    }
+
 }

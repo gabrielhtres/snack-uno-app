@@ -1,21 +1,25 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertQuantidade } from 'src/shared/quantidade.alert';
 import { ProdutosService } from '../produtos.service';
 
 import { Produto } from 'src/shared/produto.model';
-import { Restaurante } from 'src/shared/restaurante.model';
+import { RestauranteService } from '../restaurante.service';
+import { Cesta } from 'src/shared/cesta.model';
+import { CestaService } from '../cesta.service';
+import { ProdutoPedido } from 'src/shared/produto-pedido.model';
 
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.scss'],
-  providers: [ AlertQuantidade, ProdutosService ]
+  providers: [ AlertQuantidade, ProdutosService, RestauranteService ]
 })
 export class ProdutoComponent implements OnInit, OnDestroy {
 
+  @Input() public cesta: Cesta
+
   public produto: Produto
-  public restaurante: Restaurante
   public id: number
   
   public iconeEntrega: string = 'caret-down'
@@ -58,23 +62,29 @@ export class ProdutoComponent implements OnInit, OnDestroy {
 
   constructor(
     private rotaAtiva: ActivatedRoute,
-    private produtoService: ProdutosService
+    private produtoService: ProdutosService,
+    private restauranteService: RestauranteService,
+    private cestaService: CestaService
     ) { }
 
-  public adicionarACesta(idProduto: number) {
-    console.log(`Produto ${idProduto} recebido`)
-    console.log(`Quantidade: ${this.quantidadeProduto}`)
+  public adicionarACesta() {
+    let produtoPedido: ProdutoPedido = new ProdutoPedido(this.produto, 1)
+    this.cestaService.adicionarProduto(produtoPedido)
+    console.log(this.cestaService)
   }
 
   ngOnInit() {
 
     this.id = this.rotaAtiva.snapshot.params.id
-    this.restaurante = this.rotaAtiva.snapshot.params.restaurante
 
     this.produtoService.getProduto()
     
-    this.produtoService.getProdutoIdRestaurante(this.id, this.restaurante)
-      .subscribe((dado: any) => this.produto = dado[0])
+    this.produtoService.getProdutoPorId(this.id)
+      .subscribe((dado: any) => {
+        this.produto = dado[0]
+        this.restauranteService.getRestaurantePorId(this.produto.restaurante)
+          .subscribe((restaurante: any) => { this.produto.restaurante = restaurante[0].nome })
+      })
 
   }
 

@@ -1,10 +1,11 @@
-import { Produto } from "./produto.model"
+import { ProdutoPedido } from "./produto-pedido.model"
 
 export class Cesta {
-    public idUsuario: number
-    public produtos: Produto[]
-    public quantidadeTotal: number
-    public valorTotal: number
-
-    constructor() { }
+    
+    constructor(
+        public idUsuario: number,
+        public produtos: ProdutoPedido[],
+        public quantidadeTotal: number,
+        public valorTotal: number
+    ) { }
 }

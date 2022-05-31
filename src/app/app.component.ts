@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { Cesta } from '../shared/cesta.model';
+import { Component, OnInit } from '@angular/core';
 import { CestaService } from './cesta.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  providers: [ CestaService ]
+  providers: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   public appPages = [
     { title: 'Home', url: '/folder/home/home', icon: 'home' },
     { title: 'Meu Perfil', url: '/folder/meu-perfil/meu-perfil', icon: 'person' },
@@ -18,5 +19,9 @@ export class AppComponent {
     { title: 'Configurações', url: '/folder/configuracoes/configuracoes', icon: 'construct' },
   ];
 
-  constructor(private cesta: CestaService) {}
+  constructor(private cestaService: CestaService) {}
+
+  ngOnInit() {
+    
+  }
 }
