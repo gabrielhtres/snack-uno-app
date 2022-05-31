@@ -15,27 +15,14 @@ SwiperCore.use([Pagination]);
   selector: 'app-slider-produtos',
   templateUrl: './slider-produtos.component.html',
   styleUrls: ['./slider-produtos.component.scss'],
-  providers: [ ProdutosService, RestauranteService ]
-  // encapsulation: ViewEncapsulation.None
+  providers: [ ProdutosService, RestauranteService ],
+  encapsulation: ViewEncapsulation.None
 })
 export class SliderProdutosComponent implements OnInit {
 
-  public restaurantes: Restaurante[]
-  public produtosSlider: Array<Produto[]>
-  // public produtos: Produto[]
-
-  public dadosProdutos = [
-    [
-      { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Hangar', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 5 },
-      { id: '2', img: '../../assets/pastel.webp', restaurante: 'Hangar', produto: 'Pastel', descricao: 'Pastel de Frango', preco: 4 },
-      { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Hangar', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 3 }  
-    ],
-    [
-      { id: '1', img: '../../assets/pizza.jpg', restaurante: 'Point', produto: 'Pizza', descricao: 'Pizza de Calabresa', preco: 5.00 },
-      { id: '2', img: '../../assets/pastel.webp', restaurante: 'Point', produto: 'Pastel', descricao: 'Pastel de Frango', preco: 4.00 },
-      { id: '3', img: '../../assets/cafe.jpg', restaurante: 'Point', produto: 'Café', descricao: 'Café Preto com Açúcar', preco: 3.00 }  
-    ]
-  ];
+  public restaurantes: Restaurante[] = []
+  public produtosSlider: Produto[][] = []
+  // public produtos: string[]  = ['1', '2', '3']
 
   constructor(
     private restauranteService: RestauranteService,
@@ -43,17 +30,15 @@ export class SliderProdutosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    SwiperCore.use([Pagination]);
     this.restauranteService.getAllRestaurantes()
-      .subscribe((restaurantes: Restaurante[]) => { 
+      .subscribe((restaurantes: Restaurante[]) => {
         this.restaurantes = restaurantes
         for(let i=0; i<this.restaurantes.length; i++) {
-          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].nome)
-            .subscribe((produtos: Produto[]) => { this.produtosSlider.push(produtos) })
+          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id)
+            .subscribe((produtos: Produto[]) => { this.produtosSlider.push(produtos) 
+            console.log(this.produtosSlider)})
         }
-      
       })
-
-
   }
-
 }
