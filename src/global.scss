@@ -64,8 +64,6 @@
 
 .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -83,6 +81,12 @@
     height: 0.5rem;
     border-radius: 0.5rem;
 }
+
+
+
+
+
+
 
 .alertClass .alert-wrapper {
     color: var(--ion-color-nav) !important;
