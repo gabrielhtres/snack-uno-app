@@ -12,6 +12,7 @@ export class CestaService {
     
     public adicionarProduto(produtoPedido: ProdutoPedido): void {
         this.cesta.produtos.push(produtoPedido)
+        this.cesta.quantidadeTotal += 1
     }
     
 }
