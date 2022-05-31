@@ -29,6 +29,24 @@ export class SliderProdutosComponent implements OnInit {
     private produtoService: ProdutosService
   ) { }
 
+  public indexArray(id: number) {
+    for(let i=0;i<this.restaurantes.length;i++) {
+      if(this.restaurantes[i].id === id) {
+        return i
+      }
+    }
+    return undefined
+  }
+
+  public substituirRestauranteProdutos(produtos: any): Produto[] {
+    let indiceRestaurante = this.indexArray(produtos[0].restaurante)
+    for(let i=0;i<produtos.length;i++) {
+      produtos[i].restaurante = this.restaurantes[indiceRestaurante].nome
+    }
+
+    return produtos
+  }
+
   ngOnInit() {
     SwiperCore.use([Pagination]);
     this.restauranteService.getAllRestaurantes()
@@ -36,8 +54,10 @@ export class SliderProdutosComponent implements OnInit {
         this.restaurantes = restaurantes
         for(let i=0; i<this.restaurantes.length; i++) {
           this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id)
-            .subscribe((produtos: Produto[]) => { this.produtosSlider.push(produtos) 
-            console.log(this.produtosSlider)})
+            .subscribe((produtos: Produto[]) => {
+              let produtosAlterados = this.substituirRestauranteProdutos(produtos)
+              this.produtosSlider.push(produtosAlterados)      
+          })
         }
       })
   }
