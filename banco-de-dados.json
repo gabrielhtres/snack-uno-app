@@ -3,7 +3,7 @@
         {
             "id": 1,
             "img": "../../assets/pizza.jpg",
-            "restaurante": "Hangar",
+            "restaurante": 1,
             "produto": "Pizza",
             "descricao": "Pizza de Calabresa",
             "preco": 5.00
@@ -11,7 +11,7 @@
         {
             "id": 2,
             "img": "../../assets/pastel.webp",
-            "restaurante": "Hangar",
+            "restaurante": 1,
             "produto": "Pastel",
             "descricao": "Pastel de Frango",
             "preco": 4.00
@@ -19,7 +19,7 @@
         {
             "id": 3,
             "img": "../../assets/cafe.jpg",
-            "restaurante": "Hangar",
+            "restaurante": 1,
             "produto": "Café",
             "descricao": "Café Preto com Açúcar",
             "preco": 3.00
@@ -27,7 +27,7 @@
         {
             "id": 4,
             "img": "../../assets/pizza.jpg",
-            "restaurante": "Point",
+            "restaurante": 2,
             "produto": "Pizza",
             "descricao": "Pizza de Calabresa",
             "preco": 5.00
@@ -35,7 +35,7 @@
         {
             "id": 5,
             "img": "../../assets/pastel.webp",
-            "restaurante": "Point",
+            "restaurante": 2,
             "produto": "Pastel",
             "descricao": "Pastel de Frango",
             "preco": 4.00
@@ -43,7 +43,7 @@
         {
             "id": 6,
             "img": "../../assets/cafe.jpg",
-            "restaurante": "Point",
+            "restaurante": 2,
             "produto": "Café",
             "descricao": "Café Preto com Açúcar",
             "preco": 3.00

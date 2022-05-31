@@ -22,8 +22,8 @@ export class ProdutosService {
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 
-    public getProdutosPorRestaurante(restaurante: any) {
-        return this.http.get(`${URL_API}produtos?restaurante=${restaurante}`)
+    public getProdutosPorRestaurante(idRestaurante: any) {
+        return this.http.get(`${URL_API}produtos?restaurante=${idRestaurante}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 }
