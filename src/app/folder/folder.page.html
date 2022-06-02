@@ -9,7 +9,7 @@
     <ion-item color="nav" slot="end">
       <a [routerLink]="['/folder/minha-cesta/minha-cesta']">
         <ion-icon size="large" slot="end" name="bag" class="mt-2"></ion-icon>
-        <div *ngIf="quantidadeTotal > 0" class="quantidade-cesta d-flex align-items-start justify-content-center"><p>{{ quantidadeTotal }}</p></div>
+        <div *ngIf="cestaService.cesta.quantidadeTotal > 0" class="quantidade-cesta d-flex align-items-start justify-content-center"><p>{{ cestaService.cesta.quantidadeTotal }}</p></div>
       </a>
     </ion-item>
   </ion-toolbar>
