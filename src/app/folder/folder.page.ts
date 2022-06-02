@@ -9,7 +9,7 @@ import { CestaService } from '../cesta.service';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-  @Input() public quantidadeTotal: number = this.cestaService.cesta.quantidadeTotal
+  public quantidadeTotal: number
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,6 +18,12 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(this.quantidadeTotal)
+
+    this.cestaService.quantidadeTotal
+      .subscribe({
+        next(quantidade){ this.quantidadeTotal = quantidade }
+      })
   }
 
 }
