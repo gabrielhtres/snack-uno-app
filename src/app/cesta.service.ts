@@ -8,11 +8,14 @@ import { ProdutoPedido } from "src/shared/produto-pedido.model";
 export class CestaService {
 
     public cesta: Cesta = new Cesta(1, [], 0, 0)
-    public quantidadeTotal: Observable<any> = new Observable(subscriber => {
-        subscriber.next(this.cesta.quantidadeTotal)
-    })
+    public quantidadeTotal: number
 
     constructor() {}
+
+    public limparCesta(): void {
+        this.cesta.produtos = []
+        this.quantidadeTotal = 0
+    }
     
     public adicionarProduto(produtoPedido: ProdutoPedido): void {
         this.cesta.produtos.push(produtoPedido)

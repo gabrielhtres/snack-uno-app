@@ -24,10 +24,15 @@
         <ion-icon slot="end" name="trash" color="danger"></ion-icon>
       </ion-item>
     </div>
+
+    <div *ngIf="produtosCesta === []" style="color: white">
+      <p>Cesta Vazia</p>
+    </div>
+    
   </ion-list>
 
-  <div class="botao-fc mt-5">
-    <ion-button [routerLink]="['/folder/pagamento/pagamento']" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
+  <div class="botao-fc mt-5"> <!-- [routerLink]="['/folder/pagamento/pagamento']" -->
+    <ion-button (click)="finalizarCompra()" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">
       Finalizar Compra
     </ion-button>
   </div>
