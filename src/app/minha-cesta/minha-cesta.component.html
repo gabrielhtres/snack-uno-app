@@ -1,6 +1,6 @@
 <ion-content>
   <ion-list>
-    <ion-list-header class="mb-2">
+    <ion-list-header>
       <ion-text class="d-flex mt-3">
         <a [routerLink]="['/folder/home/home']">
           <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
@@ -9,19 +9,21 @@
       </ion-text>
     </ion-list-header>
 
-    <ion-item lines="full"> <!--  *ngFor="let d of dadosCesta" -->
-      <ion-avatar slot="start">
-        <img src="https://picsum.photos/200/200">
-      </ion-avatar>
-      <ion-label>
-        <h2 class="fs-6 fw-bold">Pizza</h2>
-        <h3>Pizza de Calabresa</h3>
-        <p>Hangar</p>
-        <p>Quantidade: 1</p>
-      </ion-label>
-      <p class="text-success fs-6 fw-bold me-4 mt-3">5.00</p>
-      <ion-icon slot="end" name="trash" color="danger"></ion-icon>
-    </ion-item>
+    <div *ngIf="produtosCesta !== []">
+      <ion-item lines="full" *ngFor="let produto of produtosCesta"> <!--  *ngFor="let d of dadosCesta" -->
+        <ion-avatar slot="start">
+          <img [src]="produto.produto.img">
+        </ion-avatar>
+        <ion-label>
+          <h2 class="fs-6 fw-bold">{{ produto.produto.produto }}</h2>
+          <h3>{{ produto.produto.descricao }}</h3>
+          <p>{{ produto.produto.restaurante }}</p>
+          <p>Quantidade: {{ produto.quantidade }}</p>
+        </ion-label>
+        <p class="text-success fs-6 fw-bold me-4 mt-3">{{ produto.produto.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</p>
+        <ion-icon slot="end" name="trash" color="danger"></ion-icon>
+      </ion-item>
+    </div>
   </ion-list>
 
   <div class="botao-fc mt-5">
