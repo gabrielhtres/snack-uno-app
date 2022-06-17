@@ -9,6 +9,14 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  public abrirPesquisa(): void {
+    console.log('Pesquisa')
+  }
+
+  public abrirFiltro(): void {
+    console.log('Filtro')
+  }
+
   ngOnInit() {}
 
 }
