@@ -12,6 +12,13 @@ export class FolderPage implements OnInit {
   public quantidadeCesta: number = this.cestaService.cesta.quantidadeTotal
   public logado: boolean = false
 
+  public appTabs = [
+    { title: 'Home', url: '/folder/home/home', icon: 'home' },
+    { title: 'Favoritos', url: '/folder/meus-favoritos/meus-favoritos', icon: 'heart' },
+    { title: 'Cartões', url: '/folder/meus-cartoes/meus-cartoes', icon: 'card' },
+    { title: 'Ajuda', url: '/folder/ajuda/ajuda', icon: 'help-circle' },
+  ];
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private cestaService: CestaService
