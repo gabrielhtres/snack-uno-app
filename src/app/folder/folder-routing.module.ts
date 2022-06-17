@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AjudaComponent } from '../ajuda/ajuda.component';
 import { CadastroComponent } from '../cadastro/cadastro.component';
 import { ConfiguracoesComponent } from '../configuracoes/configuracoes.component';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
 import { MeuPerfilComponent } from '../meu-perfil/meu-perfil.component';
 import { MeusCartoesComponent } from '../meus-cartoes/meus-cartoes.component';
+import { MeusFavoritosComponent } from '../meus-favoritos/meus-favoritos.component';
 import { MeusLocaisComponent } from '../meus-locais/meus-locais.component';
 import { MeusPedidosComponent } from '../meus-pedidos/meus-pedidos.component';
 import { MinhaCestaComponent } from '../minha-cesta/minha-cesta.component';
@@ -71,6 +73,14 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'meus-favoritos',
+        component: MeusFavoritosComponent
+      },
+      {
+        path: 'ajuda',
+        component: AjudaComponent
       }
     ]
   },
