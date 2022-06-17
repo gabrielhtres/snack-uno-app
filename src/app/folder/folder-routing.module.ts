@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CadastroComponent } from '../cadastro/cadastro.component';
 import { ConfiguracoesComponent } from '../configuracoes/configuracoes.component';
 import { HomeComponent } from '../home/home.component';
+import { LoginComponent } from '../login/login.component';
 import { MeuPerfilComponent } from '../meu-perfil/meu-perfil.component';
 import { MeusCartoesComponent } from '../meus-cartoes/meus-cartoes.component';
 import { MeusLocaisComponent } from '../meus-locais/meus-locais.component';
@@ -66,6 +67,10 @@ const routes: Routes = [
       {
         path: 'pedido/:id',
         component: PedidoComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
       }
     ]
   },

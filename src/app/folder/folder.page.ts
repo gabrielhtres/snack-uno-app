@@ -10,6 +10,7 @@ import { CestaService } from '../cesta.service';
 export class FolderPage implements OnInit {
   public folder: string;
   public quantidadeCesta: number = this.cestaService.cesta.quantidadeTotal
+  public logado: boolean = false
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,6 +19,9 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    if(this.folder !== 'login') {
+      this.logado = true
+    }
 
   }
 

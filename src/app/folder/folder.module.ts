@@ -23,6 +23,7 @@ import { ProdutoComponent } from '../produto/produto.component';
 import { CadastroComponent } from '../cadastro/cadastro.component';
 import { PagamentoComponent } from '../pagamento/pagamento.component';
 import { PedidoComponent } from '../pedido/pedido.component';
+import { LoginComponent } from '../login/login.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { PedidoComponent } from '../pedido/pedido.component';
   ],
   declarations: [
     FolderPage,
+    LoginComponent,
     HomeComponent,
     MeuPerfilComponent,
     MeusCartoesComponent,
