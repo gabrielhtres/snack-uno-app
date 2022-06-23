@@ -77,13 +77,14 @@ export class ProdutoComponent implements OnInit, OnDestroy {
 
     this.id = this.rotaAtiva.snapshot.params.id
 
-    this.produtoService.getProduto()
+    // this.produtoService.getProduto()
     
     this.produtoService.getProdutoPorId(this.id)
       .subscribe((dado: any) => {
-        this.produto = dado[0]
+        console.log(dado)
+        this.produto = dado.message[0]
         this.restauranteService.getRestaurantePorId(this.produto.restaurante)
-          .subscribe((restaurante: any) => { this.produto.restaurante = restaurante[0].nome })
+          .subscribe((restaurante: any) => { this.produto.restaurante = restaurante.message[0].nome })
       })
 
   }

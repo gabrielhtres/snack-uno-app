@@ -5,7 +5,7 @@ import { CestaService } from './cesta.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  providers: []
+  providers: [ CestaService ]
 })
 export class AppComponent implements OnInit {
 
@@ -23,6 +23,6 @@ export class AppComponent implements OnInit {
   constructor(private cestaService: CestaService) {}
 
   ngOnInit() {
-    
+      
   }
 }

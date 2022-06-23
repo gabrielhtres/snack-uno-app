@@ -12,12 +12,12 @@ export class RestauranteService {
     }
 
     public getAllRestaurantes(): any {
-        return this.http.get(`${URL_API}restaurantes`)
+        return this.http.get(`${URL_API}restaurants`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 
     public getRestaurantePorId(idRestaurante: any): any {
-        return this.http.get(`${URL_API}restaurantes?id=${idRestaurante}`)
+        return this.http.get(`${URL_API}restaurants?id=${idRestaurante}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 

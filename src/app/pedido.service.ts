@@ -12,12 +12,12 @@ export class PedidoService {
     }
     
     public getPedidosUsuario(idUsuario: any): any {
-        return this.http.get(`${URL_API}pedidos?id_usuario=${idUsuario}`)
+        return this.http.get(`${URL_API}requests?id_usuario=${idUsuario}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 
     public getPedidoId(idPedido: any): any {
-        return this.http.get(`${URL_API}pedidos?id=${idPedido}`)
+        return this.http.get(`${URL_API}requests?id_pedido=${idPedido}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 

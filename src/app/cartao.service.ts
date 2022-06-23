@@ -12,7 +12,7 @@ export class CartaoService {
     }
 
     public getAllCartoes(idUsuario: any): any {
-        return this.http.get(`${URL_API}cartoes?id_usuario=${idUsuario}`)
+        return this.http.get(`${URL_API}cards?id_usuario=${idUsuario}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 

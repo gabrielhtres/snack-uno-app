@@ -48,17 +48,19 @@ export class SliderProdutosComponent implements OnInit {
   }
 
   ngOnInit() {
-    SwiperCore.use([Pagination]);
-    this.restauranteService.getAllRestaurantes()
-      .subscribe((restaurantes: Restaurante[]) => {
-        this.restaurantes = restaurantes
-        for(let i=0; i<this.restaurantes.length; i++) {
-          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id)
-            .subscribe((produtos: Produto[]) => {
-              let produtosAlterados = this.substituirRestauranteProdutos(produtos)
-              this.produtosSlider.push(produtosAlterados)      
-          })
-        }
-      })
+    // SwiperCore.use([Pagination]);
+    // this.restauranteService.getAllRestaurantes()
+    //   .subscribe((restaurantes: Restaurante[]) => {
+    //     this.restaurantes = restaurantes
+    //     for(let i=0; i<this.restaurantes.length; i++) {
+    //       this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id)
+    //         .subscribe((produtos: Produto[]) => {
+    //           let produtosAlterados = this.substituirRestauranteProdutos(produtos)
+    //           this.produtosSlider.push(produtosAlterados)      
+    //       })
+    //     }
+    //   })
+    this.produtoService.getProdutoPorId(1)
+      .subscribe()
   }
 }

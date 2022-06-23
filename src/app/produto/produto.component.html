@@ -1,20 +1,21 @@
 <ion-content color="">
 
-  <p>{{ cesta }}</p>
+  <!-- <p>{{ cesta }}</p> -->
 
   <div *ngIf="produto !== undefined">
     <ion-text class="d-flex mt-3 ms-3">
       <a [routerLink]="['/folder/home/home']">
         <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
       </a>
-      <h1 class="ms-3 mt-0">{{ produto.restaurante }}</h1>
+      <h1 class="ms-3 mt-0">{{ produto.id_restaurant }}</h1>
     </ion-text>
 
-    <img [src]="produto.img" class="mt-1 img-fluid">
+    <img src="../../assets/pastel.webp" class="mt-1 img-fluid">
     <div class="m-4">
-      <h2 class="fs-2">{{ produto.produto }}</h2>
-      <p class="fs-6 mt-2">{{ produto.descricao }}</p>
-      <p class="text-success fs-4 mt-3"><strong>{{ produto.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong></p>
+      <h2 class="fs-2">{{ produto.name }}</h2>
+      <p class="fs-6 mt-2">{{ produto.desciption }}</p>
+      <p class="fs-6 mt-2"><strong>Sabores: </strong>{{ produto.flavor }}</p>
+      <p class="text-success fs-4 mt-3"><strong>{{ produto.price | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong></p>
     </div>
 
     <div class="caixa me-auto ms-auto mt-4">
@@ -65,15 +66,14 @@
           </a>
         </ion-label>
       </ion-list>
+      <div class="botao-fc caixa ms-auto me-auto">
+        <ion-button  class="fs-6 m-0" size="large" color="success" strong="false" (click)="adicionarACesta(produto.id)">
+          Adicionar à cesta
+        </ion-button>
+        <ion-input placeholder="Quantidade" type="number" min="1" [(ngModel)]="quantidadeProduto">
+        </ion-input>
+      </div>
     </div>
-  </div>
-
-  <div class="botao-fc caixa ms-auto me-auto">
-    <ion-button  class="fs-6 m-0" size="large" color="success" strong="false" (click)="adicionarACesta(produto.id)">
-      Adicionar à cesta
-    </ion-button>
-    <ion-input placeholder="Quantidade" type="number" min="1" [(ngModel)]="quantidadeProduto">
-    </ion-input>
   </div>
 
 </ion-content>
