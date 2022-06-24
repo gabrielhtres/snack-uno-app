@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Autenticacao } from '../autenticacao.service';
 
 @Component({
@@ -14,12 +15,15 @@ export class LoginComponent implements OnInit {
     'senha': new FormControl(null),
   })
 
-  constructor(private autenticacao: Autenticacao) { }
+  constructor(private autenticacao: Autenticacao, private routes: Router) { }
 
   ngOnInit() {}
 
   public validarLogin(): void {
-    this.autenticacao.validarLogin()
+    this.autenticacao.validarLogin(this.formularioLogin.value.email, this.formularioLogin.value.senha)
+      .subscribe((resp: any) => {
+        this.routes.navigate(['/folder/home/home'])
+      })
   }
 
 }

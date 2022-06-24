@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 import { URL_API } from 'src/app.api'
@@ -14,8 +14,16 @@ export class Autenticacao {
 
     }
 
-    public validarLogin(): void {
-        console.log('Chegou aqui')
+    public validarLogin(email: 'string', password: 'string'): any {
+        console.log(email, password)
+        let headers: HttpHeaders = new HttpHeaders()
+        headers.append('Content-Type', 'application/json')
+        return this.http.post(
+            `${URL_API}users/login`,
+            { email, password },
+            { headers }
+        )
+        .pipe( map( (resposta: any) => { return resposta.id })/*, retry(10)*/ )
     }
 
 }
