@@ -10,6 +10,8 @@ import { Autenticacao } from '../autenticacao.service';
 })
 export class LoginComponent implements OnInit {
 
+  public request = undefined
+
   public formularioLogin: FormGroup = new FormGroup({
     'email': new FormControl(null),
     'senha': new FormControl(null),
@@ -21,8 +23,10 @@ export class LoginComponent implements OnInit {
 
   public validarLogin(): void {
     this.autenticacao.validarLogin(this.formularioLogin.value.email, this.formularioLogin.value.senha)
-      .subscribe((resp: any) => {
-        this.routes.navigate(['/folder/home/home'])
+      .then((resp: any) => {
+        console.log(resp)
+        this.request = resp.data
+        // this.routes.navigate(['/folder/home/home'])
       })
   }
 
