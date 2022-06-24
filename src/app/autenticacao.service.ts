@@ -5,7 +5,7 @@ import { URL_API } from 'src/app.api'
 import { retry, map } from 'rxjs/operators'
 
 @Injectable()
-export class RestauranteService {
+export class Autenticacao {
     
     constructor(private http: HttpClient) {
     }
@@ -15,7 +15,7 @@ export class RestauranteService {
     }
 
     public validarLogin(): void {
-        
+        console.log('Chegou aqui')
     }
 
 }
