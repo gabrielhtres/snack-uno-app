@@ -4,6 +4,7 @@ ion-content, ion-list-header {
 
 ion-list, ion-item {
     padding: 0px;
+    --background: rgba(var(--ion-color-nav-rgb), 0.1);
 }
 
 a {
