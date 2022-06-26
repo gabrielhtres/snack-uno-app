@@ -17,10 +17,9 @@ import { ProdutoPedido } from 'src/shared/produto-pedido.model';
 })
 export class ProdutoComponent implements OnInit, OnDestroy {
 
-  @Input() public cesta: Cesta
-
   public produto: Produto
   public id: number
+  public adicionarCesta: boolean = true
   
   public iconeEntrega: string = 'caret-down'
   public iconePagamento: string = 'caret-down'
@@ -68,9 +67,10 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     ) { }
 
   public adicionarACesta() {
-    let produtoPedido: ProdutoPedido = new ProdutoPedido(this.produto, 1)
-    this.cestaService.adicionarProduto(produtoPedido)
-    console.log(this.cestaService)
+    this.adicionarCesta = false
+    // let produtoPedido: ProdutoPedido = new ProdutoPedido(this.produto, 1)
+    // this.cestaService.adicionarProduto(produtoPedido)
+    // console.log(this.cestaService)
   }
 
   ngOnInit() {

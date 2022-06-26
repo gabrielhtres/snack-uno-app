@@ -66,12 +66,22 @@
           </a>
         </ion-label>
       </ion-list>
-      <div class="botao-fc ms-auto me-auto">
-        <ion-button  class="fs-6 m-0" size="large" color="success" strong="false" (click)="adicionarACesta(produto.id)">
+      <div class="botao-fc ms-auto me-auto" *ngIf="adicionarCesta == true">
+        <ion-button  class="fs-6 m-0" size="large" color="success" strong="false" (click)="adicionarACesta()">
           Adicionar à cesta
         </ion-button>
-        <ion-input placeholder="Quantidade" type="number" min="1" [(ngModel)]="quantidadeProduto">
-        </ion-input>
+      </div>
+      <div class="mt-3" *ngIf="adicionarCesta == false">
+        <form class="justify-content-center">
+          <ion-input type="number" class="input-produto mt-2" placeholder="Quantidade"></ion-input>
+          <ion-select class="mt-2">
+            <ion-select-option class="mt-5">Opção 1</ion-select-option>
+            <ion-select-option class="mt-5">Opção 2</ion-select-option>
+          </ion-select>
+          <ion-button class="fs-6 m-0 mt-2 botao-fc" size="large" color="success" strong="false" (click)="adicionarACesta()">
+            Adicionar à cesta
+          </ion-button>
+        </form>
       </div>
     </div>
   </div>
