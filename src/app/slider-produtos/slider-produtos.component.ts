@@ -31,7 +31,7 @@ export class SliderProdutosComponent implements OnInit {
 
   public indexArray(id: number) {
     for(let i=0;i<this.restaurantes.length;i++) {
-      if(this.restaurantes[i].id === id) {
+      if(this.restaurantes[i].id_restaurant === id) {
         return i
       }
     }
@@ -48,18 +48,19 @@ export class SliderProdutosComponent implements OnInit {
   }
 
   ngOnInit() {
-    // SwiperCore.use([Pagination]);
-    // this.restauranteService.getAllRestaurantes()
-    //   .subscribe((restaurantes: Restaurante[]) => {
-    //     this.restaurantes = restaurantes
-    //     for(let i=0; i<this.restaurantes.length; i++) {
-    //       this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id)
-    //         .subscribe((produtos: Produto[]) => {
-    //           let produtosAlterados = this.substituirRestauranteProdutos(produtos)
-    //           this.produtosSlider.push(produtosAlterados)      
-    //       })
-    //     }
-    //   })
+    SwiperCore.use([Pagination]);
+    this.restauranteService.getAllRestaurantes()
+      .subscribe((restaurantes: Restaurante[]) => {
+        console.log(restaurantes)
+        this.restaurantes = restaurantes
+        for(let i=0; i<this.restaurantes.length; i++) {
+          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id_restaurant)
+            .subscribe((produtos: Produto[]) => {
+              let produtosAlterados = this.substituirRestauranteProdutos(produtos)
+              this.produtosSlider.push(produtosAlterados)      
+          })
+        }
+      })
     this.produtoService.getProdutoPorId(1)
       .subscribe()
   }

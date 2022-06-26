@@ -1,6 +1,6 @@
 export class Restaurante {
 
-    public id: number
+    public id_restaurant: number
     public nome: string
     public formasPagamento: number[]
     public localizacao: string
