@@ -3,12 +3,30 @@
     <img src="../../assets/Logo_Forms.png">
   </div>
 
-  <h1>Cadastro</h1>
+  <div class="mt-3">
+    <h1 class="texto-cadastro">Cadastre-se para matar a sua fome!</h1>
+  </div>
 
-  <form [formGroup]="formularioLogin" (ngSubmit)="validarLogin()">
+  <form [formGroup]="formularioCadastro" (ngSubmit)="validarCadastro()">
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
-      <ion-label class="mb-1"><h1 class="fs-5">Usuário</h1></ion-label>
-      <ion-input rows="1" type="text" class="input-form" placeholder="Usuário" maxlength="100" formControlName="email"></ion-input>
+      <ion-label class="mb-1"><h1 class="fs-5">Nome Completo</h1></ion-label>
+      <ion-input rows="1" type="text" class="input-form" placeholder="Nome Completo" maxlength="100" formControlName="nome"></ion-input>
+    </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+      <ion-label class="mb-1"><h1 class="fs-5">CPF</h1></ion-label>
+      <ion-input rows="1" type="text" class="input-form" placeholder="CPF" maxlength="100" formControlName="cpf"></ion-input>
+    </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+      <ion-label class="mb-1"><h1 class="fs-5">Data de Nascimento</h1></ion-label>
+      <ion-input rows="1" type="date" class="input-form" placeholder="Data" maxlength="100" formControlName="dataNascimento"></ion-input>
+    </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+      <ion-label class="mb-1"><h1 class="fs-5">Telefone</h1></ion-label>
+      <ion-input rows="1" type="text" class="input-form" placeholder="Telefone" maxlength="100" formControlName="telefone"></ion-input>
+    </div>
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+      <ion-label class="mb-1"><h1 class="fs-5">E-mail</h1></ion-label>
+      <ion-input rows="1" type="email" class="input-form" placeholder="E-mail" maxlength="100" formControlName="email"></ion-input>
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Senha</h1></ion-label>
@@ -16,16 +34,10 @@
     </div>
 
     <div class="botao-login mt-5">
-      <ion-button expand="block"class="fs-6 m-0 mb-4" size="large" strong="false" type="submit">
-        Entrar
+      <ion-button expand="block"class="fs-6 m-0 mb-4" color="success" size="large" strong="false" type="submit">
+        Cadastrar-se
       </ion-button>
     </div>
   </form>
-
-  <div class="botao-login mt-5">
-    <ion-button expand="block" [routerLink]="['/folder/home/home']" class="fs-6 m-0 mb-4" size="large" strong="false">
-      Entrar
-    </ion-button>
-  </div>  
 
 </ion-content>
