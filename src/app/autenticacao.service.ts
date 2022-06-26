@@ -32,7 +32,7 @@ export class Autenticacao {
             { email, password },
             { headers }
         )
-        .pipe( map( (resposta: any) => { return resposta }), /*retry(10)*/ )
+        .pipe( map( (resposta: any) => { return resposta })/*retry(10)*/ )
     }
 
 }

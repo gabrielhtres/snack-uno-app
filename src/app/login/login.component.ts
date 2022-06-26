@@ -11,6 +11,7 @@ import { Autenticacao } from '../autenticacao.service';
 export class LoginComponent implements OnInit {
 
   public request = undefined
+  public mensagemErroLogin: boolean = false
 
   public formularioLogin: FormGroup = new FormGroup({
     'email': new FormControl(null),
@@ -33,6 +34,10 @@ export class LoginComponent implements OnInit {
       .subscribe((resp: any) => {
         console.log(resp)
         this.routes.navigate(['/folder/home/home'])
+      },
+      (erro: any) => {
+        this.mensagemErroLogin = true
+        console.log(erro)
       })
   }
 
