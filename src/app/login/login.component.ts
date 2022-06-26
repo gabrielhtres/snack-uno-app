@@ -23,13 +23,16 @@ export class LoginComponent implements OnInit {
 
   public validarLogin(): void {
     this.autenticacao.validarLogin(this.formularioLogin.value.email, this.formularioLogin.value.senha)
-      .then((resp: any) => {
+      // .then((resp: any) => {
+      //   console.log(resp)
+      //   this.routes.navigate(['/folder/home/home'])
+      // })
+      // .catch((erro: Error) => {
+      //   this.request = erro.message
+      // })
+      .subscribe((resp: any) => {
         console.log(resp)
-        this.request = resp.data
-        // this.routes.navigate(['/folder/home/home'])
-      })
-      .catch((erro: Error) => {
-        this.request = erro.message
+        this.routes.navigate(['/folder/home/home'])
       })
   }
 

@@ -5,14 +5,20 @@
 
   <h1>Cadastro</h1>
 
-  <form>
+  <form [formGroup]="formularioLogin" (ngSubmit)="validarLogin()">
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Usuário</h1></ion-label>
-      <ion-input rows="1" type="text" class="input-form" placeholder="Usuário" maxlength="100"></ion-input>
+      <ion-input rows="1" type="text" class="input-form" placeholder="Usuário" maxlength="100" formControlName="email"></ion-input>
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Senha</h1></ion-label>
-      <ion-input rows="1" type="password" class="input-form" placeholder="Senha" maxlength="100"></ion-input>
+      <ion-input rows="1" type="password" class="input-form" placeholder="Senha" maxlength="100" formControlName="senha"></ion-input>
+    </div>
+
+    <div class="botao-login mt-5">
+      <ion-button expand="block"class="fs-6 m-0 mb-4" size="large" strong="false" type="submit">
+        Entrar
+      </ion-button>
     </div>
   </form>
 
