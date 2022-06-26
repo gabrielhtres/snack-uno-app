@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
         this.request = resp.data
         // this.routes.navigate(['/folder/home/home'])
       })
+      .catch((erro: Error) => {
+        this.request = erro.message
+      })
   }
 
 }
