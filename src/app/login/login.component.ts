@@ -24,15 +24,15 @@ export class LoginComponent implements OnInit {
 
   public validarLogin(): void {
     this.autenticacao.validarLogin(this.formularioLogin.value.email, this.formularioLogin.value.senha)
-      // .then((resp: any) => {
-      //   console.log(resp)
-      //   this.routes.navigate(['/folder/home/home'])
-      // })
-      // .catch((erro: Error) => {
-      //   this.request = erro.message
-      // })
       .subscribe((resp: any) => {
-        this.routes.navigate(['/folder/home/home'])
+        this.mensagemErroLogin = false
+        if(resp.length === 0) {
+          this.mensagemErroLogin = true
+        } else {
+          this.autenticacao.usuarioAtivo = resp[0]
+          this.mensagemErroLogin = true
+          this.routes.navigate(['/folder/home/home'])
+        }
       },
       (erro: any) => {
         this.mensagemErroLogin = true

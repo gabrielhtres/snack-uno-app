@@ -18,8 +18,8 @@ export class Autenticacao {
 
     }
 
-    public validarLogin(email: 'string', password: 'string'): any {
-        console.log(email, password)
+    public validarLogin(email: 'string', senha: 'string'): any {
+        console.log(email, senha)
         // let options = {
         //     url: `${URL_API}users/login`,
         //     headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@ export class Autenticacao {
         headers.append('Content-Type', 'application/json')
 
         return this.http.get(
-            `${URL_API}usuarios?email=${email}`,)
+            `${URL_API}usuarios?email=${email}&senha=${senha}`,)
             .pipe( map( (resposta: any) => {
                 this.usuarioAtivo = resposta[0]
                 return resposta

@@ -34,6 +34,7 @@ export class MinhaCestaComponent implements OnInit {
 
   public removerItem(idProduto: number): void {
     this.produtosCesta.splice(this.indexArray(idProduto), 1)
+    this.cestaService.cesta.quantidadeTotal -= 1
   }
 
   ngOnInit() {
