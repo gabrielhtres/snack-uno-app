@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
     { title: 'Meus Cartões', url: '/folder/meus-cartoes/meus-cartoes', icon: 'card' },
     { title: 'Meus Locais', url: '/folder/meus-locais/meus-locais', icon: 'location' },
     { title: 'Ajuda', url: '/folder/ajuda/ajuda', icon: 'help-circle' },
+    { title: 'Sair', url: '/folder/login/login', icon: 'log-out' },
   ];
 
   constructor(private cestaService: CestaService) {}

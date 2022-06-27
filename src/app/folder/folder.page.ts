@@ -17,6 +17,7 @@ export class FolderPage implements OnInit {
     { title: 'Favoritos', url: '/folder/meus-favoritos/meus-favoritos', icon: 'heart' },
     { title: 'Cartões', url: '/folder/meus-cartoes/meus-cartoes', icon: 'card' },
     { title: 'Ajuda', url: '/folder/ajuda/ajuda', icon: 'help-circle' },
+    { title: 'Sair', url: '/folder/login/login', icon: 'log-out' }
   ];
 
   constructor(
