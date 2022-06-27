@@ -18,14 +18,26 @@ export class MinhaCestaComponent implements OnInit {
     private cestaService: CestaService
     ) { }
 
+  public indexArray(id: number) {
+    for(let i=0;i<this.produtosCesta.length;i++) {
+      if(this.produtosCesta[i].produto.id === id) {
+        return i
+      }
+    }
+    return undefined
+  }
+
   public finalizarCompra(): void {
     console.log('Compra finalizada')
     this.cestaService.limparCesta()
   }
 
+  public removerItem(idProduto: number): void {
+    this.produtosCesta.splice(this.indexArray(idProduto), 1)
+  }
+
   ngOnInit() {
     this.produtosCesta = this.cestaService.cesta.produtos
-    
     console.log(this.produtosCesta)
   }
 

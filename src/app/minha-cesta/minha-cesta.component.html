@@ -21,7 +21,7 @@
           <p>Quantidade: {{ produto.quantidade }}</p>
         </ion-label>
         <p class="text-success fs-6 fw-bold me-4 mt-3">{{ produto.produto.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</p>
-        <ion-icon slot="end" name="trash" color="danger"></ion-icon>
+        <ion-icon slot="end" name="trash" color="danger" (click)="removerItem(produto.produto.id)"></ion-icon>
       </ion-item>
       <div class="botao-fc pt-5">
         <ion-button [routerLink]="['/../../../folder/pagamento/pagamento']" (click)="finalizarCompra()" class="fs-6 m-0 mb-4" size="large" color="success" strong="false">

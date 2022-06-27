@@ -1,6 +1,6 @@
 export class Produto {
 
-    public id_product: number
+    public id: number
     public img: 'string'
     public restaurante: 'string'
     public produto: 'string'
