@@ -34,7 +34,7 @@ export class Autenticacao {
             `${URL_API}usuarios?email=${email}&senha=${senha}`,)
             .pipe( map( (resposta: any) => {
                 this.usuarioAtivo = resposta[0]
-                console.log(this.usuarioAtivo)
+                // console.log(this.usuarioAtivo)
                 return resposta
             })/*retry(10)*/ )
     }
