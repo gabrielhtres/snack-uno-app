@@ -1,0 +1,25 @@
+ion-item {
+    margin-left: 0px;
+    // border: 1px solid red;
+}
+
+ion-content, ion-list-header {
+    --background: rgba(var(--ion-color-nav-rgb), 0.1);
+    text-align: center;
+}
+
+h1, h2 {
+    color: var(--ion-color-nav);
+}
+
+ion-input {
+    --background: #fff;
+    width: 90%;
+    text-align: start;
+    --padding-start: 5%;
+}
+
+ion-icon {
+    position: fixed;
+    right: 10%;
+}
