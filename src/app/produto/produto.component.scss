@@ -7,6 +7,19 @@ ion-list, ion-item {
     // border: 1px solid red;
 }
 
+ion-select {
+    /* Applies to the value and placeholder color */
+    color: var(--ion-color-nav);
+
+    /* Set a different placeholder color */
+    --placeholder-color: var(--ion-color-nav);
+    
+    /* Set full opacity on the placeholder */
+    --placeholder-opacity: 1;
+
+    background-color: #fff;
+}
+
 .area-add-cesta form  {
     width: 100%;
     border: 1px solid red;

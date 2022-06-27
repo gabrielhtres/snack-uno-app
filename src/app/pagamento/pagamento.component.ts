@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Pagamento } from 'src/shared/pagamento.model';
 import { AlertsPagamento } from 'src/shared/pagamentos.alert';
+import { PedidoService } from '../pedido.service';
 
 @Component({
   selector: 'app-pagamento',
@@ -31,7 +32,7 @@ export class PagamentoComponent implements OnInit {
     'observacoes': new FormControl(null)
   })
 
-  constructor(private alertsPagamento: AlertsPagamento) { }
+  constructor(private alertsPagamento: AlertsPagamento, private pedidoService: PedidoService) { }
 
   public async abrirAlertSelecao(input: string) {
     if (input === 'pagamento') {
@@ -49,6 +50,7 @@ export class PagamentoComponent implements OnInit {
 
   public validarPagamento(): void {
     console.log('Pagamento validado')
+
   }
   
   ngOnInit() {}

@@ -9,7 +9,8 @@ export class Usuario {
         public email: string,
         public celular: string,
         public cpf: string,
-        public dataNascimento: string
+        public dataNascimento: string,
+        public telefone: string
     ) {
 
     }

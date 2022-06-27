@@ -16,7 +16,7 @@ import { Autenticacao } from './autenticacao.service';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, HttpClientModule ,IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Autenticacao ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Autenticacao, CestaService ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,6 +4,7 @@ export class ProdutoPedido {
 
     constructor(
         public produto: Produto,
+        public sabor: string,
         public quantidade: number
     ) {}
     

@@ -8,6 +8,7 @@ import { RestauranteService } from '../restaurante.service';
 import { Cesta } from 'src/shared/cesta.model';
 import { CestaService } from '../cesta.service';
 import { ProdutoPedido } from 'src/shared/produto-pedido.model';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-produto',
@@ -16,6 +17,11 @@ import { ProdutoPedido } from 'src/shared/produto-pedido.model';
   providers: [ AlertQuantidade, ProdutosService, RestauranteService ]
 })
 export class ProdutoComponent implements OnInit, OnDestroy {
+
+  public formularioProduto: FormGroup = new FormGroup({
+    'saborForm': new FormControl(null),
+    'quantidadeForm': new FormControl(null)
+  })
 
   public produto: Produto
   public id: number
@@ -66,11 +72,13 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     private cestaService: CestaService
     ) { }
 
-  public adicionarACesta() {
+  public abrirAdicionar(): void {
     this.adicionarCesta = false
-    // let produtoPedido: ProdutoPedido = new ProdutoPedido(this.produto, 1)
-    // this.cestaService.adicionarProduto(produtoPedido)
-    // console.log(this.cestaService)
+  }
+
+  public adicionarACesta() {
+    let produtoPedido: ProdutoPedido = new ProdutoPedido(this.produto, this.formularioProduto.value.saborForm, this.formularioProduto.value.quantidadeForm)
+    this.cestaService.adicionarProduto(produtoPedido)
   }
 
   ngOnInit() {
@@ -82,9 +90,10 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     this.produtoService.getProdutoPorId(this.id)
       .subscribe((dado: any) => {
         console.log(dado)
-        this.produto = dado.message[0]
-        this.restauranteService.getRestaurantePorId(dado.message[0].id_restaurant)
-          .subscribe((restaurante: any) => { this.produto.restaurante = restaurante.message[0].name })
+        this.produto = dado[0]
+        console.log(this.produto.restaurante)
+        this.restauranteService.getRestaurantePorId(this.produto.restaurante)
+          .subscribe((restaurante: any) => { this.produto.restaurante = (restaurante[0].nome) })
       })
 
   }

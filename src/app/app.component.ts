@@ -5,7 +5,6 @@ import { CestaService } from './cesta.service';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  providers: [ CestaService ]
 })
 export class AppComponent implements OnInit {
 

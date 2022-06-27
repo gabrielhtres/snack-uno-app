@@ -12,18 +12,18 @@ export class ProdutosService {
     }
 
     public getProduto(): any {
-        return this.http.get(`${URL_API}products`)
+        return this.http.get(`${URL_API}produtos`)
             .subscribe((dado: any) => { return dado })
     
     }
 
     public getProdutoPorId(id: any): any {
-        return this.http.get(`${URL_API}products?id_product=${id}`)
+        return this.http.get(`${URL_API}produtos?id=${id}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 
     public getProdutosPorRestaurante(idRestaurante: any) {
-        return this.http.get(`${URL_API}products?id_restaurant=${idRestaurante}`)
+        return this.http.get(`${URL_API}produtos?restaurante=${idRestaurante}`)
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 }

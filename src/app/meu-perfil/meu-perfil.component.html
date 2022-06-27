@@ -54,14 +54,14 @@
       <ion-icon slot="start" name="call" color="nav"></ion-icon>
       <ion-label>
         <h2>Telefone</h2>
-        <p>{{ usuario.celular }}</p>
+        <p>{{ usuario.telefone }}</p>
       </ion-label>
-      <ion-icon *ngIf="listaEditarCelular === false" slot="end" name="pencil" (click)="abreEditar('celular')"></ion-icon>
+      <ion-icon *ngIf="listaEditarTelefone === false" slot="end" name="pencil" (click)="abreEditar('telefone')"></ion-icon>
     </ion-item>
-    <ion-list *ngIf="listaEditarCelular === true">
+    <ion-list *ngIf="listaEditarTelefone === true">
       <ion-item lines="full">
         <ion-label position="stacked">Celular:</ion-label>
-        <ion-input [placeholder]="usuario.celular" type="tel" [(ngModel)]="valorInputCelular"></ion-input>
+        <ion-input [placeholder]="usuario.telefone" type="tel" [(ngModel)]="valorInputTelefone"></ion-input>
         <ion-icon name="save" slot="end" (click)="editaValor('celular')"></ion-icon>
       </ion-item>
     </ion-list>
@@ -80,8 +80,23 @@
         <ion-input  [placeholder]="usuario.nome" type="date" [(ngModel)]="valorInputNascimento"></ion-input>
         <ion-icon name="save" slot="end" (click)="editaValor('dataNascimento')"></ion-icon>
       </ion-item>
-    </ion-list>
 
+      <ion-item lines="full">
+        <ion-icon slot="start" name="calendar" color="nav"></ion-icon>
+        <ion-label>
+          <h2>telefone</h2>
+          <p>{{ usuario.telefone }}</p>
+        </ion-label>
+        <ion-icon *ngIf="listaEditarTelefone === false" slot="end" name="pencil" (click)="abreEditar('nascimento')"></ion-icon>
+      </ion-item>
+      <ion-list *ngIf="listaEditarTelefone === true">
+        <ion-item lines="full">
+          <ion-label position="stacked">Telefone:</ion-label>
+          <ion-input  [placeholder]="usuario.nome" type="date" [(ngModel)]="valorInputTelefone"></ion-input>
+          <ion-icon name="save" slot="end" (click)="editaValor('dataNascimento')"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-list>
   </ion-list>
   
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Usuario } from 'src/shared/usuario.model';
+import { Autenticacao } from '../autenticacao.service';
 
 @Component({
   selector: 'app-meu-perfil',
@@ -10,18 +11,20 @@ export class MeuPerfilComponent implements OnInit, OnDestroy {
 
   public listaEditar: boolean = false
 
-  public usuario: Usuario = new Usuario('Gabriel', 'gabrielhtres@gmail.com', '(49) 98504-7645', '111.222.333-44', '19/09/2000')
+  public usuario: Usuario = new Usuario('', '', '', '', '', '')
   
   public listaEditarNome: boolean = false
   public listaEditarEmail: boolean = false
   public listaEditarCelular: boolean = false
   public listaEditarCPF: boolean = false
   public listaEditarNascimento: boolean = false
+  public listaEditarTelefone: boolean = false
   
   public valorInputNome: string
   public valorInputEmail: string
   public valorInputCelular: string
   public valorInputNascimento: string
+  public valorInputTelefone: string
 
   public dadosPerfil = [
     { titulo: 'Nome', dado: this.usuario.nome, icon: 'person' },
@@ -77,15 +80,20 @@ export class MeuPerfilComponent implements OnInit, OnDestroy {
         console.log(this.usuario)
         console.log(this.valorInputNascimento)
         break
+      case 'telefone':
+        this.usuario[campo] = this.valorInputTelefone
+        this.listaEditarTelefone = false
+        console.log(this.usuario)
+        console.log(this.valorInputTelefone)
       default:
         break
     }
   }
 
-  constructor() { }
+  constructor(private autenticacao: Autenticacao) { }
 
   ngOnInit() {
-
+    this.usuario = this.autenticacao.usuarioAtivo
   }
 
   ngOnDestroy() {

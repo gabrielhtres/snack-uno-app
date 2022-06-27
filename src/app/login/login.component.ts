@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
       //   this.request = erro.message
       // })
       .subscribe((resp: any) => {
-        console.log(resp)
         this.routes.navigate(['/folder/home/home'])
       },
       (erro: any) => {

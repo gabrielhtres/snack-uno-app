@@ -4,9 +4,12 @@ import { Observable } from 'rxjs'
 import { URL_API } from 'src/app.api'
 import { retry, map } from 'rxjs/operators'
 import { Http } from '@capacitor-community/http';
+import { Usuario } from 'src/shared/usuario.model'
 
 @Injectable()
 export class Autenticacao {
+
+    public usuarioAtivo: Usuario
     
     constructor(private http: HttpClient) {
     }
@@ -27,12 +30,12 @@ export class Autenticacao {
         let headers: HttpHeaders = new HttpHeaders()
         headers.append('Content-Type', 'application/json')
 
-        return this.http.post(
-            `${URL_API}users/login`,
-            { email, password },
-            { headers }
-        )
-        .pipe( map( (resposta: any) => { return resposta })/*retry(10)*/ )
+        return this.http.get(
+            `${URL_API}usuarios?email=${email}`,)
+            .pipe( map( (resposta: any) => {
+                this.usuarioAtivo = resposta[0]
+                return resposta
+            })/*retry(10)*/ )
     }
 
 }
