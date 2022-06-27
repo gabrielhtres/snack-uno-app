@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
   public appPages = [
     { title: 'Home', url: '/folder/home/home', icon: 'home' },
-    { title: 'Meus Favoritos', url: '/folder/meus-favoritos/meus-favoritos', icon: 'heart' },
+    // { title: 'Meus Favoritos', url: '/folder/meus-favoritos/meus-favoritos', icon: 'heart' },
     { title: 'Meu Perfil', url: '/folder/meu-perfil/meu-perfil', icon: 'person' },
     { title: 'Minha Cesta', url: '/folder/minha-cesta/minha-cesta', icon: 'bag'},
     { title: 'Meus Pedidos', url: '/folder/meus-pedidos/meus-pedidos', icon: 'receipt' },
