@@ -26,7 +26,7 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    if(this.folder !== 'login') {
+    if(this.folder !== 'login' && this.folder !== 'cadastro') {
       this.logado = true
     }
 
