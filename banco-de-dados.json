@@ -127,5 +127,13 @@
       "senha": "teste2",
       "email": "teste2@teste2.com"
     }
+  ],
+  "locais": [
+    {
+        "id": 1,
+        "nome": "Local 1",
+        "local": "R-203",
+        "idUsuario": 1
+    }
   ]
 }

@@ -39,7 +39,7 @@ export class PagamentoComponent implements OnInit {
       this.pagamento.formaPagamento = await this.alertsPagamento.presentAlertFormaPagamento()
       this.formularioPagamento.get('formaPagamento').setValue(this.valoresInputs[this.pagamento.formaPagamento])
       this.tipoPagamentoTemplate = this.valoresInputs[this.pagamento.formaPagamento]
-      console.log(this.formularioPagamento.get('formaEntrega'))
+      // console.log(this.formularioPagamento.get('formaEntrega'))
     } else if (input === 'entrega') {
       this.pagamento.formaEntrega = await this.alertsPagamento.presentAlertFormaEntrega()
       this.formularioPagamento.get('formaEntrega').setValue(this.valoresInputs[this.pagamento.formaEntrega])

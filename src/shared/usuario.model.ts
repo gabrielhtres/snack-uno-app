@@ -1,5 +1,6 @@
 export class Usuario {
 
+    public id: number
     public token: string
     public usuario: string
     public senha: string

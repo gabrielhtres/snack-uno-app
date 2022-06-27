@@ -4,6 +4,7 @@ import { RestauranteService } from '../restaurante.service';
 
 import { Pedido } from 'src/shared/pedido.model';
 import { Restaurante } from 'src/shared/restaurante.model';
+import { Autenticacao } from '../autenticacao.service';
 
 @Component({
   selector: 'app-meus-pedidos',
@@ -24,7 +25,8 @@ export class MeusPedidosComponent implements OnInit {
 
   constructor(
     private pedidoService: PedidoService,
-    private restauranteService: RestauranteService
+    private restauranteService: RestauranteService,
+    private autenticacao: Autenticacao
   ) { }
 
   async ngOnInit() {
@@ -32,7 +34,7 @@ export class MeusPedidosComponent implements OnInit {
     this.restauranteService.getAllRestaurantes()
       .subscribe((restaurantes: any) => { this.restaurantes = restaurantes })
 
-    this.pedidoService.getPedidosUsuario(1)
+    this.pedidoService.getPedidosUsuario(this.autenticacao.usuarioAtivo.id)
       .subscribe((pedidos: any) => { this.pedidos = pedidos })
   }
 

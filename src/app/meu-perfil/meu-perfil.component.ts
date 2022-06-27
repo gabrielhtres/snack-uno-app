@@ -59,32 +59,32 @@ export class MeuPerfilComponent implements OnInit, OnDestroy {
       case 'nome':
         this.usuario[campo] = this.valorInputNome
         this.listaEditarNome = false
-        console.log(this.usuario)
-        console.log(this.valorInputNome)
+        // console.log(this.usuario)
+        // console.log(this.valorInputNome)
         break
       case 'email':
         this.usuario[campo] = this.valorInputEmail
         this.listaEditarEmail = false
-        console.log(this.usuario)
-        console.log(this.valorInputEmail)
+        // console.log(this.usuario)
+        // console.log(this.valorInputEmail)
         break
       case 'celular':
         this.usuario[campo] = this.valorInputCelular
         this.listaEditarCelular= false
-        console.log(this.usuario)
-        console.log(this.valorInputCelular)
+        // console.log(this.usuario)
+        // console.log(this.valorInputCelular)
         break
       case 'dataNascimento':
         this.usuario[campo] = this.valorInputNascimento
         this.listaEditarNascimento = false
-        console.log(this.usuario)
-        console.log(this.valorInputNascimento)
+        // console.log(this.usuario)
+        // console.log(this.valorInputNascimento)
         break
       case 'telefone':
         this.usuario[campo] = this.valorInputTelefone
         this.listaEditarTelefone = false
-        console.log(this.usuario)
-        console.log(this.valorInputTelefone)
+        // console.log(this.usuario)
+        // console.log(this.valorInputTelefone)
       default:
         break
     }

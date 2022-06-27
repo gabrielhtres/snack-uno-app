@@ -9,7 +9,7 @@ import { Usuario } from 'src/shared/usuario.model'
 @Injectable()
 export class Autenticacao {
 
-    public usuarioAtivo: Usuario
+    public usuarioAtivo: any
     
     constructor(private http: HttpClient) {
     }
@@ -19,7 +19,7 @@ export class Autenticacao {
     }
 
     public validarLogin(email: 'string', senha: 'string'): any {
-        console.log(email, senha)
+        // console.log(email, senha)
         // let options = {
         //     url: `${URL_API}users/login`,
         //     headers: { 'Content-Type': 'application/json' },
@@ -34,6 +34,7 @@ export class Autenticacao {
             `${URL_API}usuarios?email=${email}&senha=${senha}`,)
             .pipe( map( (resposta: any) => {
                 this.usuarioAtivo = resposta[0]
+                console.log(this.usuarioAtivo)
                 return resposta
             })/*retry(10)*/ )
     }

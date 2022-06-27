@@ -39,7 +39,7 @@ export class MinhaCestaComponent implements OnInit {
 
   ngOnInit() {
     this.produtosCesta = this.cestaService.cesta.produtos
-    console.log(this.produtosCesta)
+    // console.log(this.produtosCesta)
   }
 
 }

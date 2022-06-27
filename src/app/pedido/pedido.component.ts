@@ -31,12 +31,12 @@ export class PedidoComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(
       (parametros: any) => {
-        console.log(parametros.id)
+        // console.log(parametros.id)
         this.pedidoService.getPedidoId(parametros.id)
         .subscribe((pedido: any) => { this.pedido = pedido[0] })
       })
 
-      console.log(this.pedido)
+      // console.log(this.pedido)
 
     // this.pedidoService.getPedidoId(this.idPedido)
     //   .subscribe((pedido: any) => { this.pedido = pedido[0] })

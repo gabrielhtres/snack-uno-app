@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       },
       (erro: any) => {
         this.mensagemErroLogin = true
-        console.log(erro)
+        // console.log(erro)
       })
   }
 

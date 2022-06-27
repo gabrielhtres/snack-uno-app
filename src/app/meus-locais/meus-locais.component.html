@@ -10,11 +10,11 @@
     </ion-list-header>
   </ion-list>
 
-  <ion-item lines="full">
+  <ion-item lines="full" *ngFor="let l of locais">
     <ion-icon slot="start" name="location" color="nav"></ion-icon>
     <ion-label>
-      <h2>Local 1</h2>
-      <p>Rua Tchurusbango Tchurusbago</p>
+      <h2>{{ l.nome }}</h2>
+      <p>{{ l.local }}</p>
     </ion-label>
     <ion-icon slot="end" name="pencil"></ion-icon>
   </ion-item>
