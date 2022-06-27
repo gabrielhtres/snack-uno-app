@@ -43,3 +43,19 @@ ion-button {
 h1.texto-cadastro {
     text-align: center;
 }
+
+.ng-touched .ng-valid {
+    border: 1px solid green;
+}
+
+.ng-touched .ng-invalid {
+    border: 1px solid red;
+}
+
+small.valid {
+    color: green;
+}
+
+small.invalid {
+    color: red;
+}

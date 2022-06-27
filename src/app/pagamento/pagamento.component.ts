@@ -8,7 +8,7 @@ import { PedidoService } from '../pedido.service';
   selector: 'app-pagamento',
   templateUrl: './pagamento.component.html',
   styleUrls: ['./pagamento.component.scss'],
-  providers: [ AlertsPagamento ]
+  providers: [ AlertsPagamento, PedidoService ]
 })
 export class PagamentoComponent implements OnInit {
 

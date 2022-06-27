@@ -19,7 +19,7 @@
         placeholder="Selecione uma forma de pagamento"
       >
       <small *ngIf="formularioPagamento.get('formaPagamento').valid && formularioPagamento.get('formaPagamento').touched" class="valid">Ok</small>
-    <small *ngIf="!formularioPagamento.get('formaPagamento').valid && formularioPagamento.get('formaPagamento').touched" class="invalid">Forma de Pagamento Inválida</small>
+      <small *ngIf="!formularioPagamento.get('formaPagamento').valid && formularioPagamento.get('formaPagamento').touched" class="invalid">Forma de Pagamento Inválida</small>
     </div>
 
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-2 mb-3">
