@@ -24,6 +24,7 @@ import { CadastroComponent } from '../cadastro/cadastro.component';
 import { PagamentoComponent } from '../pagamento/pagamento.component';
 import { PedidoComponent } from '../pedido/pedido.component';
 import { LoginComponent } from '../login/login.component';
+import { PesquisaComponent } from '../home/pesquisa/pesquisa.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { LoginComponent } from '../login/login.component';
     ProdutoComponent,
     CadastroComponent,
     PagamentoComponent,
-    PedidoComponent
+    PedidoComponent,
+    PesquisaComponent
   ]
 })
 export class FolderPageModule {}

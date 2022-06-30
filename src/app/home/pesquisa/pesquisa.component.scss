@@ -1,0 +1,35 @@
+ion-content {
+    --background: rgba(var(--ion-color-nav-rgb), 0.1);
+}
+
+ion-input {
+    width: 90%;
+    background-color: #fff;
+    --padding-start: 5%;
+}
+
+.input-pesquisa {
+    width: 100%;
+}
+
+.input-pesquisa p {
+    width: 90%;
+    font-size: 1em;
+    text-align: center;
+}
+
+// .form-range {
+//     width: 80%;
+// }
+
+// .form-range::-webkit-slider-thumb {
+//     background: var(--ion-color-nav);
+// }
+  
+// .form-range::-moz-range-thumb {
+//     background: var(--ion-color-nav);
+// }
+  
+// .form-range::-ms-thumb {
+//     background: var(--ion-color-nav);
+// }

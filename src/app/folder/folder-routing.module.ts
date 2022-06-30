@@ -4,6 +4,7 @@ import { AjudaComponent } from '../ajuda/ajuda.component';
 import { CadastroComponent } from '../cadastro/cadastro.component';
 import { ConfiguracoesComponent } from '../configuracoes/configuracoes.component';
 import { HomeComponent } from '../home/home.component';
+import { PesquisaComponent } from '../home/pesquisa/pesquisa.component';
 import { LoginComponent } from '../login/login.component';
 import { MeuPerfilComponent } from '../meu-perfil/meu-perfil.component';
 import { MeusCartoesComponent } from '../meus-cartoes/meus-cartoes.component';
@@ -81,6 +82,10 @@ const routes: Routes = [
       {
         path: 'ajuda',
         component: AjudaComponent
+      },
+      {
+        path: 'pesquisa/:tipoPesquisa',
+        component: PesquisaComponent
       }
     ]
   },
