@@ -20,7 +20,7 @@ export class MinhaCestaComponent implements OnInit {
 
   public indexArray(id: number) {
     for(let i=0;i<this.produtosCesta.length;i++) {
-      if(this.produtosCesta[i].produto.id === id) {
+      if(this.produtosCesta[i].produto.id_product === id) {
         return i
       }
     }

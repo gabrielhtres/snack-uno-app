@@ -89,11 +89,10 @@ export class ProdutoComponent implements OnInit, OnDestroy {
     
     this.produtoService.getProdutoPorId(this.id)
       .subscribe((dado: any) => {
-        console.log(dado)
-        this.produto = dado[0]
-        // console.log(this.produto.restaurante)
-        this.restauranteService.getRestaurantePorId(this.produto.restaurante)
-          .subscribe((restaurante: any) => { this.produto.restaurante = restaurante[0].nome })
+        this.produto = dado.message[0]
+        console.log(this.produto.id_restaurant)
+        this.restauranteService.getRestaurantePorId(this.produto.id_restaurant)
+        .subscribe((restaurante: any) => { this.produto.id_restaurant = restaurante.message[0].name })
       })
 
   }

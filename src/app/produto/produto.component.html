@@ -7,15 +7,15 @@
       <a [routerLink]="['/folder/home/home']">
         <ion-icon name="arrow-back" size="large" color="nav"></ion-icon>
       </a>
-      <h1 class="ms-3 mt-0">{{ produto.restaurante }}</h1>
+      <h1 class="ms-3 mt-0">{{ produto.id_restaurant }}</h1>
     </ion-text>
 
-    <img [src]="produto.img" class="mt-1 img-fluid">
+    <img src="../../assets/cafe.jpg" class="mt-1 img-fluid">
     <div class="m-4">
-      <h2 class="fs-2">{{ produto.produto }}</h2>
-      <p class="fs-6 mt-2">{{ produto.descricao }}</p>
-      <p class="fs-6 mt-2"><strong>Sabores: </strong>{{ produto.sabores }}</p>
-      <p class="text-success fs-4 mt-3"><strong>{{ produto.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong></p>
+      <h2 class="fs-2">{{ produto.name }}</h2>
+      <p class="fs-6 mt-2">{{ produto.description }}</p>
+      <p class="fs-6 mt-2"><strong>Sabores: </strong>{{ produto.flavor }}</p>
+      <p class="text-success fs-4 mt-3"><strong>{{ produto.price | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong></p>
     </div>
 
     <div class="caixa me-auto ms-auto mt-4">

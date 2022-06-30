@@ -1,11 +1,12 @@
 export class Produto {
 
-    public id: number
-    public img: 'string'
-    public restaurante: 'string'
-    public produto: 'string'
-    public descricao: 'string'
-    public preco: number
+    public id_product: number
+    public image: string
+    public id_restaurant: string
+    public name: string
+    public description: string
+    public price: number
+    public flavor: string[]
 
     constructor() {}
 }

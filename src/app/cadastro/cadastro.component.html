@@ -10,9 +10,9 @@
   <form [formGroup]="formularioCadastro" (ngSubmit)="validarCadastro()">
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Nome Completo</h1></ion-label>
-      <ion-input rows="1" type="text" class="input-form" placeholder="Nome Completo" maxlength="100" formControlName="nome" [value]="formularioCadastro.value.nome"></ion-input>
-      <small *ngIf="formularioCadastro.get('nome').valid && formularioCadastro.get('nome').touched" class="valid">Ok</small>
-      <small *ngIf="!formularioCadastro.get('nome').valid && formularioCadastro.get('nome').touched" class="invalid">Nome Inválido</small>
+      <ion-input rows="1" type="text" class="input-form" placeholder="Nome Completo" maxlength="100" formControlName="name"></ion-input>
+      <small *ngIf="formularioCadastro.get('name').valid && formularioCadastro.get('name').touched" class="valid">Ok</small>
+      <small *ngIf="!formularioCadastro.get('name').valid && formularioCadastro.get('name').touched" class="invalid">Nome Inválido</small>
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">CPF</h1></ion-label>
@@ -22,15 +22,15 @@
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Data de Nascimento</h1></ion-label>
-      <ion-input rows="1" type="date" class="input-form" placeholder="Data" formControlName="dataNascimento"></ion-input>
-      <small *ngIf="formularioCadastro.get('dataNascimento').valid && formularioCadastro.get('dataNascimento').touched" class="valid">Ok</small>
-      <small *ngIf="!formularioCadastro.get('dataNascimento').valid && formularioCadastro.get('dataNascimento').touched" class="invalid">Data de Nascimento Inválida</small>
+      <ion-input rows="1" type="date" class="input-form" placeholder="Data" formControlName="data_birth"></ion-input>
+      <small *ngIf="formularioCadastro.get('data_birth').valid && formularioCadastro.get('data_birth').touched" class="valid">Ok</small>
+      <small *ngIf="!formularioCadastro.get('data_birth').valid && formularioCadastro.get('data_birth').touched" class="invalid">Data de Nascimento Inválida</small>
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Telefone</h1></ion-label>
-      <ion-input rows="1" type="tel" class="input-form" placeholder="Telefone" formControlName="telefone"></ion-input>
-      <small *ngIf="formularioCadastro.get('telefone').valid && formularioCadastro.get('telefone').touched" class="valid">Ok</small>
-      <small *ngIf="!formularioCadastro.get('telefone').valid && formularioCadastro.get('telefone').touched" class="invalid">Telefone Inválido</small>
+      <ion-input rows="1" type="tel" class="input-form" placeholder="Telefone" formControlName="telephone"></ion-input>
+      <small *ngIf="formularioCadastro.get('telephone').valid && formularioCadastro.get('telephone').touched" class="valid">Ok</small>
+      <small *ngIf="!formularioCadastro.get('telephone').valid && formularioCadastro.get('telephone').touched" class="invalid">Telefone Inválido</small>
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">E-mail</h1></ion-label>
@@ -40,9 +40,9 @@
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Senha</h1></ion-label>
-      <ion-input rows="1" type="password" class="input-form" placeholder="Senha" formControlName="senha"></ion-input>
-      <small *ngIf="formularioCadastro.get('senha').valid && formularioCadastro.get('senha').touched" class="valid">Ok</small>
-      <small *ngIf="!formularioCadastro.get('senha').valid && formularioCadastro.get('senha').touched" class="invalid">Senha Inválida</small>
+      <ion-input rows="1" type="password" class="input-form" placeholder="Senha" formControlName="password"></ion-input>
+      <small *ngIf="formularioCadastro.get('password').valid && formularioCadastro.get('password').touched" class="valid">Ok</small>
+      <small *ngIf="!formularioCadastro.get('password').valid && formularioCadastro.get('password').touched" class="invalid">Senha Inválida</small>
     </div>
 
     <div class="botao-login mt-5">

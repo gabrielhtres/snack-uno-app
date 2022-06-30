@@ -31,7 +31,7 @@ export class SliderProdutosComponent implements OnInit {
 
   public indexArray(id: number) {
     for(let i=0;i<this.restaurantes.length;i++) {
-      if(this.restaurantes[i].id === id) {
+      if(this.restaurantes[i].id_restaurant === id) {
         return i
       }
     }
@@ -41,7 +41,7 @@ export class SliderProdutosComponent implements OnInit {
   public substituirRestauranteProdutos(produtos: any): Produto[] {
     let indiceRestaurante = this.indexArray(produtos[0].restaurante)
     for(let i=0;i<produtos.length;i++) {
-      produtos[i].restaurante = this.restaurantes[indiceRestaurante].nome
+      produtos[i].restaurante = this.restaurantes[indiceRestaurante].name
     }
 
     return produtos
@@ -52,8 +52,9 @@ export class SliderProdutosComponent implements OnInit {
     this.restauranteService.getAllRestaurantes()
       .subscribe((restaurantes: Restaurante[]) => {
         this.restaurantes = restaurantes
+        console.log(restaurantes)
         for(let i=0; i<this.restaurantes.length; i++) {
-          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id)
+          this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id_restaurant)
             .subscribe((produtos: Produto[]) => {
               let produtosAlterados = this.substituirRestauranteProdutos(produtos)
               this.produtosSlider.push(produtosAlterados)      

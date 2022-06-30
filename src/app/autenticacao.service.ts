@@ -18,7 +18,7 @@ export class Autenticacao {
 
     }
 
-    public validarLogin(email: 'string', senha: 'string'): any {
+    public validarLogin(email: 'string', password: 'string'): any {
         // console.log(email, senha)
         // let options = {
         //     url: `${URL_API}users/login`,
@@ -30,13 +30,27 @@ export class Autenticacao {
         let headers: HttpHeaders = new HttpHeaders()
         headers.append('Content-Type', 'application/json')
 
-        return this.http.get(
-            `${URL_API}usuarios?email=${email}&senha=${senha}`,)
-            .pipe( map( (resposta: any) => {
-                this.usuarioAtivo = resposta[0]
-                // console.log(this.usuarioAtivo)
-                return resposta
-            })/*retry(10)*/ )
+        return this.http.post(
+            `${URL_API}users/login`,
+            { email, password },
+            { headers }
+            )
+    }
+
+    public cadastrarUsuario(usuario: Usuario): any {
+        console.log(usuario)
+        let headers: HttpHeaders = new HttpHeaders()
+        headers.append('Content-Type', 'application/json')
+        return this.http.post(
+            `${URL_API}users/signup`,
+            usuario,
+            { headers }
+        )
+        .pipe( map( (resposta: any) => {
+            this.usuarioAtivo = resposta[0]
+            // console.log(this.usuarioAtivo)
+            return resposta
+        })/*retry(10)*/ )
     }
 
 }

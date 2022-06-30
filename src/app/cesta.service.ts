@@ -20,7 +20,7 @@ export class CestaService {
     }
     
     public adicionarProduto(produtoPedido: ProdutoPedido): void {
-        produtoPedido.produto.preco = produtoPedido.produto.preco * produtoPedido.quantidade
+        produtoPedido.produto.price = produtoPedido.produto.price * produtoPedido.quantidade
         this.cesta.produtos.push(produtoPedido)
         this.cesta.quantidadeTotal += 1
     }

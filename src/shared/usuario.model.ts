@@ -3,15 +3,14 @@ export class Usuario {
     public id: number
     public token: string
     public usuario: string
-    public senha: string
 
     constructor(
-        public nome: string,
-        public email: string,
-        public celular: string,
+        public name: string,
         public cpf: string,
-        public dataNascimento: string,
-        public telefone: string
+        public data_birth: string,
+        public telephone: string,
+        public email: string,
+        public password: string
     ) {
 
     }

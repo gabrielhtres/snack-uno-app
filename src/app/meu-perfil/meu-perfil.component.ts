@@ -27,11 +27,11 @@ export class MeuPerfilComponent implements OnInit, OnDestroy {
   public valorInputTelefone: string
 
   public dadosPerfil = [
-    { titulo: 'Nome', dado: this.usuario.nome, icon: 'person' },
+    { titulo: 'Nome', dado: this.usuario.name, icon: 'person' },
     { titulo: 'E-mail', dado: this.usuario.email, icon: 'mail' },
-    { titulo: 'Celular', dado: this.usuario.celular, icon: 'call' },
+    { titulo: 'Celular', dado: this.usuario.telephone, icon: 'call' },
     { titulo: 'CPF', dado: this.usuario.cpf, icon: 'card' },
-    { titulo: 'Data de Nascimento', dado: this.usuario.dataNascimento, icon: 'calendar' }
+    { titulo: 'Data de Nascimento', dado: this.usuario.data_birth, icon: 'calendar' }
   ];
 
   public abreEditar(dadoEditar: string): void {
