@@ -2,24 +2,24 @@
   <div *ngIf="produtosSlider !== undefined">
     <swiper [pagination]="true" #swipper class="swiper" *ngFor="let produtos of produtosSlider">
       <ng-template swiperSlide class="swiper-slide" *ngFor="let p of produtos">
-        <a [routerLink]="['/folder/produto/produto', p.id]">
+        <a [routerLink]="['/folder/produto/produto', p.id_product]">
           <ion-card>
-            <img [src]="p.img" class="img-card">
+            <img [src]="p.image" class="img-card">
             <ion-card-header>
               <ion-card-subtitle class="d-flex align-items-center mb-3">
                 <img class="img-restaurante" src="http://picsum.photos/40/40">
-                <p>{{ p.restaurante }}</p>
+                <p>{{ p.id_restaurant }}</p>
               </ion-card-subtitle>
-              <ion-card-title><h3>{{ p.produto }}</h3></ion-card-title>
+              <ion-card-title><h3>{{ p.name }}</h3></ion-card-title>
             </ion-card-header>
           
             <ion-card-content>
-              <p>{{ p.descricao }}</p>
-              <p>{{ p.sabores }}</p>
+              <p>{{ p.description }}</p>
+              <p>{{ p.flavor }}</p>
             </ion-card-content>
 
             <ion-card-content class="preco mb-1">
-              <strong class="text-success fs-5">{{ p.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong>
+              <strong class="text-success fs-5">{{ p.price | currency : 'BRL' : 'R$ ' : '1.2-2' }}</strong>
             </ion-card-content>
           </ion-card>
         </a>

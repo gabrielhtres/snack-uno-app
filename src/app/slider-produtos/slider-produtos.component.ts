@@ -39,9 +39,9 @@ export class SliderProdutosComponent implements OnInit {
   }
 
   public substituirRestauranteProdutos(produtos: any): Produto[] {
-    let indiceRestaurante = this.indexArray(produtos[0].restaurante)
+    let indiceRestaurante = this.indexArray(produtos[0].id_restaurant)
     for(let i=0;i<produtos.length;i++) {
-      produtos[i].restaurante = this.restaurantes[indiceRestaurante].name
+      produtos[i].id_restaurant = this.restaurantes[indiceRestaurante].name
     }
 
     return produtos
@@ -50,13 +50,14 @@ export class SliderProdutosComponent implements OnInit {
   ngOnInit() {
     SwiperCore.use([Pagination]);
     this.restauranteService.getAllRestaurantes()
-      .subscribe((restaurantes: Restaurante[]) => {
-        this.restaurantes = restaurantes
-        console.log(restaurantes)
+      .subscribe((restaurantes: any) => {
+        this.restaurantes = restaurantes.message
+        // console.log(restaurantes.message)
         for(let i=0; i<this.restaurantes.length; i++) {
           this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id_restaurant)
-            .subscribe((produtos: Produto[]) => {
-              let produtosAlterados = this.substituirRestauranteProdutos(produtos)
+            .subscribe((produtos: any) => {
+              // console.log(produtos.message)
+              let produtosAlterados = this.substituirRestauranteProdutos(produtos.message)
               this.produtosSlider.push(produtosAlterados)      
           })
         }

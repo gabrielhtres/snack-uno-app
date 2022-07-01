@@ -10,7 +10,7 @@
       <h1 class="ms-3 mt-0">{{ produto.id_restaurant }}</h1>
     </ion-text>
 
-    <img src="../../assets/cafe.jpg" class="mt-1 img-fluid">
+    <img src="https://i.imgur.com/78ZfWGH.jpg" class="mt-1 img-fluid">
     <div class="m-4">
       <h2 class="fs-2">{{ produto.name }}</h2>
       <p class="fs-6 mt-2">{{ produto.description }}</p>
@@ -75,7 +75,7 @@
         <form class="justify-content-center" [formGroup]="formularioProduto" (ngSubmit)="adicionarACesta()">
           <ion-input type="number" class="input-produto mt-2" placeholder="Quantidade" min="1" formControlName="quantidadeForm"></ion-input>
           <ion-select class="mt-2" placeholder="Sabor" formControlName="saborForm">
-            <ion-select-option *ngFor="let op of produto.sabores">{{ op }}</ion-select-option>
+            <ion-select-option *ngFor="let op of produto.flavor">{{ op }}</ion-select-option>
           </ion-select>
           <ion-button class="fs-6 m-0 mt-2 botao-fc" size="large" color="success" strong="false" type="submit">
             Adicionar à cesta
