@@ -39,4 +39,12 @@ export class CadastroComponent implements OnInit {
       })
   }
 
+  public mudarValor(evento: any): void {
+    if(evento.target.value.length == 3) {
+      evento.target.value += '.'
+    }
+    console.log(this.formularioCadastro.value.cpf)
+    // console.log(evento.target.value += '.')
+  }
+
 }
