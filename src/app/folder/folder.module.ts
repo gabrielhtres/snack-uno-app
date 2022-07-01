@@ -25,6 +25,7 @@ import { PagamentoComponent } from '../pagamento/pagamento.component';
 import { PedidoComponent } from '../pedido/pedido.component';
 import { LoginComponent } from '../login/login.component';
 import { PesquisaComponent } from '../home/pesquisa/pesquisa.component';
+import { NgxMaskModule } from 'ngx-mask'
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { PesquisaComponent } from '../home/pesquisa/pesquisa.component';
     IonicModule,
     FolderPageRoutingModule,
     SwiperModule,
+    NgxMaskModule.forRoot(),
     ReactiveFormsModule
   ],
   declarations: [

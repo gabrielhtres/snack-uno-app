@@ -52,6 +52,10 @@ h1.texto-cadastro {
     border: 1px solid red;
 }
 
+.ng-untouched.ng-pristine.ng-invalid {
+    border: none;
+}
+
 small.valid {
     color: green;
 }

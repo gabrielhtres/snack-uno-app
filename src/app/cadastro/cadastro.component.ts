@@ -3,23 +3,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/shared/usuario.model';
 import { Autenticacao } from '../autenticacao.service';
 
+import { MaskPipe } from 'ngx-mask';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss'],
+  providers: [ MaskPipe ]
 })
 export class CadastroComponent implements OnInit {
 
   public formularioCadastro: FormGroup = new FormGroup({
-    'name': new FormControl(null, [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
-    'email': new FormControl(null, [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
-    'data_birth': new FormControl(null, [ Validators.required, Validators.minLength(1) ] ),
-    'password': new FormControl(null, [ Validators.required, Validators.minLength(8), Validators.maxLength(50) ] ),
-    'cpf': new FormControl(null, [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] ),
-    'telephone': new FormControl(null, [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] )
+    'name': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
+    'email': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
+    'data_birth': new FormControl('', [ Validators.required, Validators.minLength(1) ] ),
+    'password': new FormControl('', [ Validators.required, Validators.minLength(8), Validators.maxLength(50) ] ),
+    'cpf': new FormControl('', [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] ),
+    'telephone': new FormControl('', [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] )
   })
 
-  constructor(private autenticacao: Autenticacao) { }
+  constructor(private autenticacao: Autenticacao, private maskPipe: MaskPipe) { }
 
   ngOnInit() {}
 
@@ -38,5 +41,4 @@ export class CadastroComponent implements OnInit {
         console.log(resp)
       })
   }
-
 }
