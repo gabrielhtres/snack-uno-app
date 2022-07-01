@@ -16,7 +16,7 @@
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">CPF</h1></ion-label>
-      <ion-input rows="1" (ionChange)="mudarValor($event)" type="text" class="input-form" minLenght="11" maxLength="14" placeholder="CPF" formControlName="cpf"></ion-input>
+      <ion-input rows="1" (ionChange)="mudarValor($event, 'cpf')" type="text" class="input-form" minLenght="11" maxLength="14" placeholder="CPF" formControlName="cpf"></ion-input>
       <small *ngIf="formularioCadastro.get('cpf').valid && formularioCadastro.get('cpf').touched" class="valid">Ok</small>
       <small *ngIf="!formularioCadastro.get('cpf').valid && formularioCadastro.get('cpf').touched" class="invalid">CPF Inválido</small>
     </div>
