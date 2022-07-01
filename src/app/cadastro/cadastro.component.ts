@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/shared/usuario.model';
 import { Autenticacao } from '../autenticacao.service';
-
-import { MaskPipe } from 'ngx-mask';
+import { InputMask } from '@grapecity/wijmo.input'
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss'],
-  providers: [ MaskPipe ]
+  providers: [ InputMask ]
 })
 export class CadastroComponent implements OnInit {
 
@@ -22,7 +21,7 @@ export class CadastroComponent implements OnInit {
     'telephone': new FormControl('', [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] )
   })
 
-  constructor(private autenticacao: Autenticacao, private maskPipe: MaskPipe) { }
+  constructor(private autenticacao: Autenticacao, private inputMask: InputMask) { }
 
   ngOnInit() {}
 
@@ -40,5 +39,9 @@ export class CadastroComponent implements OnInit {
       .subscribe((resp: any) => {
         console.log(resp)
       })
+  }
+
+  public setMask(): any {
+    let input = new this.inputMask()
   }
 }
