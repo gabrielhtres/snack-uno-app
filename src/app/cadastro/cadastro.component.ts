@@ -10,6 +10,8 @@ import { Autenticacao } from '../autenticacao.service';
 })
 export class CadastroComponent implements OnInit {
 
+  public valorAnt: string = ''
+
   public formularioCadastro: FormGroup = new FormGroup({
     'name': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
     'email': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
@@ -40,10 +42,25 @@ export class CadastroComponent implements OnInit {
   }
 
   public mudarValor(evento: any): void {
-    if(evento.target.value.length == 3) {
+    if((evento.target.value.length == 3 && this.valorAnt.length != 4) ||
+       (evento.target.value.length == 7 && this.valorAnt.length != 8)
+    ) {
       evento.target.value += '.'
+      this.valorAnt = evento.target.value
+    } else if((evento.target.value.length == 11 && this.valorAnt.length != 12)) {
+      evento.target.value += '-'
+      this.valorAnt = evento.target.value
+    } else if(evento.target.value.length == 3 && this.valorAnt.length == 4) {
+      evento.target.value = evento.target.value.substr(0, 2)
+      this.valorAnt = evento.target.value
+    } else if(evento.target.value.length == 7 && this.valorAnt.length == 8) {
+      evento.target.value = evento.target.value.substr(0, 6)
+      this.valorAnt = evento.target.value
+    } else if(evento.target.value.length == 11 && this.valorAnt.length == 12) {
+      evento.target.value = evento.target.value.substr(0,10)
+      this.valorAnt = evento.target.value
     }
-    console.log(this.formularioCadastro.value.cpf)
+    console.log(evento)
     // console.log(evento.target.value += '.')
   }
 
