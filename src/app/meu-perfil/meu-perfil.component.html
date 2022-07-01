@@ -52,7 +52,7 @@
     </ion-item>
     <ion-list *ngIf="listaEditarTelefone === true">
       <ion-item lines="full">
-        <ion-label position="stacked">Celular:</ion-label>
+        <ion-label position="stacked">Telefone:</ion-label>
         <ion-input [placeholder]="usuario.telefone" type="tel" [(ngModel)]="valorInputTelefone"></ion-input>
         <ion-icon name="save" slot="end" (click)="editaValor('celular')"></ion-icon>
       </ion-item>
