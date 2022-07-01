@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -16,7 +15,7 @@ import { Autenticacao } from './autenticacao.service';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, HttpClientModule ,IonicModule.forRoot(), AppRoutingModule, NgxMaskModule.forRoot({ validation: false })],
+  imports: [BrowserModule, HttpClientModule ,IonicModule.forRoot(), AppRoutingModule ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Autenticacao, CestaService ],
   bootstrap: [AppComponent],
 })
