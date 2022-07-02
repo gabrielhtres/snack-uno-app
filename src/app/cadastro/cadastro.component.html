@@ -40,7 +40,10 @@
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Senha</h1></ion-label>
-      <ion-input rows="1" type="password" class="input-form" placeholder="Senha" minLength="6" maxLength="50" formControlName="password"></ion-input>
+      <div class="d-flex flex-column">
+        <ion-input rows="1" [type]="tipoInputSenha" class="input-form" placeholder="Senha" minLength="6" maxLength="50" formControlName="password"></ion-input>
+        <ion-icon class="me-3 align-self-end" [name]="iconeInputSenha" (click)="mudarValor($event, 'senha')" style="position: relative; bottom: 2.2em; z-index: 999"></ion-icon>
+      </div>
       <small *ngIf="formularioCadastro.get('password').valid && formularioCadastro.get('password').touched" class="valid">Ok</small>
       <small *ngIf="!formularioCadastro.get('password').valid && formularioCadastro.get('password').touched" class="invalid">Senha Inválida</small>
     </div>

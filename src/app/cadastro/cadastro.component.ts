@@ -11,6 +11,8 @@ import { Autenticacao } from '../autenticacao.service';
 export class CadastroComponent implements OnInit {
 
   public valorAnt: string = ''
+  public tipoInputSenha: string = 'password'
+  public iconeInputSenha: string = 'eye'
 
   public formularioCadastro: FormGroup = new FormGroup({
     'name': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
@@ -85,6 +87,15 @@ export class CadastroComponent implements OnInit {
           console.log('Entrou aqui')
           evento.target.value = evento.target.value.substr(0, 9)
           this.valorAnt = evento.target.value
+        }
+        break;
+      case 'senha':
+        if(this.tipoInputSenha == 'password') {
+          this.tipoInputSenha = 'text'
+          this.iconeInputSenha = 'eye-off'
+        } else {
+          this.tipoInputSenha = 'password'
+          this.iconeInputSenha = 'eye'
         }
         break;
     
