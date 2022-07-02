@@ -38,6 +38,7 @@ export class Autenticacao {
     }
 
     public cadastrarUsuario(usuario: Usuario): any {
+        // console.log(usuario)
         let headers: HttpHeaders = new HttpHeaders()
         headers.append('Content-Type', 'application/json')
         return this.http.post(
