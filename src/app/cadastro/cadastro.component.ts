@@ -13,6 +13,7 @@ export class CadastroComponent implements OnInit {
   public valorAnt: string = ''
   public tipoInputSenha: string = 'password'
   public iconeInputSenha: string = 'eye'
+  public cadastroUsuario: any = null
 
   public formularioCadastro: FormGroup = new FormGroup({
     'name': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
@@ -41,7 +42,11 @@ export class CadastroComponent implements OnInit {
 
     this.autenticacao.cadastrarUsuario(usuario)
       .subscribe((resp: any) => {
-        console.log(resp)
+        if(resp.message = 201) {
+          this.cadastroUsuario = true
+        } else {
+          this.cadastroUsuario = false
+        }
       })
   }
 

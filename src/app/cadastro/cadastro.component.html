@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content *ngIf="cadastroUsuario === null">
   <div class="d-flex justify-content-center">
     <img src="../../assets/Logo_Forms.png">
   </div>
@@ -53,10 +53,20 @@
     </div>
 
     <div class="botao-login mt-5">
+      <small *ngIf="cadastroUsuario === false" class="invalid">Não foi possível realizar o cadastro, por favor verifique seus dados</small>
       <ion-button expand="block"class="fs-6 m-0 mb-4" color="success" size="large" strong="false" type="submit" [disabled]="!formularioCadastro.valid">
         Cadastrar-se
       </ion-button>
     </div>
   </form>
 
+</ion-content>
+
+<ion-content *ngIf="cadastroUsuario === true">
+  <div style="width: 100%; height: 100%;" class="d-flex align-items-center justify-content-center flex-column">
+    <img src="../../assets/Logo_Forms.png">
+    <ion-icon name="checkmark-circle" size="large" color="success mt-5"></ion-icon>
+    <h1 class="text-success">Você foi cadastrado com sucesso!</h1>
+    <a [routerLink]="['/folder/login/login']" class="mt-5">Voltar para a página de Login</a>
+  </div>
 </ion-content>
