@@ -19,8 +19,8 @@ export class CadastroComponent implements OnInit {
     'email': new FormControl('', [ Validators.required, Validators.minLength(1), Validators.maxLength(50) ] ),
     'data_birth': new FormControl('', [ Validators.required, Validators.minLength(1) ] ),
     'password': new FormControl('', [ Validators.required, Validators.minLength(8), Validators.maxLength(50) ] ),
-    'cpf': new FormControl('', [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] ),
-    'telephone': new FormControl('', [ Validators.required, Validators.minLength(11), Validators.maxLength(11) ] )
+    'cpf': new FormControl('', [ Validators.required, Validators.minLength(14), Validators.maxLength(14) ] ),
+    'telephone': new FormControl('', [ Validators.required, Validators.minLength(15), Validators.maxLength(15) ] )
   })
 
   constructor(private autenticacao: Autenticacao) { }
@@ -33,9 +33,11 @@ export class CadastroComponent implements OnInit {
       this.formularioCadastro.value.cpf,
       this.formularioCadastro.value.data_birth,
       this.formularioCadastro.value.telephone,
-      this.formularioCadastro.value.email,
+      this.formularioCadastro.value.email += '@unochapeco.edu.br',
       this.formularioCadastro.value.password,
     )
+
+    console.log(usuario)
 
     this.autenticacao.cadastrarUsuario(usuario)
       .subscribe((resp: any) => {
@@ -66,7 +68,6 @@ export class CadastroComponent implements OnInit {
         }
         break;
       case 'telefone':
-        console.log(this.valorAnt.length)
         if(evento.target.value.length == 1 && this.valorAnt.length == 0) {
           evento.target.value = '(' +  evento.target.value
           this.valorAnt = evento.target.value

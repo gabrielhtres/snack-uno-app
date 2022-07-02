@@ -32,15 +32,15 @@
       <small *ngIf="formularioCadastro.get('telephone').valid && formularioCadastro.get('telephone').touched" class="valid">Ok</small>
       <small *ngIf="!formularioCadastro.get('telephone').valid && formularioCadastro.get('telephone').touched" class="invalid">Telefone Inválido</small>
     </div>
-    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
+    <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4 mb-1">
       <ion-label class="mb-1"><h1 class="fs-5">E-mail</h1></ion-label>
-      <div class="d-flex flex-row" style="height: 50px;">
+      <div class="d-flex flex-row mb-1" style="height: 50px;">
         <ion-input rows="1" class="input-form-email" type="text" maxLength="50" placeholder="E-mail" formControlName="email">
         </ion-input>
         <span class="input-email">@unochapeco.edu.br</span>
       </div>
-      <small *ngIf="formularioCadastro.get('email').valid && formularioCadastro.get('email').touched" class="valid">Ok</small>
-      <small *ngIf="!formularioCadastro.get('email').valid && formularioCadastro.get('email').touched" class="invalid">E-mail Inválido</small>
+      <small class="mt-1" *ngIf="formularioCadastro.get('email').valid && formularioCadastro.get('email').touched" class="valid">Ok</small>
+      <small class="mt-1" *ngIf="!formularioCadastro.get('email').valid && formularioCadastro.get('email').touched" class="invalid">E-mail Inválido</small>
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Senha</h1></ion-label>
