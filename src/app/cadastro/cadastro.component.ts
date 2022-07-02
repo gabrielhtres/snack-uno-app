@@ -38,8 +38,6 @@ export class CadastroComponent implements OnInit {
       this.formularioCadastro.value.password,
     )
 
-    console.log(usuario)
-
     this.autenticacao.cadastrarUsuario(usuario)
       .subscribe((resp: any) => {
         if(resp.message = 201) {
