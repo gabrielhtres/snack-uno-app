@@ -49,7 +49,7 @@ export class CadastroComponent implements OnInit {
         ) {
           evento.target.value += '.'
           this.valorAnt = evento.target.value
-        } else if((evento.target.value.length == 11 && this.valorAnt.length != 12)) {
+        } else if(evento.target.value.length == 11 && this.valorAnt.length != 12) {
           evento.target.value += '-'
           this.valorAnt = evento.target.value
         } else if(evento.target.value.length == 3 && this.valorAnt.length == 4) {
@@ -59,16 +59,39 @@ export class CadastroComponent implements OnInit {
           evento.target.value = evento.target.value.substr(0, 6)
           this.valorAnt = evento.target.value
         } else if(evento.target.value.length == 11 && this.valorAnt.length == 12) {
-          evento.target.value = evento.target.value.substr(0,10)
+          evento.target.value = evento.target.value.substr(0, 10)
           this.valorAnt = evento.target.value
         }
         break;
       case 'telefone':
-        
-    }
+        console.log(this.valorAnt.length)
+        if(evento.target.value.length == 1 && this.valorAnt.length == 0) {
+          evento.target.value = '(' +  evento.target.value
+          this.valorAnt = evento.target.value
+        } else if(evento.target.value.length == 1 && this.valorAnt.length != 0) {
+          evento.target.value = ''
+          this.valorAnt = evento.target.value
+        } else if(evento.target.value.length == 3 && this.valorAnt.length != 5) {
+          evento.target.value += ') '
+          this.valorAnt = evento.target.value
+        } else if(evento.target.value.length == 10 && this.valorAnt.length != 11) {
+          evento.target.value += '-'
+          this.valorAnt = evento.target.value
+        } else if(evento.target.value.length == 4 && this.valorAnt.length == 5) {
+          console.log('VSF')
+          evento.target.value = evento.target.value.substr(0, 2)
+          this.valorAnt = evento.target.value
+        } else if(evento.target.value.length == 10 && this.valorAnt.length == 11) {
+          console.log('Entrou aqui')
+          evento.target.value = evento.target.value.substr(0, 9)
+          this.valorAnt = evento.target.value
+        }
+        break;
     
     console.log(evento)
     // console.log(evento.target.value += '.')
+    }
+
   }
 
 }

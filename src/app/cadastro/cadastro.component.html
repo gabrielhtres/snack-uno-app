@@ -28,7 +28,7 @@
     </div>
     <div class="caixa-form d-flex flex-column me-auto ms-auto mt-4">
       <ion-label class="mb-1"><h1 class="fs-5">Telefone</h1></ion-label>
-      <ion-input rows="1" type="tel" class="input-form" minLenght="11" maxLength="11" placeholder="Telefone" formControlName="telephone"></ion-input>
+      <ion-input rows="1" (ionChange)="mudarValor($event, 'telefone')" type="text" class="input-form" minLenght="15" maxLength="15" placeholder="Telefone" formControlName="telephone"></ion-input>
       <small *ngIf="formularioCadastro.get('telephone').valid && formularioCadastro.get('telephone').touched" class="valid">Ok</small>
       <small *ngIf="!formularioCadastro.get('telephone').valid && formularioCadastro.get('telephone').touched" class="invalid">Telefone Inválido</small>
     </div>
