@@ -30,7 +30,7 @@
       <ion-icon slot="start" name="person" color="nav"></ion-icon>
       <ion-label>
         <h2>Nome</h2>
-        <p>{{ usuario.nome }}</p>
+        <p>{{ usuario.name }}</p>
       </ion-label>
       <ion-icon *ngIf="listaEditarNome === false" slot="end" name="pencil" (click)="abreEditar('nome')"></ion-icon>
     </ion-item>
@@ -46,7 +46,7 @@
       <ion-icon slot="start" name="call" color="nav"></ion-icon>
       <ion-label>
         <h2>Telefone</h2>
-        <p>{{ usuario.telefone }}</p>
+        <p>{{ usuario.telephone }}</p>
       </ion-label>
       <ion-icon *ngIf="listaEditarTelefone === false" slot="end" name="pencil" (click)="abreEditar('telefone')"></ion-icon>
     </ion-item>
@@ -62,7 +62,7 @@
       <ion-icon slot="start" name="calendar" color="nav"></ion-icon>
       <ion-label>
         <h2>Data de Nascimento</h2>
-        <p>{{ usuario.dataNascimento }}</p>
+        <p>{{ usuario.data_birth | date: 'dd/M/yyyy'}}</p>
       </ion-label>
       <ion-icon *ngIf="listaEditarNascimento === false" slot="end" name="pencil" (click)="abreEditar('nascimento')"></ion-icon>
     </ion-item>
@@ -77,7 +77,7 @@
         <ion-icon slot="start" name="calendar" color="nav"></ion-icon>
         <ion-label>
           <h2>telefone</h2>
-          <p>{{ usuario.telefone }}</p>
+          <p>{{ usuario.telephone }}</p>
         </ion-label>
         <ion-icon *ngIf="listaEditarTelefone === false" slot="end" name="pencil" (click)="abreEditar('nascimento')"></ion-icon>
       </ion-item>
