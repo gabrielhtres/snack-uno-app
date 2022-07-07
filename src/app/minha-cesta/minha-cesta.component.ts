@@ -2,20 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoPedido } from 'src/shared/produto-pedido.model';
 import { Produto } from 'src/shared/produto.model';
 import { CestaService } from '../cesta.service';
+import { PedidoService } from '../pedido.service';
 import { ProdutosService } from '../produtos.service';
 import { RestauranteService } from '../restaurante.service';
 
 @Component({
   selector: 'app-minha-cesta',
   templateUrl: './minha-cesta.component.html',
-  styleUrls: ['./minha-cesta.component.scss']
+  styleUrls: ['./minha-cesta.component.scss'],
+  providers: [ PedidoService ]
 })
 export class MinhaCestaComponent implements OnInit {
 
   public produtosCesta: ProdutoPedido[]
 
   constructor(
-    private cestaService: CestaService
+    private cestaService: CestaService,
+    private pedidoService: PedidoService
     ) { }
 
   public indexArray(id: number) {
@@ -28,7 +31,10 @@ export class MinhaCestaComponent implements OnInit {
   }
 
   public finalizarCompra(): void {
-    console.log('Compra finalizada')
+    this.pedidoService.cadastrarPedido(this.cestaService.cesta)
+      .subscribe((resposta: any) => {
+        console.log(resposta)
+      }) 
     this.cestaService.limparCesta()
   }
 

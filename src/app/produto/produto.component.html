@@ -10,7 +10,7 @@
       <h1 class="ms-3 mt-0">{{ produto.id_restaurant }}</h1>
     </ion-text>
 
-    <img src="https://i.imgur.com/78ZfWGH.jpg" class="mt-1 img-fluid">
+    <img [src]="produto.image" class="mt-1 img-fluid">
     <div class="m-4">
       <h2 class="fs-2">{{ produto.name }}</h2>
       <p class="fs-6 mt-2">{{ produto.description }}</p>
@@ -67,11 +67,11 @@
         </ion-label>
       </ion-list>
       <div class="botao-fc ms-auto me-auto" *ngIf="adicionarCesta == true">
-        <ion-button  class="fs-6 m-0" size="large" color="success" strong="false" (click)="abrirAdicionar()">
+        <ion-button  class="fs-6 m-0 mb-5" size="large" color="success" strong="false" (click)="abrirAdicionar()">
           Comprar
         </ion-button>
       </div>
-      <div class="mt-3" *ngIf="adicionarCesta == false">
+      <div class="mt-3 mb-5" *ngIf="adicionarCesta == false">
         <form class="justify-content-center" [formGroup]="formularioProduto" (ngSubmit)="adicionarACesta()">
           <ion-input type="number" class="input-produto mt-2" placeholder="Quantidade" min="1" formControlName="quantidadeForm"></ion-input>
           <ion-select class="mt-2" placeholder="Sabor" formControlName="saborForm">

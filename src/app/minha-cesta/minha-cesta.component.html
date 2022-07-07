@@ -12,15 +12,15 @@
     <div *ngIf="produtosCesta.length !== 0">
       <ion-item lines="full" *ngFor="let produto of produtosCesta"> <!--  *ngFor="let d of dadosCesta" -->
         <ion-avatar slot="start">
-          <img [src]="produto.produto.img">
+          <img [src]="produto.produto.image">
         </ion-avatar>
         <ion-label>
-          <h2 class="fs-6 fw-bold">{{ produto.produto.produto }}</h2>
-          <h3>{{ produto.produto.descricao }}</h3>
-          <p>{{ produto.produto.restaurante }}</p>
+          <h2 class="fs-6 fw-bold">{{ produto.produto.name }}</h2>
+          <h3>{{ produto.produto.description }}</h3>
+          <p>{{ produto.produto.id_restaurant }}</p>
           <p>Quantidade: {{ produto.quantidade }}</p>
         </ion-label>
-        <p class="text-success fs-6 fw-bold me-4 mt-3">{{ produto.produto.preco | currency : 'BRL' : 'R$ ' : '1.2-2' }}</p>
+        <p class="text-success fs-6 fw-bold me-4 mt-3">{{ produto.produto.price | currency : 'BRL' : 'R$ ' : '1.2-2' }}</p>
         <ion-icon slot="end" name="trash" color="danger" (click)="removerItem(produto.produto.id)"></ion-icon>
       </ion-item>
       <div class="botao-fc pt-5">

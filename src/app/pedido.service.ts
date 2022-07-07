@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 import { URL_API } from 'src/app.api'
@@ -21,4 +21,15 @@ export class PedidoService {
             .pipe( map( (resposta: any) => { return resposta }), retry(10) )
     }
 
+    public cadastrarPedido(cesta: any): any {
+
+        let headers: HttpHeaders = new HttpHeaders()
+        headers.append('Content-Type', 'application/json')
+        
+        return this.http.post(
+            `${URL_API}users/login`,
+            { cesta },
+            { headers }
+            )
+    }
 }

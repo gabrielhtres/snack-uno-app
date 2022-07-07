@@ -27,8 +27,10 @@ export class LoginComponent implements OnInit {
       .subscribe((resp: any) => {
         this.mensagemErroLogin = false
         if(resp.length === 0) {
+          console.log(resp)
           this.mensagemErroLogin = true
         } else {
+          console.log(resp)
           this.autenticacao.usuarioAtivo = resp[0]
           this.mensagemErroLogin = true
           this.routes.navigate(['/folder/home/home'])

@@ -39,9 +39,11 @@ export class SliderProdutosComponent implements OnInit {
   }
 
   public substituirRestauranteProdutos(produtos: any): Produto[] {
+    console.log(produtos)
     let indiceRestaurante = this.indexArray(produtos[0].id_restaurant)
     for(let i=0;i<produtos.length;i++) {
-      produtos[i].id_restaurant = this.restaurantes[indiceRestaurante].name
+
+      produtos[i].id_restaurant = this.restaurantes[indiceRestaurante].namerestaurant
     }
 
     return produtos
@@ -51,13 +53,13 @@ export class SliderProdutosComponent implements OnInit {
     SwiperCore.use([Pagination]);
     this.restauranteService.getAllRestaurantes()
       .subscribe((restaurantes: any) => {
-        this.restaurantes = restaurantes.message
-        // console.log(restaurantes.message)
+        // console.log(restaurantes)
+        this.restaurantes = restaurantes
         for(let i=0; i<this.restaurantes.length; i++) {
           this.produtoService.getProdutosPorRestaurante(this.restaurantes[i].id_restaurant)
             .subscribe((produtos: any) => {
-              // console.log(produtos.message)
-              let produtosAlterados = this.substituirRestauranteProdutos(produtos.message)
+              // console.log(produtos)
+              let produtosAlterados = this.substituirRestauranteProdutos(produtos)
               this.produtosSlider.push(produtosAlterados)      
           })
         }
